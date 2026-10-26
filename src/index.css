@@ -1,0 +1,248 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: 'Anton', 'Bebas Neue', sans-serif;
+  --font-display: 'Anton', 'Bebas Neue', sans-serif;
+  --font-sans: 'Outfit', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+}
+
+@layer base {
+  :root {
+    /* Vivid+Co Colors */
+    --color-bone-white: #fffdf9;
+    --color-obsidian: #101010;
+    --color-graphite-veil: #495764;
+    --color-ash-border: #403f3f;
+    --color-fog-blue: #6f879c;
+    --color-pure-black: #000000;
+    --color-prism-red: #ff2a2a;
+    --color-prism-cyan: #2a7fff;
+    --color-prism-lime: #2aff2a;
+
+    /* Typography — Anton & Bebas Neue (Condensed Bold Display) + Outfit (Modern Geometric Sans) */
+    --font-heading: 'Anton', 'Bebas Neue', sans-serif;
+    --font-display: 'Anton', 'Bebas Neue', sans-serif;
+    --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+    /* Surfaces */
+    --surface-obsidian-canvas: #101010;
+    --surface-graphite-veil: #495764;
+    --surface-bone-card: #fffdf9;
+  }
+
+  html {
+    background-color: #101010;
+    min-height: 100%;
+    width: 100%;
+  }
+
+  body {
+    background-color: #101010;
+    color: #fffdf9;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    min-height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: 0.02em;
+  }
+}
+
+/* Custom Display & Body Typography */
+.font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+}
+
+.font-display {
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Ensure paragraph tags or small text spans remain clean and legible in Outfit */
+p.font-display,
+span.font-display,
+div.font-display.text-xs,
+div.font-display.text-sm,
+div.font-display.text-base,
+blockquote.font-display {
+  font-family: var(--font-sans);
+}
+
+/* Elegant Highlight: Sleek illuminated metallic silver */
+.neon-silver-text {
+  font-family: inherit;
+  font-style: normal;
+  letter-spacing: inherit;
+  color: #cfd9e4;
+  text-shadow: 0 0 18px rgba(207, 217, 228, 0.45), 0 0 35px rgba(160, 185, 210, 0.25);
+  display: inline;
+}
+
+/* Calendly iframe embed styling - zero inner scroll, hide scrollbars */
+.calendly-inline-widget iframe {
+  overflow: hidden !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+.calendly-inline-widget iframe::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Vivid+Co Components & Utilities */
+.btn-outlined {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid #fffdf9;
+  border-radius: 5px;
+  padding: 9px 18px;
+  color: #fffdf9;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: all 0.5s cubic-bezier(0.52, 0.01, 0, 1);
+  cursor: pointer;
+}
+
+.btn-outlined:hover {
+  background-color: #fffdf9;
+  color: #101010;
+}
+
+.btn-ghost-nav {
+  background: transparent;
+  border: none;
+  border-radius: 0px;
+  padding: 0;
+  color: #fffdf9;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: color 0.5s cubic-bezier(0.52, 0.01, 0, 1);
+  cursor: pointer;
+}
+
+.btn-ghost-nav:hover {
+  color: #6f879c;
+}
+
+.service-label-fog {
+  color: #6f879c;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+}
+
+/* Ash Hairline Card & Containers */
+.ash-card {
+  background: #141414;
+  border: 1px solid #403f3f;
+  border-radius: 15px;
+  padding: 24px;
+  transition: border-color 0.5s cubic-bezier(0.52, 0.01, 0, 1);
+}
+
+.ash-card:hover {
+  border-color: #6f879c;
+}
+
+.ash-divider {
+  border-top: 1px solid #403f3f;
+  width: 100%;
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #101010;
+}
+::-webkit-scrollbar-thumb {
+  background: #403f3f;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6f879c;
+}
+
+/* GPU Accelerated Marquee for Client Logos - zero main-thread overhead */
+@keyframes marquee-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-scroll-reverse {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 35s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover,
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll-reverse 35s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-reverse {
+    animation-duration: 90s;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

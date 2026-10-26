@@ -1,0 +1,8 @@
+{
+  "name": "Remix VantyxMedia",
+  "description": "Consistent $2k+ Jobs & Pay-Per-Show Ads for 5–12 Person Contractor & Service Crews ($30k+/mo)",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
