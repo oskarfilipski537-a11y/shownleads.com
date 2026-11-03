@@ -39,21 +39,21 @@ export const Toast: React.FC<ToastProps> = ({
           role="status"
           aria-live="polite"
         >
-          <div className="rounded-[12px] bg-[#141414] border border-[#fffdf9] p-5 shadow-[0_20px_40px_rgba(0,0,0,0.6)] relative overflow-hidden backdrop-blur-md">
+          <div className="rounded-[20px] bg-[#0c0e17]/95 border border-white/10 p-5 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(59,130,246,0.2)] relative overflow-hidden backdrop-blur-2xl">
             {/* Top Accent Line */}
-            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#2a7fff] via-[#fffdf9] to-[#2aff2a]" />
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-600 via-sky-400 to-blue-400" />
 
             <div className="flex items-start gap-3.5">
-              <div className="w-8 h-8 rounded-[5px] bg-[#101010] border border-[#403f3f] flex items-center justify-center shrink-0 text-[#fffdf9] mt-0.5">
-                <CheckCircle2 className="w-4 h-4 text-[#fffdf9]" />
+              <div className="w-9 h-9 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center shrink-0 text-blue-400 mt-0.5 shadow-[0_0_12px_rgba(59,130,246,0.3)]">
+                <CheckCircle2 className="w-4 h-4 text-blue-400" />
               </div>
 
               <div className="flex-1 min-w-0 pr-4">
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="text-xs uppercase tracking-[0.08em] font-display text-[#fffdf9] font-normal">
+                  <span className="text-xs uppercase tracking-[0.08em] font-display text-[#fffdf9] font-semibold">
                     {title}
                   </span>
-                  <span className="px-1.5 py-0.5 rounded-[3px] bg-[#101010] border border-[#403f3f] text-[9px] font-display text-[#6f879c] uppercase">
+                  <span className="px-2 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-[9px] font-mono text-blue-400 uppercase">
                     Priority Audit
                   </span>
                 </div>
@@ -63,16 +63,16 @@ export const Toast: React.FC<ToastProps> = ({
                   {message}
                 </p>
 
-                <div className="mt-2.5 pt-2 border-t border-[#403f3f]/50 flex items-center gap-2 text-[11px] text-[#6f879c] font-display">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#2aff2a] animate-pulse" />
-                  <span>Expert Lead Strategist Assigned</span>
+                <div className="mt-2.5 pt-2 border-t border-white/5 flex items-center gap-2 text-[11px] text-[#6f879c] font-display">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse shadow-[0_0_8px_rgba(59,130,246,0.9)]" />
+                  <span className="text-blue-300">Expert Lead Strategist Assigned</span>
                 </div>
               </div>
 
               <button
                 onClick={onClose}
                 aria-label="Dismiss notification"
-                className="text-[#6f879c] hover:text-[#fffdf9] transition-colors p-1 rounded hover:bg-[#1f1f1f] cursor-pointer shrink-0"
+                className="text-[#6f879c] hover:text-[#fffdf9] transition-colors p-1.5 rounded-full hover:bg-white/10 cursor-pointer shrink-0"
               >
                 <X className="w-4 h-4" />
               </button>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, DollarSign, Lock } from 'lucide-react';
+import { ArrowRight, DollarSign, Lock, Sparkles } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 interface CompaniesWeWorkWithProps {
@@ -15,11 +15,11 @@ export const CompaniesWeWorkWith: React.FC<CompaniesWeWorkWithProps> = ({ onOpen
   const tradesGroup2 = trades.slice(7);
 
   const countries = [
-    "Ireland",
     "United States",
     "United Kingdom",
-    "Australia",
-    "Canada"
+    "Ireland",
+    "Canada",
+    "Australia"
   ];
 
   // Repeat for continuous seamless marquee streaming
@@ -29,26 +29,27 @@ export const CompaniesWeWorkWith: React.FC<CompaniesWeWorkWithProps> = ({ onOpen
   return (
     <section
       id="companies-we-work-with"
-      className="relative py-28 sm:py-36 lg:py-44 bg-[#000000] overflow-hidden border-t border-[#1a1a1a]"
+      className="relative py-28 sm:py-36 bg-[#07080c] overflow-hidden"
     >
       {/* Ambient background illumination */}
       <div 
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[550px] rounded-full pointer-events-none opacity-20"
-        style={{ background: 'radial-gradient(circle, rgba(207, 217, 228, 0.1) 0%, transparent 70%)' }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[550px] rounded-full pointer-events-none opacity-20 aurora-blue-glow blur-3xl -z-0"
       />
 
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10 mb-14 sm:mb-20">
         
-        {/* Section Header */}
+        {/* Section Header with Fundory Serif Italic Accent */}
         <div className="max-w-3xl mx-auto text-center">
-          <div className="mb-4 inline-flex items-center gap-2">
-            <span className="text-xs uppercase tracking-[0.14em] text-[#6f879c] font-sans font-medium">
-              {t.companiesTag}
-            </span>
+          <div className="mb-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-950/70 border border-blue-500/30 text-blue-300 text-xs font-sans font-medium">
+            <Sparkles className="w-3.5 h-3.5 text-blue-400" />
+            <span className="uppercase tracking-widest text-[11px]">{t.companiesTag}</span>
           </div>
 
           <h2 className="font-heading uppercase text-3xl sm:text-5xl lg:text-[3.75rem] text-[#fffdf9] font-normal tracking-[0.02em] mb-6 leading-tight">
-            {t.companiesTitle1}<span className="neon-silver-text">{t.companiesTitle2}</span>
+            Companies We{' '}
+            <span className="font-serif italic font-normal text-blue-400 tracking-normal normal-case">
+              Work With
+            </span>
           </h2>
 
           <p className="font-sans text-base sm:text-lg text-[#fffdf9]/90 font-normal leading-relaxed max-w-2xl mx-auto mb-8">
@@ -57,17 +58,17 @@ export const CompaniesWeWorkWith: React.FC<CompaniesWeWorkWithProps> = ({ onOpen
 
           {/* Qualified Geographic & Metric Badges */}
           <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 text-xs font-sans">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-[6px] bg-[#121418] border border-[#262a34] text-[#cfd9e4]">
-              <DollarSign className="w-3.5 h-3.5 text-[#2aff2a]" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-950/50 border border-blue-500/30 text-blue-200">
+              <DollarSign className="w-3.5 h-3.5 text-blue-400" />
               <span className="font-medium">{t.companiesBadgeTicket}</span>
             </div>
 
             {countries.map((c, i) => (
               <div 
                 key={i} 
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[6px] bg-[#0d0e12] border border-[#22252e] text-[#8e9aa8]"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-gray-300"
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#2aff2a]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
                 <span>{c}</span>
               </div>
             ))}
@@ -79,89 +80,76 @@ export const CompaniesWeWorkWith: React.FC<CompaniesWeWorkWithProps> = ({ onOpen
       {/* Kinetic Infinite Ribbon 1 (Left Scrolling) */}
       <div className="relative w-full overflow-hidden mb-5 sm:mb-6">
         {/* Left & Right Gradient Vignettes */}
-        <div className="absolute left-0 inset-y-0 w-28 sm:w-56 bg-gradient-to-r from-[#000000] to-transparent z-20 pointer-events-none" />
-        <div className="absolute right-0 inset-y-0 w-28 sm:w-56 bg-gradient-to-l from-[#000000] to-transparent z-20 pointer-events-none" />
+        <div className="absolute left-0 inset-y-0 w-28 sm:w-56 bg-gradient-to-r from-[#07080c] to-transparent z-20 pointer-events-none" />
+        <div className="absolute right-0 inset-y-0 w-28 sm:w-56 bg-gradient-to-l from-[#07080c] to-transparent z-20 pointer-events-none" />
 
         <div className="flex gap-4 sm:gap-5 w-max animate-marquee cursor-default">
           {marquee1.map((trade, idx) => (
             <div
               key={idx}
-              className="px-6 py-5 rounded-[14px] bg-[#0d0f14] border border-[#222633] hover:border-[#6f879c] transition-all duration-300 flex flex-col justify-between shrink-0 shadow-xl group min-w-[280px] sm:min-w-[320px]"
+              className="px-6 py-5 rounded-2xl bg-[#0c0e17]/90 border border-white/[0.08] hover:border-blue-500/40 transition-all duration-300 flex flex-col justify-between shrink-0 shadow-xl group min-w-[280px] sm:min-w-[320px] backdrop-blur-md"
             >
-              <div className="flex items-center justify-between gap-3 text-xs font-sans text-[#6f879c] mb-3 pb-2.5 border-b border-[#1c202a]">
-                <span className="uppercase tracking-wider text-[11px] font-medium">{trade.category}</span>
-                <span className="flex items-center gap-1.5 text-[10px] font-mono text-[#2aff2a]">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#2aff2a] animate-pulse" />
-                  QUALIFIED
+              <div>
+                <span className="text-[10px] uppercase font-mono tracking-widest text-blue-400 block mb-1">
+                  {trade.category}
+                </span>
+                <span className="font-heading uppercase text-lg sm:text-xl text-[#fffdf9] font-medium tracking-wide block">
+                  {trade.name}
                 </span>
               </div>
 
-              <div className="font-heading uppercase text-xl sm:text-2xl text-[#fffdf9] tracking-[0.02em] group-hover:text-[#cfd9e4] transition-colors leading-tight mb-4">
-                {trade.name}
-              </div>
-
-              <div className="pt-2 border-t border-[#1c202a] flex items-center justify-between text-xs font-sans">
-                <span className="text-[#8e9aa8]">Avg Ticket:</span>
-                <span className="text-[#2aff2a] font-mono font-medium">{trade.avgTicket}</span>
+              <div className="flex items-center justify-between pt-4 mt-3 border-t border-white/[0.06] text-xs font-sans">
+                <span className="text-gray-400">Typical Value:</span>
+                <span className="text-blue-300 font-mono font-medium">{trade.avgTicket}</span>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Kinetic Infinite Ribbon 2 (Reverse Right Scrolling) */}
-      <div className="relative w-full overflow-hidden mb-16 sm:mb-20">
-        <div className="absolute left-0 inset-y-0 w-28 sm:w-56 bg-gradient-to-r from-[#000000] to-transparent z-20 pointer-events-none" />
-        <div className="absolute right-0 inset-y-0 w-28 sm:w-56 bg-gradient-to-l from-[#000000] to-transparent z-20 pointer-events-none" />
+      {/* Kinetic Infinite Ribbon 2 (Right Scrolling) */}
+      <div className="relative w-full overflow-hidden mb-12 sm:mb-16">
+        {/* Left & Right Gradient Vignettes */}
+        <div className="absolute left-0 inset-y-0 w-28 sm:w-56 bg-gradient-to-r from-[#07080c] to-transparent z-20 pointer-events-none" />
+        <div className="absolute right-0 inset-y-0 w-28 sm:w-56 bg-gradient-to-l from-[#07080c] to-transparent z-20 pointer-events-none" />
 
         <div className="flex gap-4 sm:gap-5 w-max animate-marquee-reverse cursor-default">
           {marquee2.map((trade, idx) => (
             <div
               key={idx}
-              className="px-6 py-5 rounded-[14px] bg-[#0d0f14] border border-[#222633] hover:border-[#6f879c] transition-all duration-300 flex flex-col justify-between shrink-0 shadow-xl group min-w-[280px] sm:min-w-[320px]"
+              className="px-6 py-5 rounded-2xl bg-[#0c0e17]/90 border border-white/[0.08] hover:border-blue-500/40 transition-all duration-300 flex flex-col justify-between shrink-0 shadow-xl group min-w-[280px] sm:min-w-[320px] backdrop-blur-md"
             >
-              <div className="flex items-center justify-between gap-3 text-xs font-sans text-[#6f879c] mb-3 pb-2.5 border-b border-[#1c202a]">
-                <span className="uppercase tracking-wider text-[11px] font-medium">{trade.category}</span>
-                <span className="flex items-center gap-1.5 text-[10px] font-mono text-[#cfd9e4]">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#cfd9e4]" />
-                  QUALIFIED
+              <div>
+                <span className="text-[10px] uppercase font-mono tracking-widest text-blue-400 block mb-1">
+                  {trade.category}
+                </span>
+                <span className="font-heading uppercase text-lg sm:text-xl text-[#fffdf9] font-medium tracking-wide block">
+                  {trade.name}
                 </span>
               </div>
 
-              <div className="font-heading uppercase text-xl sm:text-2xl text-[#fffdf9] tracking-[0.02em] group-hover:text-[#cfd9e4] transition-colors leading-tight mb-4">
-                {trade.name}
-              </div>
-
-              <div className="pt-2 border-t border-[#1c202a] flex items-center justify-between text-xs font-sans">
-                <span className="text-[#8e9aa8]">Avg Ticket:</span>
-                <span className="text-[#cfd9e4] font-mono font-medium">{trade.avgTicket}</span>
+              <div className="flex items-center justify-between pt-4 mt-3 border-t border-white/[0.06] text-xs font-sans">
+                <span className="text-gray-400">Typical Value:</span>
+                <span className="text-blue-300 font-mono font-medium">{trade.avgTicket}</span>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Sleek Territory Lock Callout & Action Anchor (No static columns) */}
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10 text-center">
-        <div className="max-w-2xl mx-auto space-y-6">
-          <div className="inline-flex items-center gap-2 text-xs text-[#8e9aa8] font-sans">
-            <Lock className="w-3.5 h-3.5 text-[#2aff2a]" />
-            <span>{t.companiesBadgeLock}</span>
-          </div>
-
-          {onOpenQuiz && (
-            <div>
-              <button
-                onClick={onOpenQuiz}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 text-xs sm:text-sm uppercase tracking-[0.08em] font-medium font-sans text-[#101010] bg-[#fffdf9] hover:bg-[#eae6de] hover:scale-[1.02] active:scale-[0.98] rounded-[6px] transition-all duration-300 cursor-pointer shadow-[0_4px_25px_rgba(255,253,249,0.15)]"
-              >
-                <span>{t.companiesCta}</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          )}
+      {/* Territory Exclusivity Banner */}
+      {onOpenQuiz && (
+        <div className="max-w-2xl mx-auto px-6 text-center">
+          <button
+            onClick={onOpenQuiz}
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-black font-sans font-semibold text-xs sm:text-sm uppercase tracking-wider hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer shadow-[0_4px_25px_rgba(255,255,255,0.2)]"
+          >
+            <span>{t.companiesCta}</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
         </div>
-      </div>
+      )}
+
     </section>
   );
 };

@@ -25,50 +25,50 @@ export const IntentSystem: React.FC = () => {
         </div>
 
         {/* 3-Step Flow Card */}
-        <div className="max-w-5xl mx-auto bg-[#141414] rounded-[15px] p-8 sm:p-10 mb-20 border border-[#403f3f] relative">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[#403f3f] pb-5 mb-8 gap-3">
+        <div className="max-w-5xl mx-auto bg-[#0c0e17] rounded-[24px] p-8 sm:p-10 mb-20 border border-white/10 relative shadow-[0_20px_60px_rgba(0,0,0,0.8),0_0_40px_rgba(59,130,246,0.12)] backdrop-blur-xl">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-5 mb-8 gap-3">
             <div className="flex items-center gap-2 text-xs uppercase tracking-[0.08em] text-[#fffdf9] font-display">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2aff2a] opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2aff2a]" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500" />
               </span>
-              <span>3-TIER CAPTURE & SETTING SYSTEM</span>
+              <span>3-TIER CAPTURE &amp; SETTING SYSTEM</span>
             </div>
-            <div className="text-xs uppercase tracking-[0.08em] text-[#6f879c] border border-[#403f3f] px-3 py-1 rounded-[5px] inline-flex items-center gap-1.5 font-display">
-              <Globe className="w-3 h-3 text-[#6f879c]" />
+            <div className="text-xs uppercase tracking-[0.08em] text-blue-400 border border-blue-500/30 bg-blue-500/10 px-3.5 py-1 rounded-full inline-flex items-center gap-1.5 font-display font-medium">
+              <Globe className="w-3.5 h-3.5 text-blue-400" />
               <span>US • UK • IRELAND</span>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
             {/* Step 1 */}
-            <div className="bg-[#101010] border border-[#403f3f] rounded-[15px] p-6 sm:p-7 flex flex-col justify-between hover:border-[#6f879c] transition-colors duration-500">
+            <div className="bg-[#10121a] border border-white/10 rounded-[18px] p-6 sm:p-7 flex flex-col justify-between hover:border-blue-500/40 transition-colors duration-300">
               <div>
-                <div className="w-8 h-8 rounded-[6px] border border-[#403f3f] flex items-center justify-center text-[#fffdf9] mb-5">
+                <div className="w-9 h-9 rounded-full bg-[#161824] border border-white/10 flex items-center justify-center text-blue-400 mb-5">
                   <Search className="w-4 h-4" />
                 </div>
-                <div className="text-xs uppercase tracking-[0.08em] text-[#6f879c] font-display mb-2">
+                <div className="text-xs uppercase tracking-[0.08em] text-blue-400 font-display font-semibold mb-2">
                   1. INTENT SIGNALS
                 </div>
                 <h4 className="font-display text-lg text-[#fffdf9] font-normal mb-2">
-                  Buyer Cues & Search
+                  Buyer Cues &amp; Search
                 </h4>
                 <p className="text-xs text-[#fffdf9]/75 leading-relaxed font-normal">
                   Pixel tracking identifying homeowners actively researching trade contractors in your exact postal codes.
                 </p>
               </div>
-              <div className="mt-6 pt-4 border-t border-[#403f3f] text-[11px] uppercase tracking-[0.08em] text-[#6f879c] font-display">
+              <div className="mt-6 pt-4 text-[11px] uppercase tracking-[0.08em] text-[#6f879c] font-display">
                 Meta Intent Pixels
               </div>
             </div>
 
             {/* Step 2 */}
-            <div className="bg-[#101010] border border-[#403f3f] rounded-[15px] p-6 sm:p-7 flex flex-col justify-between hover:border-[#6f879c] transition-colors duration-500">
+            <div className="bg-[#10121a] border border-white/10 rounded-[18px] p-6 sm:p-7 flex flex-col justify-between hover:border-blue-500/40 transition-colors duration-300">
               <div>
-                <div className="w-8 h-8 rounded-[6px] border border-[#403f3f] flex items-center justify-center text-[#fffdf9] mb-5">
+                <div className="w-9 h-9 rounded-full bg-[#161824] border border-white/10 flex items-center justify-center text-blue-400 mb-5">
                   <UserCheck className="w-4 h-4" />
                 </div>
-                <div className="text-xs uppercase tracking-[0.08em] text-[#6f879c] font-display mb-2">
+                <div className="text-xs uppercase tracking-[0.08em] text-blue-400 font-display font-semibold mb-2">
                   2. MULTI-STAGE QUIZ
                 </div>
                 <h4 className="font-display text-lg text-[#fffdf9] font-normal mb-2">
@@ -78,19 +78,19 @@ export const IntentSystem: React.FC = () => {
                   Multi-question logic filters for ownership, immediate project timeframe, and verified budget thresholds.
                 </p>
               </div>
-              <div className="mt-6 pt-4 border-t border-[#403f3f] text-[11px] uppercase tracking-[0.08em] text-[#6f879c] font-display">
+              <div className="mt-6 pt-4 text-[11px] uppercase tracking-[0.08em] text-[#6f879c] font-display">
                 Vetted High-Ticket ICP
               </div>
             </div>
 
             {/* Step 3 */}
-            <div className="bg-[#181818] border border-[#fffdf9] rounded-[15px] p-6 sm:p-7 flex flex-col justify-between">
+            <div className="bg-gradient-to-b from-[#10162a] to-[#0c101d] border border-blue-500/40 rounded-[18px] p-6 sm:p-7 flex flex-col justify-between shadow-[0_0_30px_rgba(59,130,246,0.15)]">
               <div>
-                <div className="w-8 h-8 rounded-[6px] border border-[#fffdf9] flex items-center justify-center text-[#fffdf9] mb-5">
+                <div className="w-9 h-9 rounded-full bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-blue-400 mb-5">
                   <PhoneCall className="w-4 h-4" />
                 </div>
-                <div className="text-xs uppercase tracking-[0.08em] text-[#fffdf9] font-display mb-2">
-                  3. SETTER CALL & SHOW
+                <div className="text-xs uppercase tracking-[0.08em] text-blue-300 font-display font-semibold mb-2">
+                  3. SETTER CALL &amp; SHOW
                 </div>
                 <h4 className="font-display text-lg text-[#fffdf9] font-normal mb-2">
                   Speed to Lead in 180s
@@ -99,9 +99,9 @@ export const IntentSystem: React.FC = () => {
                   Dedicated US-trained reps confirm project scope and lock appointments directly onto your route calendar.
                 </p>
               </div>
-              <div className="mt-6 pt-4 border-t border-[#403f3f] text-[11px] uppercase tracking-[0.08em] text-[#fffdf9] flex items-center gap-1.5 font-display">
-                <CheckCircle className="w-3.5 h-3.5 text-[#2aff2a]" />
-                <span className="text-[#2aff2a]">Pay Per Estimate (Paid Only On Show)</span>
+              <div className="mt-6 pt-4 text-[11px] uppercase tracking-[0.08em] text-blue-400 flex items-center gap-1.5 font-display font-semibold">
+                <CheckCircle className="w-3.5 h-3.5 text-blue-400" />
+                <span>Pay Per Estimate (Paid Only On Show)</span>
               </div>
             </div>
           </div>

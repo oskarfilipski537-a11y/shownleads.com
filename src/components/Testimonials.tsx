@@ -329,31 +329,28 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenQuiz }) => {
     <section
       id="contractor-testimonials"
       aria-label="Verified Contractor Testimonials"
-      className="relative py-24 sm:py-32 lg:py-36 bg-[#000000] overflow-hidden border-t border-[#1a1a1a]"
+      className="relative py-24 sm:py-32 lg:py-36 bg-[#07080c] overflow-hidden"
     >
       {/* Ambient background glows */}
       <div 
-        className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full pointer-events-none opacity-20"
-        style={{ background: 'radial-gradient(circle, rgba(207, 217, 228, 0.12) 0%, transparent 70%)' }}
-      />
-      <div 
-        className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[600px] h-[450px] rounded-full pointer-events-none opacity-15"
-        style={{ background: 'radial-gradient(circle, rgba(42, 255, 42, 0.08) 0%, transparent 70%)' }}
+        className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full pointer-events-none opacity-20 aurora-blue-glow blur-3xl -z-0"
       />
 
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
         
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
-          <div className="mb-4 inline-flex items-center gap-2">
-            <span className="text-xs uppercase tracking-[0.14em] text-[#6f879c] font-sans font-medium">
+          <div className="mb-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-950/70 border border-blue-500/30 text-blue-300 text-xs font-sans font-medium">
+            <span className="uppercase tracking-widest text-[11px]">
               {currentContent.tag}
             </span>
           </div>
 
           <h2 className="font-heading uppercase text-3xl sm:text-5xl lg:text-[3.75rem] text-[#fffdf9] font-normal tracking-[0.02em] mb-6 leading-tight">
-            {currentContent.titlePart1}
-            <span className="neon-silver-text">{currentContent.titleSpan}</span>
+            Verified Results from{' '}
+            <span className="font-serif italic font-normal text-blue-400 tracking-normal normal-case">
+              Real Partners
+            </span>
           </h2>
 
           <p className="font-sans text-base sm:text-lg text-[#fffdf9]/85 font-normal leading-relaxed max-w-2xl mx-auto">
@@ -361,14 +358,14 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenQuiz }) => {
           </p>
         </div>
 
-        {/* 4-Column Grid Matching Uploaded Card Design (With 'Verified Partner' Badge Removed) */}
+        {/* 4-Column Grid Matching Uploaded Card Design */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6 mb-20">
           {currentContent.cards.map((card, idx) => (
             <div
               key={idx}
-              className="rounded-[16px] bg-[#0e1015] border border-[#232733] hover:border-[#6f879c] transition-all duration-300 overflow-hidden flex flex-col justify-between shadow-2xl group"
+              className="rounded-3xl bg-[#0c0e17]/90 border border-white/[0.08] hover:border-blue-500/40 transition-all duration-300 overflow-hidden flex flex-col justify-between shadow-xl group backdrop-blur-md"
             >
-              {/* Card Top: Contractor Image (Clean with no badge) */}
+              {/* Card Top: Contractor Image */}
               <div className="relative w-full aspect-[4/3] sm:aspect-[1.15/1] overflow-hidden bg-[#161820]">
                 <img
                   src={card.image}
@@ -377,7 +374,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenQuiz }) => {
                   loading="lazy"
                   decoding="async"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0e1015] via-transparent to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0c0e17] via-transparent to-transparent opacity-80" />
               </div>
 
               {/* Card Bottom: Content matching screenshot layout */}
@@ -398,25 +395,25 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenQuiz }) => {
                     “{card.quote}”
                   </p>
 
-                  {/* Result Pill matching screenshot [Result, e.g. 14 booked estimates in 30 days] */}
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[6px] bg-[#181a22] border border-[#2b303d] text-xs font-mono text-[#cfd9e4] mb-5 w-full">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#2aff2a] shrink-0" />
+                  {/* Result Pill */}
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-blue-950/40 border border-blue-500/30 text-xs font-mono text-blue-200 mb-5 w-full">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0" />
                     <span className="truncate">{card.result}</span>
                   </div>
                 </div>
 
                 {/* Divider Line */}
-                <div className="pt-4 border-t border-[#1f232d]">
+                <div className="pt-4 border-t border-white/[0.06]">
                   {/* [Client Name] */}
                   <div className="font-heading uppercase text-lg sm:text-xl text-[#fffdf9] font-medium tracking-tight mb-1">
                     {card.name}
                   </div>
 
                   {/* [Company] · [Niche] */}
-                  <div className="font-sans text-xs text-[#8e9aa8] truncate">
+                  <div className="font-sans text-xs text-gray-400 truncate">
                     <span>{card.company}</span>
-                    <span className="mx-1.5 text-[#4a505e]">·</span>
-                    <span className="text-[#cfd9e4]">{card.niche}</span>
+                    <span className="mx-1.5 text-gray-600">·</span>
+                    <span className="text-gray-300">{card.niche}</span>
                   </div>
                 </div>
               </div>
@@ -425,21 +422,23 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenQuiz }) => {
         </div>
 
         {/* THREE WHATSAPP MESSAGE TESTIMONIALS SECTION */}
-        <div className="pt-8 pb-16 border-t border-[#1a1d24]">
+        <div className="pt-10 pb-16">
           <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-            <div className="mb-3.5 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#12151c] border border-[#232938]">
-              <span className="w-2 h-2 rounded-full bg-[#25d366] animate-pulse" />
-              <span className="text-xs uppercase tracking-[0.14em] text-[#25d366] font-mono font-medium">
+            <div className="mb-3.5 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-950/70 border border-blue-500/30 text-blue-300">
+              <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+              <span className="text-xs uppercase tracking-[0.14em] font-mono font-medium">
                 {currentContent.waTag}
               </span>
             </div>
 
             <h3 className="font-heading uppercase text-2xl sm:text-4xl text-[#fffdf9] font-normal tracking-[0.02em] mb-4 leading-tight">
-              {currentContent.waTitlePart1}
-              <span className="neon-silver-text">{currentContent.waTitleSpan}</span>
+              Live from Contractors:{' '}
+              <span className="font-serif italic font-normal text-blue-400 tracking-normal normal-case">
+                WhatsApp Dispatch Records
+              </span>
             </h3>
 
-            <p className="font-sans text-sm sm:text-base text-[#8e9aa8] max-w-xl mx-auto leading-relaxed">
+            <p className="font-sans text-sm sm:text-base text-gray-300 max-w-xl mx-auto leading-relaxed">
               {currentContent.waSubtitle}
             </p>
           </div>
@@ -460,7 +459,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenQuiz }) => {
                       {wa.tag}
                     </span>
                   </div>
-                  <span className="text-[10px] font-mono text-[#2aff2a] bg-[#121b16] px-2 py-0.5 rounded-[4px] border border-[#1b3d27]">
+                  <span className="text-[10px] font-mono text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded-full border border-blue-500/30">
                     Live
                   </span>
                 </div>
@@ -495,7 +494,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenQuiz }) => {
         {/* Territory Callout Anchor & Quiz Action */}
         <div className="max-w-2xl mx-auto text-center space-y-6 pt-4">
           <div className="inline-flex items-center gap-2 text-xs text-[#8e9aa8] font-sans">
-            <ShieldCheck className="w-4 h-4 text-[#2aff2a]" />
+            <ShieldCheck className="w-4 h-4 text-blue-400" />
             <span>All metrics independently verified. Zero upfront retainers. You only pay per shown estimate.</span>
           </div>
 
@@ -503,9 +502,9 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenQuiz }) => {
             <div>
               <button
                 onClick={onOpenQuiz}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 text-xs sm:text-sm uppercase tracking-[0.08em] font-medium font-sans text-[#101010] bg-[#fffdf9] hover:bg-[#eae6de] hover:scale-[1.02] active:scale-[0.98] rounded-[6px] transition-all duration-300 cursor-pointer shadow-[0_4px_25px_rgba(255,253,249,0.15)]"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 text-xs sm:text-sm uppercase tracking-[0.08em] font-semibold font-sans text-black bg-white hover:scale-[1.02] active:scale-[0.98] rounded-full transition-all duration-300 cursor-pointer shadow-[0_4px_25px_rgba(255,255,255,0.25)]"
               >
-                <span>{currentContent.ctaButton}</span>
+                <span>{currentContent.ctaButton} •</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>

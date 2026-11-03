@@ -178,20 +178,20 @@ export const CompanyPage: React.FC<CompanyPageProps> = ({
   });
 
   return (
-    <div className="min-h-screen bg-[#000000] text-[#fffdf9] pt-24 pb-24 selection:bg-[#2aff2a]/20 selection:text-[#fffdf9]">
+    <div className="min-h-screen bg-[#07080c] text-[#fffdf9] pt-24 pb-24 selection:bg-blue-500/20 selection:text-[#fffdf9]">
       {/* Precision ambient glow */}
       <div 
-        className="fixed top-1/4 left-1/3 w-[650px] h-[650px] rounded-full pointer-events-none opacity-[0.07] -z-10 blur-3xl"
-        style={{ background: 'radial-gradient(circle, #2aff2a 0%, transparent 70%)' }}
+        className="fixed top-1/4 left-1/3 w-[650px] h-[650px] rounded-full pointer-events-none opacity-[0.12] -z-10 blur-3xl"
+        style={{ background: 'radial-gradient(circle, #3b82f6 0%, transparent 70%)' }}
       />
       <div 
-        className="fixed bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full pointer-events-none opacity-[0.05] -z-10 blur-3xl"
-        style={{ background: 'radial-gradient(circle, #2a7fff 0%, transparent 70%)' }}
+        className="fixed bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full pointer-events-none opacity-[0.08] -z-10 blur-3xl"
+        style={{ background: 'radial-gradient(circle, #2563eb 0%, transparent 70%)' }}
       />
 
       <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-12">
         {/* Navigation Breadcrumb */}
-        <nav aria-label="Breadcrumb" className="flex items-center justify-between gap-4 py-4 mb-10 border-b border-[#22242a]">
+        <nav aria-label="Breadcrumb" className="flex items-center justify-between gap-4 py-4 mb-10">
           <button
             onClick={onNavigateHome}
             className="inline-flex items-center gap-2 text-xs font-sans uppercase tracking-[0.08em] text-[#8e9aa8] hover:text-[#fffdf9] transition-colors cursor-pointer"
@@ -203,40 +203,40 @@ export const CompanyPage: React.FC<CompanyPageProps> = ({
           <div className="flex items-center gap-2 text-xs text-[#6f879c] font-sans">
             <span className="cursor-pointer hover:text-[#fffdf9] transition-colors" onClick={onNavigateHome}>Home</span>
             <span className="text-[#3a3d45]">/</span>
-            <span className="text-[#2aff2a] font-medium">Company</span>
+            <span className="text-blue-400 font-medium">Company</span>
           </div>
         </nav>
 
         {/* HERO HEADER */}
         <header className="max-w-4xl mx-auto text-center mb-16 sm:mb-20">
           <div className="flex items-center justify-center gap-2 text-xs text-[#8e9aa8] font-sans mb-4 tracking-wider uppercase">
-            <Building2 className="w-3.5 h-3.5 text-[#2aff2a]" />
+            <Building2 className="w-3.5 h-3.5 text-blue-400" />
             <span>The ShownLeads Corporation</span>
             <span aria-hidden="true" className="text-[#3a3d45]">·</span>
-            <span className="text-[#2aff2a]">Est. 2024</span>
+            <span className="text-blue-400">Est. 2024</span>
             <span aria-hidden="true" className="text-[#3a3d45]">·</span>
             <span>Performance Architecture</span>
           </div>
 
           <h1 className="font-heading uppercase text-3xl sm:text-5xl lg:text-6xl text-[#fffdf9] font-normal tracking-[0.02em] mb-6 leading-[1.04] text-balance">
             THE ARCHITECTURE OF <br className="hidden sm:inline" />
-            <span className="neon-silver-text">ALIGNED CLIENT ACQUISITION</span>
+            <span className="text-blue-400 font-serif italic lowercase tracking-normal">aligned client acquisition</span>
           </h1>
 
-          <p className="font-sans text-sm sm:text-base lg:text-lg text-[#8e9aa8] font-normal max-w-2xl mx-auto leading-relaxed mb-10">
+          <p className="font-sans text-sm sm:text-base lg:text-lg text-gray-300 font-normal max-w-2xl mx-auto leading-relaxed mb-10">
             We built ShownLeads to eliminate agency retainer complacency. Our mission is to engineer the world’s most accountable client acquisition engine for high-ticket service crews.
           </p>
 
           {/* Institutional Benchmark Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-5 rounded-[12px] bg-[#121316] border border-[#22242a] max-w-3xl mx-auto text-left shadow-[0_8px_24px_rgba(0,0,0,0.4)]">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-5 rounded-[18px] bg-[#0c0e17] border border-white/10 max-w-3xl mx-auto text-left shadow-[0_8px_24px_rgba(0,0,0,0.4)]">
             <div className="p-2 sm:p-3">
-              <div className="font-display text-2xl sm:text-3xl text-[#2aff2a] leading-none tracking-tight">
+              <div className="font-display text-2xl sm:text-3xl text-blue-400 leading-none tracking-tight">
                 $0
               </div>
-              <div className="text-[11px] uppercase tracking-wider text-[#8e9aa8] font-sans mt-1.5 font-medium">
+              <div className="text-[11px] uppercase tracking-wider text-gray-400 font-mono mt-1.5 font-medium">
                 Agency Retainers
               </div>
-              <div className="text-[10px] text-[#6f879c] font-sans mt-0.5">
+              <div className="text-[10px] text-gray-500 font-sans mt-0.5">
                 100% Performance-Tied
               </div>
             </div>
@@ -265,14 +265,14 @@ export const CompanyPage: React.FC<CompanyPageProps> = ({
               </div>
             </div>
 
-            <div className="p-2 sm:p-3 border-t sm:border-t-0 sm:border-l border-[#22242a]">
-              <div className="font-display text-2xl sm:text-3xl text-[#2aff2a] leading-none tracking-tight">
+            <div className="p-2 sm:p-3 border-t sm:border-t-0 sm:border-l border-white/10">
+              <div className="font-display text-2xl sm:text-3xl text-blue-400 leading-none tracking-tight">
                 1 Per City
               </div>
-              <div className="text-[11px] uppercase tracking-wider text-[#8e9aa8] font-sans mt-1.5 font-medium">
+              <div className="text-[11px] uppercase tracking-wider text-gray-400 font-mono mt-1.5 font-medium">
                 Territory Lockout
               </div>
-              <div className="text-[10px] text-[#6f879c] font-sans mt-0.5">
+              <div className="text-[10px] text-gray-500 font-sans mt-0.5">
                 Strict Non-Compete
               </div>
             </div>
@@ -345,11 +345,11 @@ export const CompanyPage: React.FC<CompanyPageProps> = ({
               className="space-y-16"
             >
               {/* Origin Story Manifesto */}
-              <div className="p-8 sm:p-12 rounded-[16px] bg-[#121316] border border-[#22242a] relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-[#2aff2a]/5 via-transparent to-transparent pointer-events-none" />
+              <div className="p-8 sm:p-12 rounded-[24px] bg-[#0c0e17] border border-white/10 relative overflow-hidden shadow-2xl backdrop-blur-xl">
+                <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-blue-500/10 via-transparent to-transparent pointer-events-none" />
 
                 <div className="max-w-3xl space-y-6">
-                  <div className="text-xs uppercase tracking-[0.14em] font-sans font-medium text-[#2aff2a]">
+                  <div className="text-xs uppercase tracking-[0.14em] font-sans font-semibold text-blue-400">
                     Origin &amp; Mission
                   </div>
 
@@ -370,12 +370,12 @@ export const CompanyPage: React.FC<CompanyPageProps> = ({
                   </div>
 
                   {/* Founder Quote Callout */}
-                  <blockquote className="p-5 rounded-[10px] bg-[#16181d] border-l-2 border-[#2aff2a] border-y border-r border-[#26282e] space-y-2 mt-8">
+                  <blockquote className="p-5 rounded-2xl bg-[#10121a] border-l-2 border-blue-500 border-y border-r border-white/10 space-y-2 mt-8">
                     <div className="text-xs italic text-[#fffdf9]/90 font-sans leading-relaxed">
                       &ldquo;When incentives are properly aligned, everything becomes clear. We don&apos;t celebrate website traffic or Facebook impressions. We only celebrate when a pre-screened property owner sits down at your kitchen table ready to sign a contract.&rdquo;
                     </div>
                     <div className="text-xs text-[#8e9aa8] font-sans font-medium pt-1">
-                      — Cillian Ward, <span className="text-[#6f879c]">Founder &amp; Chief Growth Architect</span>
+                      — Cillian Ward, <span className="text-blue-400">Founder &amp; Chief Growth Architect</span>
                     </div>
                   </blockquote>
                 </div>
@@ -394,8 +394,8 @@ export const CompanyPage: React.FC<CompanyPageProps> = ({
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Traditional Agency */}
-                  <div className="p-7 rounded-[14px] bg-[#121316] border border-[#2a2222] space-y-5">
-                    <div className="flex items-center justify-between text-xs pb-3 border-b border-[#2a2222]">
+                  <div className="p-7 rounded-[20px] bg-[#0c0e17] border border-red-500/20 space-y-5">
+                    <div className="flex items-center justify-between text-xs pb-3 border-b border-white/5">
                       <span className="font-sans uppercase tracking-wider text-[#ff6b6b] font-semibold">
                         The Traditional Retainer Model
                       </span>
@@ -423,29 +423,29 @@ export const CompanyPage: React.FC<CompanyPageProps> = ({
                   </div>
 
                   {/* ShownLeads Performance */}
-                  <div className="p-7 rounded-[14px] bg-[#121417] border-2 border-[#2aff2a]/80 space-y-5 shadow-[0_8px_30px_rgba(42,255,42,0.08)]">
-                    <div className="flex items-center justify-between text-xs pb-3 border-b border-[#1f2b21]">
-                      <span className="font-sans uppercase tracking-wider text-[#2aff2a] font-semibold">
+                  <div className="p-7 rounded-[20px] bg-[#0c0e17] border-2 border-blue-500/80 space-y-5 shadow-[0_8px_30px_rgba(59,130,246,0.15)]">
+                    <div className="flex items-center justify-between text-xs pb-3 border-b border-blue-500/20">
+                      <span className="font-sans uppercase tracking-wider text-blue-400 font-semibold">
                         The ShownLeads Aligned Standard
                       </span>
-                      <span className="text-[#2aff2a]">Performance Covenant</span>
+                      <span className="text-blue-400">Performance Covenant</span>
                     </div>
 
                     <ul className="space-y-3.5 text-xs text-[#fffdf9]/90 font-sans">
                       <li className="flex items-start gap-2.5">
-                        <span className="text-[#2aff2a] font-bold mt-0.5">✓</span>
+                        <span className="text-blue-400 font-bold mt-0.5">✓</span>
                         <span><strong>$0 monthly agency retainers:</strong> You only pay when a qualified, pre-screened buyer shows up to your meeting.</span>
                       </li>
                       <li className="flex items-start gap-2.5">
-                        <span className="text-[#2aff2a] font-bold mt-0.5">✓</span>
+                        <span className="text-blue-400 font-bold mt-0.5">✓</span>
                         <span><strong>180-second setter telephony:</strong> Every inquiry is called, screened for budget and property ownership, and calendar-synced.</span>
                       </li>
                       <li className="flex items-start gap-2.5">
-                        <span className="text-[#2aff2a] font-bold mt-0.5">✓</span>
+                        <span className="text-blue-400 font-bold mt-0.5">✓</span>
                         <span><strong>Strict 1-client territory exclusivity:</strong> Your competitors are permanently shut out of our acquisition engine.</span>
                       </li>
                       <li className="flex items-start gap-2.5">
-                        <span className="text-[#2aff2a] font-bold mt-0.5">✓</span>
+                        <span className="text-blue-400 font-bold mt-0.5">✓</span>
                         <span><strong>100% irrevocable asset equity:</strong> All Meta ad accounts, Google tags, and customer lists belong to you forever.</span>
                       </li>
                     </ul>
@@ -466,7 +466,7 @@ export const CompanyPage: React.FC<CompanyPageProps> = ({
               className="space-y-8"
             >
               <div className="text-center max-w-xl mx-auto mb-10">
-                <div className="text-xs uppercase tracking-[0.14em] font-sans font-medium text-[#2aff2a] mb-2">
+                <div className="text-xs uppercase tracking-[0.14em] font-sans font-semibold text-blue-400 mb-2">
                   Operating Constitution
                 </div>
                 <h2 className="font-heading uppercase text-2xl sm:text-3xl text-[#fffdf9]">
@@ -481,14 +481,14 @@ export const CompanyPage: React.FC<CompanyPageProps> = ({
                 {operatingPrinciples.map((principle) => (
                   <div
                     key={principle.number}
-                    className="p-8 rounded-[16px] bg-[#121316] border border-[#22242a] hover:border-[#403f3f] transition-all space-y-5 flex flex-col justify-between"
+                    className="p-8 rounded-[22px] bg-[#0c0e17] border border-white/10 hover:border-blue-500/40 transition-all space-y-5 flex flex-col justify-between shadow-lg"
                   >
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <span className="font-display text-2xl text-[#6f879c] leading-none">
+                        <span className="font-display text-2xl text-blue-400 leading-none">
                           {principle.number}
                         </span>
-                        <span className="text-[11px] font-sans font-medium text-[#2aff2a] tracking-wider uppercase">
+                        <span className="text-[11px] font-sans font-semibold text-blue-400 tracking-wider uppercase px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20">
                           {principle.metric}
                         </span>
                       </div>
@@ -507,8 +507,8 @@ export const CompanyPage: React.FC<CompanyPageProps> = ({
                       </p>
                     </div>
 
-                    <div className="pt-4 border-t border-[#22242a] flex items-center gap-2 text-xs text-[#6f879c] font-sans">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#2aff2a] shrink-0" />
+                    <div className="pt-4 border-t border-white/5 flex items-center gap-2 text-xs text-[#6f879c] font-sans">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-blue-400 shrink-0" />
                       <span>{principle.proof}</span>
                     </div>
                   </div>
@@ -516,9 +516,9 @@ export const CompanyPage: React.FC<CompanyPageProps> = ({
               </div>
 
               {/* Territory Protection Pledge */}
-              <div className="p-6 rounded-[12px] bg-[#14161a] border border-[#26282e] flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left mt-8">
+              <div className="p-7 rounded-[22px] bg-[#0c0e17] border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left mt-8 shadow-xl">
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-[8px] bg-[#17191d] border border-[#2a2d33] flex items-center justify-center text-[#2aff2a] shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 shrink-0 shadow-[0_0_15px_rgba(59,130,246,0.2)]">
                     <Lock className="w-5 h-5" />
                   </div>
                   <div>
@@ -533,9 +533,9 @@ export const CompanyPage: React.FC<CompanyPageProps> = ({
 
                 <button
                   onClick={onOpenQuiz}
-                  className="shrink-0 px-5 py-2.5 rounded-[6px] bg-[#fffdf9] text-[#101010] text-xs uppercase tracking-[0.08em] font-sans font-semibold hover:bg-[#eae6de] transition-colors cursor-pointer"
+                  className="shrink-0 px-6 py-3 rounded-full bg-white text-black text-xs uppercase tracking-[0.08em] font-sans font-semibold hover:scale-105 transition-transform cursor-pointer shadow-[0_4px_20px_rgba(255,255,255,0.2)]"
                 >
-                  Verify Your Territory
+                  Verify Your Territory •
                 </button>
               </div>
             </motion.div>
@@ -552,7 +552,7 @@ export const CompanyPage: React.FC<CompanyPageProps> = ({
               className="space-y-8"
             >
               <div className="text-center max-w-xl mx-auto mb-10">
-                <div className="text-xs uppercase tracking-[0.14em] font-sans font-medium text-[#2aff2a] mb-2">
+                <div className="text-xs uppercase tracking-[0.14em] font-sans font-semibold text-blue-400 mb-2">
                   Leadership &amp; Operations
                 </div>
                 <h2 className="font-heading uppercase text-2xl sm:text-3xl text-[#fffdf9]">
@@ -567,19 +567,19 @@ export const CompanyPage: React.FC<CompanyPageProps> = ({
                 {teamMembers.map((member, idx) => (
                   <div
                     key={idx}
-                    className="p-7 rounded-[16px] bg-[#121316] border border-[#22242a] hover:border-[#403f3f] transition-all space-y-5 flex flex-col justify-between"
+                    className="p-7 rounded-[22px] bg-[#0c0e17] border border-white/10 hover:border-blue-500/40 transition-all space-y-5 flex flex-col justify-between shadow-lg"
                   >
                     <div className="space-y-4">
                       {/* Member Header */}
                       <div className="flex items-center gap-4">
-                        <div className="w-14 h-14 rounded-[12px] bg-[#17191d] border border-[#2a2d33] flex items-center justify-center text-[#fffdf9] font-display text-xl font-semibold shrink-0 shadow-inner">
+                        <div className="w-14 h-14 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 font-display text-xl font-semibold shrink-0">
                           {member.avatarInitials}
                         </div>
                         <div>
                           <h3 className="font-heading text-xl text-[#fffdf9] uppercase tracking-wide">
                             {member.name}
                           </h3>
-                          <div className="text-xs text-[#2aff2a] font-sans font-medium">
+                          <div className="text-xs text-blue-400 font-sans font-semibold">
                             {member.role}
                           </div>
                           <div className="text-[11px] text-[#6f879c] font-sans mt-0.5">
@@ -589,7 +589,7 @@ export const CompanyPage: React.FC<CompanyPageProps> = ({
                       </div>
 
                       {/* Credential Tag */}
-                      <div className="text-[11px] text-[#8e9aa8] font-sans bg-[#16181d] px-3 py-1.5 rounded-[6px] border border-[#26282e]">
+                      <div className="text-[11px] text-[#8e9aa8] font-sans bg-[#10121a] px-3.5 py-2 rounded-xl border border-white/5">
                         <strong className="text-[#fffdf9] font-medium">Track Record:</strong> {member.credential}
                       </div>
 
@@ -599,12 +599,12 @@ export const CompanyPage: React.FC<CompanyPageProps> = ({
                       </p>
 
                       {/* Philosophy Quote */}
-                      <blockquote className="font-sans text-xs italic text-[#fffdf9]/80 border-l-2 border-[#26282e] pl-3 py-0.5">
+                      <blockquote className="font-sans text-xs italic text-[#fffdf9]/80 border-l-2 border-blue-500 pl-3 py-0.5">
                         &ldquo;{member.quote}&rdquo;
                       </blockquote>
                     </div>
 
-                    <div className="pt-4 border-t border-[#22242a] flex items-center justify-between text-xs">
+                    <div className="pt-4 border-t border-white/5 flex items-center justify-between text-xs">
                       <span className="text-[#6f879c] font-sans">Primary Responsibility:</span>
                       <span className="text-[#fffdf9] font-sans font-medium text-right">{member.focus}</span>
                     </div>
@@ -625,7 +625,7 @@ export const CompanyPage: React.FC<CompanyPageProps> = ({
               className="space-y-8"
             >
               <div className="text-center max-w-xl mx-auto mb-8">
-                <div className="text-xs uppercase tracking-[0.14em] font-sans font-medium text-[#2aff2a] mb-2">
+                <div className="text-xs uppercase tracking-[0.14em] font-sans font-semibold text-blue-400 mb-2">
                   Corporate Dispatches
                 </div>
                 <h2 className="font-heading uppercase text-2xl sm:text-3xl text-[#fffdf9]">
@@ -637,7 +637,7 @@ export const CompanyPage: React.FC<CompanyPageProps> = ({
               </div>
 
               {/* News Filter Pills */}
-              <div className="flex items-center justify-center gap-2 mb-8">
+              <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
                 {[
                   { id: 'all', label: 'All Dispatches' },
                   { id: 'expansion', label: '17 Niches Expansion' },
@@ -647,10 +647,10 @@ export const CompanyPage: React.FC<CompanyPageProps> = ({
                   <button
                     key={cat.id}
                     onClick={() => setSelectedNewsCategory(cat.id)}
-                    className={`px-3.5 py-1.5 rounded-[6px] text-xs font-sans font-medium uppercase tracking-wider transition-all cursor-pointer ${
+                    className={`px-4 py-2 rounded-full text-xs font-sans font-medium uppercase tracking-wider transition-all cursor-pointer ${
                       selectedNewsCategory === cat.id
-                        ? 'bg-[#fffdf9] text-[#101010] shadow-sm font-semibold'
-                        : 'bg-[#14161a] text-[#8e9aa8] border border-[#22242a] hover:text-[#fffdf9]'
+                        ? 'bg-white text-black shadow-md font-semibold'
+                        : 'bg-[#10121a] text-[#8e9aa8] border border-white/10 hover:text-white'
                     }`}
                   >
                     {cat.label}
@@ -662,10 +662,10 @@ export const CompanyPage: React.FC<CompanyPageProps> = ({
                 {filteredNews.map((news) => (
                   <article
                     key={news.id}
-                    className="p-7 sm:p-9 rounded-[16px] bg-[#121316] border border-[#22242a] hover:border-[#403f3f] transition-all space-y-4"
+                    className="p-7 sm:p-9 rounded-[22px] bg-[#0c0e17] border border-white/10 hover:border-blue-500/40 transition-all space-y-4 shadow-lg"
                   >
                     <div className="flex flex-wrap items-center gap-2 text-xs text-[#6f879c] font-sans">
-                      <span className="text-[#2aff2a] font-medium uppercase tracking-wider text-[11px]">
+                      <span className="text-blue-400 font-semibold uppercase tracking-wider text-[11px] px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20">
                         {news.categoryLabel}
                       </span>
                       <span aria-hidden="true" className="text-[#3a3d45]">·</span>
@@ -685,14 +685,14 @@ export const CompanyPage: React.FC<CompanyPageProps> = ({
                       {news.lead}
                     </p>
 
-                    <div className="p-4 rounded-[8px] bg-[#16181d] border border-[#26282e] space-y-2">
+                    <div className="p-4 rounded-xl bg-[#10121a] border border-white/10 space-y-2">
                       <div className="text-[10px] uppercase tracking-wider text-[#6f879c] font-sans font-medium">
                         Key Strategic Takeaways:
                       </div>
                       <ul className="space-y-1.5 text-xs text-[#fffdf9]/90 font-sans">
                         {news.takeaways.map((point, pIdx) => (
                           <li key={pIdx} className="flex items-start gap-2">
-                            <span className="text-[#2aff2a] text-[11px] mt-0.5">•</span>
+                            <span className="text-blue-400 text-[11px] mt-0.5">•</span>
                             <span>{point}</span>
                           </li>
                         ))}
@@ -702,7 +702,7 @@ export const CompanyPage: React.FC<CompanyPageProps> = ({
                     <div className="pt-2 flex items-center justify-between">
                       <button
                         onClick={onOpenQuiz}
-                        className="inline-flex items-center gap-1.5 text-xs font-sans font-medium uppercase tracking-[0.08em] text-[#fffdf9] hover:text-[#2aff2a] transition-colors cursor-pointer"
+                        className="inline-flex items-center gap-1.5 text-xs font-sans font-medium uppercase tracking-[0.08em] text-[#fffdf9] hover:text-blue-400 transition-colors cursor-pointer"
                       >
                         <span>Check Sector Availability</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />
@@ -716,26 +716,26 @@ export const CompanyPage: React.FC<CompanyPageProps> = ({
         </AnimatePresence>
 
         {/* BOTTOM PARTNERSHIP ONBOARDING CTA */}
-        <div className="max-w-4xl mx-auto mt-20 rounded-[16px] bg-[#121316] border border-[#2a2d33] p-8 sm:p-12 text-center relative overflow-hidden shadow-2xl">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#2aff2a]/5 via-transparent to-transparent pointer-events-none" />
+        <div className="max-w-4xl mx-auto mt-20 rounded-[24px] bg-[#0c0e17] border border-white/10 p-8 sm:p-12 text-center relative overflow-hidden shadow-2xl">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.15),transparent_70%)] pointer-events-none" />
 
           <div className="relative z-10 space-y-4">
-            <div className="text-xs uppercase tracking-[0.14em] font-sans font-medium text-[#2aff2a]">
+            <div className="text-xs uppercase tracking-[0.14em] font-mono font-medium text-blue-400">
               Direct Territory Qualification
             </div>
 
             <h2 className="font-heading uppercase text-2xl sm:text-4xl text-[#fffdf9] font-normal tracking-tight text-balance">
-              Partner With <span className="neon-silver-text">ShownLeads</span>
+              Partner With <span className="text-blue-400 font-serif italic lowercase tracking-normal">ShownLeads</span>
             </h2>
 
-            <p className="font-sans text-xs sm:text-sm text-[#8e9aa8] max-w-xl mx-auto leading-relaxed">
+            <p className="font-sans text-xs sm:text-sm text-gray-300 max-w-xl mx-auto leading-relaxed">
               Verify if your trade sector and metropolitan territory are currently open. Zero retainers, strict 1-client exclusivity, and guaranteed pay-per-shown appointments.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <button
                 onClick={onOpenQuiz}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-[6px] bg-[#fffdf9] text-[#101010] font-sans font-semibold text-xs sm:text-sm uppercase tracking-[0.08em] hover:bg-[#eae6de] hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer shadow-lg"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white text-black font-sans font-semibold text-xs sm:text-sm uppercase tracking-[0.08em] hover:bg-gray-100 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer shadow-lg shadow-white/10"
               >
                 <span>Check Territory Eligibility</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -744,9 +744,9 @@ export const CompanyPage: React.FC<CompanyPageProps> = ({
               {onOpenSpecialist && (
                 <button
                   onClick={onOpenSpecialist}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-[6px] bg-[#17191d] border border-[#2e3238] text-[#fffdf9] font-sans font-medium text-xs sm:text-sm uppercase tracking-[0.08em] hover:bg-[#202329] hover:border-[#fffdf9] transition-all cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white/[0.06] border border-white/10 text-white font-sans font-medium text-xs sm:text-sm uppercase tracking-[0.08em] hover:bg-white/[0.12] transition-all cursor-pointer backdrop-blur-md"
                 >
-                  <PhoneCall className="w-4 h-4 text-[#6f879c]" />
+                  <PhoneCall className="w-4 h-4 text-blue-400" />
                   <span>Talk to a Lead Specialist</span>
                 </button>
               )}

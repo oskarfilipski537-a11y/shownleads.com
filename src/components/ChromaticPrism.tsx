@@ -20,13 +20,13 @@ export const ChromaticPrism: React.FC<ChromaticPrismProps> = ({
           className="absolute -top-12 -left-12 w-[340px] h-[340px] rounded-full pointer-events-none opacity-30"
           style={{
             background:
-              'radial-gradient(circle, rgba(42, 127, 255, 0.14) 0%, rgba(42, 255, 42, 0.08) 45%, transparent 70%)',
+              'radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, rgba(37, 99, 235, 0.12) 45%, transparent 70%)',
           }}
         />
 
         {/* Telemetry HUD Badge (Top of Left Flank) */}
-        <div className="mb-3 inline-flex items-center gap-2 px-3 py-1 rounded-[5px] bg-[#141414]/90 border border-[#403f3f]/80 backdrop-blur-sm text-[10px] font-display uppercase tracking-[0.1em] text-[#6f879c] shadow-sm">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#2aff2a] animate-pulse" />
+        <div className="mb-3 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#10121a]/90 border border-white/10 backdrop-blur-sm text-[10px] font-display uppercase tracking-[0.1em] text-[#6f879c] shadow-sm">
+          <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse shadow-[0_0_8px_rgba(59,130,246,0.9)]" />
           <span className="text-[#fffdf9]">DUBLIN DISPATCH</span>
           <span className="text-[#6f879c]/60">•</span>
           <span>53.3° N // SPEED: &lt; 3M</span>
@@ -64,8 +64,8 @@ export const ChromaticPrism: React.FC<ChromaticPrismProps> = ({
             </linearGradient>
 
             <linearGradient id="prism-left-beam-lime" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="#2aff2a" stopOpacity="0.7" />
-              <stop offset="100%" stopColor="#2aff2a" stopOpacity="0" />
+              <stop offset="0%" stopColor="#60a5fa" stopOpacity="0.7" />
+              <stop offset="100%" stopColor="#60a5fa" stopOpacity="0" />
             </linearGradient>
           </defs>
 
@@ -81,7 +81,7 @@ export const ChromaticPrism: React.FC<ChromaticPrismProps> = ({
             <path d="M 0 23 L 40 46 L 40 92 L 0 69 Z" fill="url(#prism-left-facet-left)" stroke="#403f3f" strokeWidth="1" />
             <path d="M 40 46 L 80 23 L 80 69 L 40 92 Z" fill="url(#prism-left-facet-right)" stroke="#403f3f" strokeWidth="1" />
             <path d="M -1 22 L 39 45 L 39 91" stroke="#2a7fff" strokeWidth="1.5" strokeOpacity="0.85" />
-            <path d="M 41 47 L 81 24" stroke="#2aff2a" strokeWidth="1.5" strokeOpacity="0.85" />
+            <path d="M 41 47 L 81 24" stroke="#60a5fa" strokeWidth="1.5" strokeOpacity="0.85" />
           </g>
 
           {/* CUBE 2 (Anchor Center Cube - Largest) */}
@@ -95,7 +95,7 @@ export const ChromaticPrism: React.FC<ChromaticPrismProps> = ({
 
             {/* Chromatic Edge Offsets */}
             <path d="M -2 41 L 73 84 L 73 170" stroke="#2a7fff" strokeWidth="1.8" strokeOpacity="0.9" />
-            <path d="M 77 88 L 152 45 L 152 131" stroke="#2aff2a" strokeWidth="1.8" strokeOpacity="0.85" />
+            <path d="M 77 88 L 152 45 L 152 131" stroke="#60a5fa" strokeWidth="1.8" strokeOpacity="0.85" />
             <path d="M 75 -2 L 150 41 L 75 84 L 0 41 Z" stroke="#ff2a2a" strokeWidth="1.2" strokeOpacity="0.5" />
 
             {/* Specular Vertex Spot */}
@@ -215,7 +215,7 @@ export const ChromaticPrism: React.FC<ChromaticPrismProps> = ({
             {/* Chromatic Edge Offsets */}
             <path d="M 77 88 L 152 45 L 152 131" stroke="#ff2a2a" strokeWidth="1.8" strokeOpacity="0.9" />
             <path d="M -2 41 L 73 84 L 73 170" stroke="#2a7fff" strokeWidth="1.8" strokeOpacity="0.85" />
-            <path d="M 75 -2 L 150 41 L 75 84 L 0 41 Z" stroke="#2aff2a" strokeWidth="1.2" strokeOpacity="0.5" />
+            <path d="M 75 -2 L 150 41 L 75 84 L 0 41 Z" stroke="#60a5fa" strokeWidth="1.2" strokeOpacity="0.5" />
 
             {/* Specular Vertex Spot */}
             <circle cx="75" cy="86" r="2.5" fill="#fffdf9" />

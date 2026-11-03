@@ -212,20 +212,20 @@ export const OurCompaniesPage: React.FC<OurCompaniesPageProps> = ({
   });
 
   return (
-    <div className="min-h-screen bg-[#000000] text-[#fffdf9] pt-24 pb-20">
+    <div className="min-h-screen bg-[#07080c] text-[#fffdf9] pt-24 pb-20">
       {/* Background ambient lighting */}
       <div 
         className="fixed top-1/4 left-1/4 w-[500px] h-[500px] rounded-full pointer-events-none opacity-20 -z-10"
-        style={{ background: 'radial-gradient(circle, rgba(42, 255, 42, 0.08) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%)' }}
       />
       <div 
         className="fixed bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full pointer-events-none opacity-15 -z-10"
-        style={{ background: 'radial-gradient(circle, rgba(42, 127, 255, 0.08) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%)' }}
       />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
         {/* Navigation Breadcrumb */}
-        <div className="flex items-center justify-between gap-4 py-4 mb-8 border-b border-[#26282e]">
+        <div className="flex items-center justify-between gap-4 py-4 mb-8">
           <button
             onClick={onNavigateHome}
             className="inline-flex items-center gap-2 text-xs font-sans uppercase tracking-[0.08em] text-[#8e9aa8] hover:text-[#fffdf9] transition-colors cursor-pointer"
@@ -237,37 +237,37 @@ export const OurCompaniesPage: React.FC<OurCompaniesPageProps> = ({
           <div className="flex items-center gap-2 text-xs text-[#6f879c] font-sans">
             <span className="cursor-pointer hover:text-[#fffdf9]" onClick={onNavigateHome}>Home</span>
             <span>/</span>
-            <span className="text-[#2aff2a]">Our Companies</span>
+            <span className="text-blue-400 font-medium">Our Companies</span>
           </div>
         </div>
 
         {/* Hero Section */}
         <div className="max-w-4xl mx-auto text-center mb-14 sm:mb-18">
-          <div className="mb-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#16181d] border border-[#2e3238] shadow-sm">
-            <Building2 className="w-3.5 h-3.5 text-[#2aff2a]" />
-            <span className="text-[11px] uppercase tracking-[0.14em] text-[#fffdf9]/90 font-sans font-medium">
+          <div className="mb-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 shadow-sm">
+            <Building2 className="w-3.5 h-3.5 text-blue-400" />
+            <span className="text-[11px] uppercase tracking-[0.14em] text-blue-200 font-mono font-medium">
               17 Specialized Verticals • 1 Partner Per City
             </span>
           </div>
 
           <h1 className="font-heading uppercase text-3xl sm:text-5xl lg:text-6xl text-[#fffdf9] font-normal tracking-[0.02em] mb-5 leading-[1.04]">
-            OUR SPECIALIZED <span className="neon-silver-text">COMPANIES &amp; NICHES</span>
+            OUR SPECIALIZED <span className="text-blue-400 font-serif italic lowercase tracking-normal">companies &amp; niches</span>
           </h1>
 
-          <p className="font-sans text-sm sm:text-base lg:text-lg text-[#8e9aa8] font-normal max-w-2xl mx-auto leading-relaxed mb-8">
+          <p className="font-sans text-sm sm:text-base lg:text-lg text-gray-300 font-normal max-w-2xl mx-auto leading-relaxed mb-8">
             We don&apos;t run generic campaigns. Each of our 17 industry verticals operates on bespoke buyer-intent funnels, localized qualification scripts, and fixed pay-per-result terms.
           </p>
 
           {/* Search & Filter Bar */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-2xl mx-auto mb-8">
             <div className="relative w-full">
-              <Search className="w-4 h-4 text-[#6f879c] absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Search className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 placeholder="Search by trade (e.g. Gutters, ADU, Mortgage, Elevator)..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 rounded-[8px] bg-[#14161a] border border-[#26282e] text-xs font-sans text-[#fffdf9] placeholder-[#6f879c] focus:outline-none focus:border-[#2aff2a] transition-colors"
+                className="w-full pl-10 pr-4 py-3 rounded-full bg-[#10121a] border border-white/10 text-xs font-sans text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors shadow-inner"
               />
             </div>
           </div>
@@ -285,10 +285,10 @@ export const OurCompaniesPage: React.FC<OurCompaniesPageProps> = ({
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`px-3.5 py-2 rounded-[6px] text-xs uppercase tracking-[0.08em] font-sans font-medium whitespace-nowrap transition-all cursor-pointer ${
+                className={`px-4 py-2 rounded-full text-xs uppercase tracking-[0.08em] font-sans font-medium whitespace-nowrap transition-all cursor-pointer ${
                   selectedCategory === cat.id
-                    ? 'bg-[#fffdf9] text-[#101010] shadow-sm'
-                    : 'bg-[#14161a] text-[#8e9aa8] border border-[#26282e] hover:text-[#fffdf9]'
+                    ? 'bg-white text-black shadow-sm font-semibold'
+                    : 'bg-[#14161a] text-gray-400 border border-white/10 hover:text-white'
                 }`}
               >
                 {cat.label}
@@ -302,14 +302,14 @@ export const OurCompaniesPage: React.FC<OurCompaniesPageProps> = ({
           {filteredCompanies.map((item) => (
             <div
               key={item.id}
-              className="p-6 rounded-[16px] bg-[#121316] border border-[#26282e] hover:border-[#403f3f] transition-all flex flex-col justify-between space-y-5"
+              className="p-6 rounded-[22px] bg-[#0c0e17] border border-white/10 hover:border-blue-500/40 transition-all flex flex-col justify-between space-y-5 shadow-lg"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="w-10 h-10 rounded-[8px] bg-[#17191d] border border-[#2a2d33] flex items-center justify-center text-xl">
+                  <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-xl">
                     {item.icon}
                   </div>
-                  <span className="px-2 py-0.5 rounded-[4px] bg-[#181a1f] border border-[#2c2f36] text-[10px] text-[#2aff2a] font-sans uppercase tracking-wider font-semibold">
+                  <span className="px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-[10px] text-blue-300 font-mono font-semibold">
                     {item.avgTicket}
                   </span>
                 </div>
@@ -318,30 +318,30 @@ export const OurCompaniesPage: React.FC<OurCompaniesPageProps> = ({
                   <h3 className="font-heading text-lg sm:text-xl text-[#fffdf9] uppercase">
                     {item.name}
                   </h3>
-                  <p className="font-sans text-xs text-[#8e9aa8] mt-1 leading-relaxed">
+                  <p className="font-sans text-xs text-gray-400 mt-1 leading-relaxed">
                     {item.targetBuyer}
                   </p>
                 </div>
 
-                <div className="space-y-2 pt-2 border-t border-[#22242a]">
-                  <div className="text-[10px] uppercase tracking-wider text-[#6f879c] font-sans">
+                <div className="space-y-2 pt-2 border-t border-white/[0.06]">
+                  <div className="text-[10px] uppercase tracking-wider text-gray-500 font-mono">
                     ShownLeads Qualification Screening:
                   </div>
-                  <p className="font-sans text-xs text-[#fffdf9]/90 leading-relaxed bg-[#16181d] p-2.5 rounded-[6px] border border-[#26282e]">
+                  <p className="font-sans text-xs text-gray-200 leading-relaxed bg-[#10121a] p-2.5 rounded-xl border border-white/[0.06]">
                     {item.qualification}
                   </p>
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-[#22242a] flex items-center justify-between gap-3">
-                <div className="flex items-center gap-1.5 text-[11px] text-[#2aff2a] font-sans">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#2aff2a]" />
+              <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between gap-3">
+                <div className="flex items-center gap-1.5 text-[11px] text-blue-400 font-mono">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
                   <span>1 Partner Per City</span>
                 </div>
 
                 <button
                   onClick={onOpenQuiz}
-                  className="inline-flex items-center gap-1 text-xs font-sans uppercase tracking-[0.08em] font-medium text-[#fffdf9] hover:text-[#2aff2a] transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1 text-xs font-sans uppercase tracking-[0.08em] font-medium text-[#fffdf9] hover:text-blue-400 transition-colors cursor-pointer"
                 >
                   <span>Check Territory</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
@@ -352,37 +352,40 @@ export const OurCompaniesPage: React.FC<OurCompaniesPageProps> = ({
         </div>
 
         {/* BOTTOM CTA */}
-        <div className="max-w-4xl mx-auto rounded-[16px] bg-[#141414] border border-[#403f3f] p-8 sm:p-14 text-center">
-          <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#101010] border border-[#2e3238] text-xs uppercase tracking-[0.1em] text-[#6f879c] font-sans">
-            <span>CITY TERRITORY LOCK</span>
-          </div>
+        <div className="max-w-4xl mx-auto rounded-[24px] bg-[#0c0e17] border border-white/10 p-8 sm:p-14 text-center shadow-2xl relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.15),transparent_70%)] pointer-events-none" />
+          <div className="relative z-10">
+            <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-xs uppercase tracking-[0.1em] text-blue-300 font-mono">
+              <span>CITY TERRITORY LOCK</span>
+            </div>
 
-          <h2 className="font-heading uppercase text-2xl sm:text-4xl text-[#fffdf9] font-normal tracking-tight mb-4">
-            Is Your Trade &amp; City <span className="neon-silver-text">Still Available?</span>
-          </h2>
+            <h2 className="font-heading uppercase text-2xl sm:text-4xl text-[#fffdf9] font-normal tracking-tight mb-4">
+              Is Your Trade &amp; City <span className="text-blue-400 font-serif italic lowercase tracking-normal">still available?</span>
+            </h2>
 
-          <p className="font-sans text-sm sm:text-base text-[#8e9aa8] max-w-xl mx-auto leading-relaxed mb-8">
-            Once a city territory is claimed in any of our 17 verticals, all local competitors are locked out permanently.
-          </p>
+            <p className="font-sans text-sm sm:text-base text-gray-300 max-w-xl mx-auto leading-relaxed mb-8">
+              Once a city territory is claimed in any of our 17 verticals, all local competitors are locked out permanently.
+            </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
-              onClick={onOpenQuiz}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[6px] bg-[#fffdf9] text-[#101010] font-sans font-medium text-xs sm:text-sm uppercase tracking-[0.08em] hover:bg-[#eae6de] hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer shadow-lg"
-            >
-              <span>See If You Qualify</span>
-              <ArrowUpRight className="w-4 h-4" />
-            </button>
-
-            {onOpenSpecialist && (
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <button
-                onClick={onOpenSpecialist}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[6px] bg-[#181a1f] border border-[#403f3f] text-[#fffdf9] font-sans font-medium text-xs sm:text-sm uppercase tracking-[0.08em] hover:bg-[#202329] hover:border-[#fffdf9] transition-all cursor-pointer"
+                onClick={onOpenQuiz}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-black font-sans font-semibold text-xs sm:text-sm uppercase tracking-[0.08em] hover:bg-gray-100 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer shadow-lg shadow-white/10"
               >
-                <PhoneCall className="w-4 h-4 text-[#6f879c]" />
-                <span>Talk to a Lead Specialist</span>
+                <span>See If You Qualify</span>
+                <ArrowUpRight className="w-4 h-4" />
               </button>
-            )}
+
+              {onOpenSpecialist && (
+                <button
+                  onClick={onOpenSpecialist}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white/[0.06] border border-white/10 text-white font-sans font-medium text-xs sm:text-sm uppercase tracking-[0.08em] hover:bg-white/[0.12] transition-all cursor-pointer backdrop-blur-md"
+                >
+                  <PhoneCall className="w-4 h-4 text-blue-400" />
+                  <span>Talk to a Lead Specialist</span>
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>

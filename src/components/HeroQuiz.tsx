@@ -164,24 +164,24 @@ export const HeroQuiz: React.FC<HeroQuizProps> = ({ onStateChange, onCompleted }
   return (
     <div
       id="hero-quiz-card"
-      className="relative w-full max-w-lg mx-auto rounded-[15px] bg-[#141414] p-7 sm:p-9 border border-[#403f3f]"
+      className="relative w-full max-w-lg mx-auto rounded-[24px] bg-[#0c0e17]/95 p-7 sm:p-9 border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.8),0_0_40px_rgba(59,130,246,0.15)] backdrop-blur-xl"
     >
       {/* Quiz Progress & Step Indicator */}
       {started && !quizState.isCompleted && (
         <div className="mb-6">
-          <div className="flex items-center justify-between text-xs tracking-[0.08em] uppercase font-display mb-2.5">
-            <span className="text-[#6f879c]">
+          <div className="flex items-center justify-between text-xs tracking-[0.08em] uppercase font-mono mb-2.5">
+            <span className="text-gray-400">
               {quizContent.stepIndicator
                 .replace('{current}', String(quizState.currentQuestionIndex + 1))
                 .replace('{total}', String(questions.length))}
             </span>
-            <span className="text-[#fffdf9]">
+            <span className="text-white font-medium">
               {quizContent.completedLabel.replace('{percent}', String(Math.round(progressPercent)))}
             </span>
           </div>
-          <div className="w-full bg-[#101010] h-[2px] rounded-full overflow-hidden">
+          <div className="w-full bg-white/[0.06] h-[3px] rounded-full overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-[#ff2a2a] via-[#2a7fff] to-[#2aff2a] transition-all duration-300 ease-out"
+              className="h-full bg-gradient-to-r from-blue-600 via-sky-400 to-blue-500 transition-all duration-300 ease-out shadow-[0_0_10px_rgba(59,130,246,0.5)]"
               style={{ width: `${progressPercent}%` }}
             />
           </div>
@@ -191,29 +191,29 @@ export const HeroQuiz: React.FC<HeroQuizProps> = ({ onStateChange, onCompleted }
       {/* QUIZ START VIEW */}
       {!started && (
         <div className="flex flex-col items-center text-center py-2">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[5px] border border-[#403f3f] text-[#6f879c] text-xs uppercase tracking-[0.08em] font-sans mb-5 bg-[#101010]">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 text-blue-400 text-xs uppercase tracking-[0.1em] font-mono mb-5 bg-blue-500/10">
             <span>{quizContent.badge}</span>
           </div>
 
-          <h3 className="font-heading uppercase text-2xl sm:text-3xl text-[#fffdf9] font-normal mb-3 tracking-tight">
+          <h3 className="font-heading uppercase text-2xl sm:text-3xl text-white font-normal mb-3 tracking-tight">
             {quizContent.headlinePart1}
-            <span className="neon-silver-text">{quizContent.headlineSpan}</span>
+            <span className="text-blue-400 font-serif italic lowercase tracking-normal"> {quizContent.headlineSpan}</span>
           </h3>
-          <p className="font-sans text-sm sm:text-base text-[#fffdf9]/80 max-w-sm mb-8 leading-relaxed font-normal">
+          <p className="font-sans text-sm sm:text-base text-gray-300 max-w-sm mb-8 leading-relaxed font-normal">
             {quizContent.subhead}
           </p>
 
           <button
             id="start-quiz-btn"
             onClick={() => setStarted(true)}
-            className="group relative inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-3.5 text-xs sm:text-sm uppercase tracking-[0.08em] font-medium font-sans text-[#101010] bg-[#fffdf9] hover:bg-[#eae6de] hover:scale-[1.02] active:scale-[0.98] border border-[#fffdf9] rounded-[6px] transition-all duration-300 cursor-pointer shadow-lg"
+            className="group relative inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-3.5 text-xs sm:text-sm uppercase tracking-[0.08em] font-semibold font-sans text-black bg-white hover:bg-gray-100 hover:scale-[1.02] active:scale-[0.98] rounded-full transition-all duration-300 cursor-pointer shadow-lg shadow-white/10"
           >
             <span>{quizContent.startBtn}</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
 
-          <div className="flex items-center gap-2 mt-6 text-xs text-[#6f879c]">
-            <ShieldCheck className="w-3.5 h-3.5 text-[#2aff2a]" />
+          <div className="flex items-center gap-2 mt-6 text-xs text-gray-400">
+            <ShieldCheck className="w-3.5 h-3.5 text-blue-400" />
             <span>Strict 1-partner-per-niche territory lock</span>
           </div>
         </div>
@@ -312,17 +312,17 @@ export const HeroQuiz: React.FC<HeroQuizProps> = ({ onStateChange, onCompleted }
           transition={{ duration: 0.3 }}
           className="text-left"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[5px] border border-[#fffdf9] text-[#fffdf9] mb-4 bg-[#101010]">
-            <Check className="w-3.5 h-3.5 stroke-[2] text-[#2aff2a]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 text-blue-400 mb-4 bg-blue-500/10">
+            <Check className="w-3.5 h-3.5 stroke-[2] text-blue-400" />
             <span className="text-xs uppercase tracking-[0.08em] font-sans font-medium">
               {quizContent.qualified.badge}
             </span>
           </div>
 
-          <h3 className="font-heading uppercase text-2xl sm:text-3xl text-[#fffdf9] font-normal mb-2 tracking-tight">
+          <h3 className="font-heading uppercase text-2xl sm:text-3xl text-white font-normal mb-2 tracking-tight">
             {quizContent.qualified.title}
           </h3>
-          <p className="font-sans text-sm sm:text-base text-[#fffdf9]/80 mb-6 leading-relaxed font-normal">
+          <p className="font-sans text-sm sm:text-base text-gray-300 mb-6 leading-relaxed font-normal">
             {quizContent.qualified.desc}
           </p>
 
@@ -439,8 +439,8 @@ export const HeroQuiz: React.FC<HeroQuizProps> = ({ onStateChange, onCompleted }
             </form>
           ) : (
             <div className="bg-[#101010] border border-[#403f3f] rounded-[15px] p-8 text-center">
-              <div className="w-12 h-12 rounded-full border border-[#fffdf9] flex items-center justify-center mx-auto mb-4 text-[#fffdf9]">
-                <Check className="w-6 h-6 stroke-[2] text-[#2aff2a]" />
+              <div className="w-12 h-12 rounded-full border border-blue-500/30 bg-blue-500/10 flex items-center justify-center mx-auto mb-4 text-blue-400">
+                <Check className="w-6 h-6 stroke-[2] text-blue-400" />
               </div>
               <h4 className="font-heading uppercase text-xl text-[#fffdf9] font-normal mb-2">
                 {quizContent.qualified.confirmedTitle}
@@ -509,8 +509,8 @@ export const HeroQuiz: React.FC<HeroQuizProps> = ({ onStateChange, onCompleted }
                 </button>
               </form>
             ) : (
-              <div className="text-xs text-[#fffdf9] py-2 flex items-center gap-2 font-normal">
-                <Check className="w-3.5 h-3.5 text-[#2aff2a]" />
+              <div className="text-xs text-white py-2 flex items-center gap-2 font-normal">
+                <Check className="w-3.5 h-3.5 text-blue-400" />
                 <span>{quizContent.disqualified.confirmedWaitlist}</span>
               </div>
             )}

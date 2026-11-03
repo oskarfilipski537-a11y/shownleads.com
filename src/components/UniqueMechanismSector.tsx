@@ -221,7 +221,7 @@ export const UniqueMechanismSector: React.FC<UniqueMechanismSectorProps> = ({ on
             variants={itemVariants}
             className="font-heading uppercase text-3xl sm:text-5xl lg:text-[3.25rem] text-[#fffdf9] font-normal tracking-[0.02em] mb-5 leading-tight"
           >
-            The ShownLeads <span className="neon-silver-text">Unique Mechanism</span>
+            The ShownLeads <span className="neon-silver-text font-serif italic lowercase tracking-normal">Unique Mechanism</span>
           </motion.h2>
 
           <motion.p
@@ -234,13 +234,13 @@ export const UniqueMechanismSector: React.FC<UniqueMechanismSectorProps> = ({ on
           {/* Architectural View Mode Toggle */}
           <motion.div
             variants={itemVariants}
-            className="mt-8 inline-flex items-center p-1 rounded-[8px] bg-[#141414] border border-[#403f3f]"
+            className="mt-8 inline-flex items-center p-1 rounded-full bg-[#10121a] border border-white/10"
           >
             <button
               onClick={() => setViewMode('blueprint')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-[6px] text-xs uppercase tracking-[0.08em] font-sans transition-all cursor-pointer ${
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs uppercase tracking-[0.08em] font-sans transition-all cursor-pointer ${
                 viewMode === 'blueprint'
-                  ? 'bg-[#fffdf9] text-[#101010] font-semibold shadow-sm'
+                  ? 'bg-white text-black font-semibold shadow-md'
                   : 'text-[#6f879c] hover:text-[#fffdf9] font-medium'
               }`}
             >
@@ -249,9 +249,9 @@ export const UniqueMechanismSector: React.FC<UniqueMechanismSectorProps> = ({ on
             </button>
             <button
               onClick={() => setViewMode('matrix')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-[6px] text-xs uppercase tracking-[0.08em] font-sans transition-all cursor-pointer ${
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs uppercase tracking-[0.08em] font-sans transition-all cursor-pointer ${
                 viewMode === 'matrix'
-                  ? 'bg-[#fffdf9] text-[#101010] font-semibold shadow-sm'
+                  ? 'bg-white text-black font-semibold shadow-md'
                   : 'text-[#6f879c] hover:text-[#fffdf9] font-medium'
               }`}
             >
@@ -272,9 +272,9 @@ export const UniqueMechanismSector: React.FC<UniqueMechanismSectorProps> = ({ on
             className="max-w-6xl mx-auto"
           >
             {/* Top Operational Formula Banner */}
-            <div className="mb-8 p-4 sm:p-5 rounded-[12px] bg-[#141414] border border-[#403f3f] flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-display">
+            <div className="mb-8 p-4 sm:p-5 rounded-[20px] bg-[#0c0e17] border border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-display shadow-lg">
               <div className="flex items-center gap-3">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#2aff2a] animate-pulse shrink-0" />
+                <span className="w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse shrink-0 shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
                 <span className="text-[#fffdf9]/90">
                   <strong className="text-[#fffdf9]">The Core Disconnect:</strong> Most agencies run ads to dead profiles or post content with zero ad spend. ShownLeads fuses both into one synchronized pipeline.
                 </span>
@@ -282,26 +282,26 @@ export const UniqueMechanismSector: React.FC<UniqueMechanismSectorProps> = ({ on
               <div className="flex items-center gap-2 text-[#6f879c] shrink-0 uppercase tracking-wider text-[11px]">
                 <span>9 Synchronized Components</span>
                 <span>•</span>
-                <span className="text-[#2aff2a]">Zero Retainer Splitting</span>
+                <span className="text-blue-400 font-semibold">Zero Retainer Splitting</span>
               </div>
             </div>
 
             {/* Clean Two-Column Layout (Side-by-Side Balanced Pillars) */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-stretch">
               {/* PILLAR 1: PAY-PER-RESULT PAID ENGINE */}
-              <div className="rounded-[15px] bg-[#141414] border border-[#403f3f] p-6 sm:p-8 flex flex-col justify-between hover:border-[#fffdf9]/30 transition-colors">
+              <div className="rounded-[24px] bg-[#0c0e17] border border-white/10 p-6 sm:p-8 flex flex-col justify-between hover:border-blue-500/40 transition-all shadow-xl">
                 <div>
                   {/* Pillar 1 Header */}
-                  <div className="flex items-center justify-between pb-5 border-b border-[#403f3f] mb-6">
+                  <div className="flex items-center justify-between pb-5 border-b border-white/5 mb-6">
                     <div>
-                      <span className="text-[10px] uppercase tracking-[0.14em] text-[#6f879c] font-display block mb-1">
+                      <span className="text-[10px] uppercase tracking-[0.14em] text-blue-400 font-display block mb-1 font-semibold">
                         PILLAR 01
                       </span>
                       <h3 className="font-display text-xl sm:text-2xl text-[#fffdf9] font-normal">
                         Paid Performance Engine
                       </h3>
                     </div>
-                    <span className="px-2.5 py-1 rounded-[4px] bg-[#181818] border border-[#333] text-[10px] text-[#2aff2a] uppercase font-display tracking-wider">
+                    <span className="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-[10px] text-blue-400 uppercase font-display tracking-wider font-semibold">
                       Demand Surge
                     </span>
                   </div>
@@ -317,11 +317,11 @@ export const UniqueMechanismSector: React.FC<UniqueMechanismSectorProps> = ({ on
                       return (
                         <div
                           key={service.id}
-                          className="p-4 rounded-[10px] bg-[#000000] border border-[#403f3f] hover:border-[#fffdf9]/40 transition-all group"
+                          className="p-4 rounded-[16px] bg-[#10121a] border border-white/5 hover:border-blue-500/30 transition-all group"
                         >
                           <div className="flex items-start justify-between gap-3 mb-2">
                             <div className="flex items-center gap-2.5">
-                              <div className="w-7 h-7 rounded-[6px] bg-[#181818] border border-[#333] flex items-center justify-center text-[#fffdf9] shrink-0">
+                              <div className="w-8 h-8 rounded-full bg-[#161824] border border-white/10 flex items-center justify-center text-blue-400 shrink-0">
                                 <Icon className="w-3.5 h-3.5" />
                               </div>
                               <span className="font-display text-sm text-[#fffdf9] font-normal lowercase first-letter:capitalize">
@@ -332,10 +332,10 @@ export const UniqueMechanismSector: React.FC<UniqueMechanismSectorProps> = ({ on
                               {service.number}
                             </span>
                           </div>
-                          <p className="text-xs text-[#fffdf9]/65 pl-9 leading-relaxed">
+                          <p className="text-xs text-[#fffdf9]/65 pl-10 leading-relaxed">
                             {service.description}
                           </p>
-                          <div className="mt-2 pl-9 flex items-center gap-1.5 text-[10px] text-[#2aff2a] font-display">
+                          <div className="mt-2 pl-10 flex items-center gap-1.5 text-[10px] text-blue-400 font-display font-medium">
                             <span>↳ {service.badge}</span>
                           </div>
                         </div>
@@ -345,14 +345,14 @@ export const UniqueMechanismSector: React.FC<UniqueMechanismSectorProps> = ({ on
                 </div>
 
                 {/* Pillar 1 Footnote */}
-                <div className="mt-6 pt-4 border-t border-[#262626] text-[11px] text-[#6f879c] font-display flex items-center justify-between">
+                <div className="mt-6 pt-4 border-t border-white/5 text-[11px] text-[#6f879c] font-display flex items-center justify-between">
                   <span>Guaranteed Scope: $2k+ Jobs</span>
-                  <span className="text-[#fffdf9]">4 Systems Active</span>
+                  <span className="text-blue-400 font-medium">4 Systems Active</span>
                 </div>
               </div>
 
               {/* PILLAR 2: ORGANIC SOCIAL MEDIA AUTHORITY */}
-              <div className="rounded-[15px] bg-[#141414] border border-[#403f3f] p-6 sm:p-8 flex flex-col justify-between hover:border-[#fffdf9]/30 transition-colors">
+              <div className="rounded-[24px] bg-[#0c0e17] border border-white/10 p-6 sm:p-8 flex flex-col justify-between hover:border-blue-500/40 transition-all shadow-xl">
                 <div>
                   {/* Pillar 2 Header */}
                   <div className="flex items-center justify-between pb-5 border-b border-[#403f3f] mb-6">
@@ -416,15 +416,15 @@ export const UniqueMechanismSector: React.FC<UniqueMechanismSectorProps> = ({ on
             </div>
 
             {/* Full-Width Integrated Synchronization Row (Module 09) */}
-            <div className="mt-6 p-5 sm:p-6 rounded-[15px] bg-[#141414] border border-[#403f3f] flex flex-col md:flex-row items-start md:items-center justify-between gap-5 hover:border-[#fffdf9]/40 transition-colors">
+            <div className="mt-6 p-6 sm:p-7 rounded-[24px] bg-[#0c0e17] border border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-5 hover:border-blue-500/40 transition-colors shadow-xl">
               <div className="flex items-start sm:items-center gap-4">
-                <div className="w-11 h-11 rounded-[8px] bg-[#000000] border border-[#403f3f] flex items-center justify-center text-[#fffdf9] shrink-0 mt-0.5 sm:mt-0">
-                  <Bot className="w-5 h-5 text-[#2aff2a]" />
+                <div className="w-12 h-12 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 shrink-0 mt-0.5 sm:mt-0 shadow-[0_0_15px_rgba(59,130,246,0.2)]">
+                  <Bot className="w-5 h-5 text-blue-400" />
                 </div>
                 <div>
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-[10px] font-mono text-[#6f879c]">MODULE 09</span>
-                    <span className="px-2 py-0.5 rounded-[4px] bg-[#000000] border border-[#333] text-[9px] uppercase tracking-wider text-[#2aff2a] font-display">
+                    <span className="text-[10px] font-mono text-blue-400">MODULE 09</span>
+                    <span className="px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-[9px] uppercase tracking-wider text-blue-400 font-display font-semibold">
                       {automationService.badge}
                     </span>
                     <span className="text-xs text-[#6f879c] font-display hidden sm:inline">• {automationService.category}</span>
@@ -443,7 +443,7 @@ export const UniqueMechanismSector: React.FC<UniqueMechanismSectorProps> = ({ on
                   <span className="text-[10px] uppercase tracking-wider text-[#6f879c] font-display block">Calendar Lock</span>
                   <span className="text-xs text-[#fffdf9] font-display">Google / Outlook Sync</span>
                 </div>
-                <div className="px-3 py-1.5 rounded-[6px] bg-[#000000] border border-[#2aff2a]/40 text-[#2aff2a] text-xs font-display flex items-center gap-1.5">
+                <div className="px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-display flex items-center gap-1.5 font-semibold">
                   <Clock className="w-3.5 h-3.5" />
                   <span>&lt;45s Speed to Lead</span>
                 </div>
@@ -451,10 +451,10 @@ export const UniqueMechanismSector: React.FC<UniqueMechanismSectorProps> = ({ on
             </div>
 
             {/* Bottom Synthesis & Qualification Bar */}
-            <div className="mt-8 p-6 sm:p-8 rounded-[15px] bg-[#141414] border border-[#403f3f] flex flex-col lg:flex-row items-center justify-between gap-6">
+            <div className="mt-8 p-6 sm:p-8 rounded-[24px] bg-[#0c0e17] border border-white/10 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-2xl">
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-[8px] bg-[#000000] border border-[#403f3f] flex items-center justify-center text-[#2aff2a] shrink-0">
-                  <ShieldCheck className="w-5 h-5" />
+                <div className="w-12 h-12 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 shrink-0 shadow-[0_0_15px_rgba(59,130,246,0.2)]">
+                  <ShieldCheck className="w-5 h-5 text-blue-400" />
                 </div>
                 <div>
                   <h4 className="font-display text-base text-[#fffdf9] font-normal mb-1">
@@ -468,9 +468,9 @@ export const UniqueMechanismSector: React.FC<UniqueMechanismSectorProps> = ({ on
 
               <button
                 onClick={onOpenQuiz}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 text-xs uppercase tracking-[0.08em] font-normal text-[#101010] bg-[#fffdf9] hover:bg-transparent hover:text-[#fffdf9] border border-[#fffdf9] rounded-[5px] transition-all duration-500 cursor-pointer shrink-0 shadow-md"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 text-xs uppercase tracking-[0.08em] font-semibold text-black bg-white hover:scale-[1.02] rounded-full transition-all duration-300 cursor-pointer shrink-0 shadow-[0_4px_25px_rgba(255,255,255,0.25)]"
               >
-                <span>Check Territory Eligibility</span>
+                <span>Check Territory Eligibility •</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
@@ -488,7 +488,7 @@ export const UniqueMechanismSector: React.FC<UniqueMechanismSectorProps> = ({ on
             className="max-w-6xl mx-auto"
           >
             {/* Filter Pills & Live Metric Counter */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 bg-[#141414] border border-[#403f3f] rounded-[12px] p-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 bg-[#0c0e17] border border-white/10 rounded-[20px] p-4 shadow-lg">
               <div className="flex flex-wrap items-center gap-2">
                 {[
                   { key: 'all', label: 'All 9 Services' },
@@ -499,10 +499,10 @@ export const UniqueMechanismSector: React.FC<UniqueMechanismSectorProps> = ({ on
                   <button
                     key={pill.key}
                     onClick={() => setActiveFilter(pill.key as PillarFilter)}
-                    className={`px-3 py-1.5 rounded-[6px] text-xs uppercase tracking-[0.06em] font-display transition-all cursor-pointer border ${
+                    className={`px-4 py-2 rounded-full text-xs uppercase tracking-[0.06em] font-display transition-all cursor-pointer ${
                       activeFilter === pill.key
-                        ? 'bg-[#fffdf9] text-[#101010] border-[#fffdf9] font-medium shadow-sm'
-                        : 'bg-[#000000] text-[#6f879c] border-[#403f3f] hover:text-[#fffdf9] hover:border-[#6f879c]'
+                        ? 'bg-white text-black font-semibold shadow-md'
+                        : 'bg-[#10121a] text-[#6f879c] border border-white/10 hover:text-white'
                     }`}
                   >
                     {pill.label}
@@ -510,8 +510,8 @@ export const UniqueMechanismSector: React.FC<UniqueMechanismSectorProps> = ({ on
                 ))}
               </div>
 
-              <div className="text-xs text-[#6f879c] font-display flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-[#2aff2a] animate-pulse" />
+              <div className="text-xs text-blue-400 font-display flex items-center gap-1.5 font-medium px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
+                <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
                 <span>Showing {filteredServices.length} of 9 components</span>
               </div>
             </div>
@@ -531,17 +531,17 @@ export const UniqueMechanismSector: React.FC<UniqueMechanismSectorProps> = ({ on
                       exit={{ opacity: 0, scale: 0.98 }}
                       transition={{ duration: 0.25 }}
                       onClick={() => setExpandedId(isExpanded ? null : service.id)}
-                      className="p-6 rounded-[12px] bg-[#141414] border border-[#403f3f] hover:border-[#fffdf9]/50 transition-all duration-300 flex flex-col justify-between group cursor-pointer hover:shadow-[0_15px_30px_rgba(0,0,0,0.4)]"
+                      className="p-6 rounded-[22px] bg-[#0c0e17] border border-white/10 hover:border-blue-500/40 transition-all duration-300 flex flex-col justify-between group cursor-pointer hover:shadow-[0_15px_30px_rgba(0,0,0,0.6)]"
                     >
                       <div>
                         {/* Card Header: Icon, Number, Badge */}
                         <div className="flex items-center justify-between gap-2 mb-4">
-                          <div className="w-10 h-10 rounded-[8px] bg-[#000000] border border-[#403f3f] group-hover:border-[#fffdf9]/40 flex items-center justify-center text-[#fffdf9] shrink-0 transition-colors">
+                          <div className="w-10 h-10 rounded-full bg-[#161824] border border-white/10 group-hover:border-blue-500/40 flex items-center justify-center text-blue-400 shrink-0 transition-colors">
                             <Icon className="w-5 h-5 stroke-[1.75]" />
                           </div>
 
                           <div className="flex items-center gap-2">
-                            <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-[4px] bg-[#181818] border border-[#333] text-[#2aff2a] font-display">
+                            <span className="text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-display font-semibold">
                               {service.badge}
                             </span>
                             <span className="text-xs font-mono text-[#6f879c]">
@@ -551,7 +551,7 @@ export const UniqueMechanismSector: React.FC<UniqueMechanismSectorProps> = ({ on
                         </div>
 
                         {/* Exact Service Name */}
-                        <h4 className="font-display text-base text-[#fffdf9] font-normal leading-snug mb-2 lowercase first-letter:capitalize group-hover:text-[#fffdf9] transition-colors">
+                        <h4 className="font-display text-base text-[#fffdf9] font-normal leading-snug mb-2 lowercase first-letter:capitalize group-hover:text-blue-400 transition-colors">
                           {service.name}
                         </h4>
 
@@ -561,8 +561,8 @@ export const UniqueMechanismSector: React.FC<UniqueMechanismSectorProps> = ({ on
                         </p>
 
                         {/* Contractor Business Benefit */}
-                        <div className="p-3 rounded-[8px] bg-[#000000] border border-[#2b2b2b] mb-3">
-                          <span className="text-[10px] uppercase tracking-wider text-[#6f879c] font-display block mb-1">
+                        <div className="p-3.5 rounded-xl bg-[#10121a] border border-white/5 mb-3">
+                          <span className="text-[10px] uppercase tracking-wider text-blue-400 font-display block mb-1 font-semibold">
                             Contractor Outcome
                           </span>
                           <p className="text-xs text-[#fffdf9]/90 font-normal leading-relaxed">
@@ -572,7 +572,7 @@ export const UniqueMechanismSector: React.FC<UniqueMechanismSectorProps> = ({ on
                       </div>
 
                       {/* Technical Spec Drawer Indicator */}
-                      <div className="mt-2 pt-3 border-t border-[#262626] flex items-center justify-between text-[10px] text-[#6f879c] font-display uppercase tracking-wider">
+                      <div className="mt-2 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] text-[#6f879c] font-display uppercase tracking-wider">
                         <span>{service.spec}</span>
                         <ChevronRight className={`w-3.5 h-3.5 text-[#6f879c] transition-transform ${isExpanded ? 'rotate-90 text-[#fffdf9]' : 'group-hover:translate-x-0.5'}`} />
                       </div>
@@ -583,17 +583,17 @@ export const UniqueMechanismSector: React.FC<UniqueMechanismSectorProps> = ({ on
             </div>
 
             {/* Bottom Callout & Qualification CTA */}
-            <div className="mt-10 p-6 rounded-[15px] bg-[#141414] border border-[#403f3f] flex flex-col sm:flex-row items-center justify-between gap-5">
+            <div className="mt-10 p-6 sm:p-7 rounded-[22px] bg-[#0c0e17] border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-5 shadow-2xl">
               <div className="flex items-center gap-3 text-xs text-[#fffdf9]/80">
-                <CheckCircle2 className="w-4 h-4 text-[#2aff2a] shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
                 <span>All 9 services bundled into one transparent performance agreement.</span>
               </div>
 
               <button
                 onClick={onOpenQuiz}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3 text-xs uppercase tracking-[0.08em] font-normal text-[#101010] bg-[#fffdf9] hover:bg-transparent hover:text-[#fffdf9] border border-[#fffdf9] rounded-[5px] transition-all duration-500 cursor-pointer shrink-0 shadow-md"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 text-xs uppercase tracking-[0.08em] font-semibold text-black bg-white hover:scale-[1.02] rounded-full transition-all duration-300 cursor-pointer shrink-0 shadow-[0_4px_25px_rgba(255,255,255,0.25)]"
               >
-                <span>Check Territory Eligibility</span>
+                <span>Check Territory Eligibility •</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>

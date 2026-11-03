@@ -38,23 +38,24 @@ interface ZipData {
 export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQuiz }) => {
   const { language } = useLanguage();
   const pprData = PPR_TRANSLATIONS[language] || PPR_TRANSLATIONS.en;
+  const mobile = pprData.mobile || PPR_TRANSLATIONS.en.mobile;
 
-  // Step state: 0 to 5
+  // Step state: 0 to 7
   const [activeStep, setActiveStep] = useState<number>(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState<boolean>(false);
 
   // Active selected ZIP code for the interactive Tampa Bay targeting map
   const [selectedZip, setSelectedZip] = useState<string>('33629');
 
-  // Screen 4 interactive quiz states
-  const [radiusAnswer, setRadiusAnswer] = useState<'Yes' | 'No'>('Yes');
-  const [homeownerAnswer, setHomeownerAnswer] = useState<'Yes' | 'No'>('Yes');
-  const [paymentAnswer, setPaymentAnswer] = useState<'Insurance' | 'Cash' | 'Finance'>('Insurance');
-  const [scopeAnswer, setScopeAnswer] = useState<'Replacement' | 'Repair' | 'Remodel'>('Remodel');
-  const [timelineAnswer, setTimelineAnswer] = useState<'ASAP' | '1-3 mo' | '3+ mo'>('ASAP');
+  // Screen 4 interactive quiz state indices
+  const [radiusIdx, setRadiusIdx] = useState<number>(0);
+  const [homeownerIdx, setHomeownerIdx] = useState<number>(0);
+  const [paymentIdx, setPaymentIdx] = useState<number>(0);
+  const [scopeIdx, setScopeIdx] = useState<number>(2);
+  const [timelineIdx, setTimelineIdx] = useState<number>(0);
 
   // Screen 5 booking states
-  const [selectedDate, setSelectedDate] = useState<string>('Thu 14');
+  const [selectedDayIdx, setSelectedDayIdx] = useState<number>(3);
   const [selectedTime, setSelectedTime] = useState<string>('12:30');
   const [isBooked, setIsBooked] = useState<boolean>(false);
 
@@ -330,18 +331,18 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
   return (
     <section
       id="pay-per-result"
-      className="relative py-24 sm:py-32 bg-[#000000] overflow-hidden border-t border-[#1a1a1a]"
+      className="relative py-24 sm:py-32 bg-[#07080c] overflow-hidden"
     >
       <div className="max-w-[1240px] mx-auto px-6 sm:px-10 lg:px-12 relative z-10">
         
         {/* Top Section Header */}
         <div className="max-w-3xl mb-16 sm:mb-20">
           <div className="mb-3 inline-flex items-center gap-2">
-            <span className="text-[11px] font-mono tracking-[0.2em] text-[#777777] uppercase font-medium">
+            <span className="text-[11px] font-mono tracking-[0.2em] text-blue-400 uppercase font-semibold">
               {pprData.headerTag}
             </span>
           </div>
-          <h2 className="font-display text-3xl sm:text-5xl lg:text-[54px] text-white font-normal tracking-tight leading-[1.1]">
+          <h2 className="font-heading uppercase text-3xl sm:text-5xl lg:text-[54px] text-white font-normal tracking-tight leading-[1.1]">
             {pprData.headerTitle}
           </h2>
         </div>
@@ -361,9 +362,9 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                     isActive ? 'opacity-100' : 'opacity-40 hover:opacity-75'
                   }`}
                 >
-                  {/* Active Vertical Green Pill Bar */}
+                  {/* Active Vertical Royal Blue Pill Bar */}
                   {isActive && (
-                    <div className="absolute left-0 top-1 bottom-1 w-[2px] bg-[#2aff2a] rounded-full shadow-[0_0_12px_rgba(42,255,42,0.8)]" />
+                    <div className="absolute left-0 top-1 bottom-1 w-[2.5px] bg-blue-500 rounded-full shadow-[0_0_14px_rgba(59,130,246,0.9)]" />
                   )}
 
                   {/* Step Number */}
@@ -429,10 +430,10 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                       <div className="relative z-10 pt-11 px-4 pb-2 bg-gradient-to-b from-white/95 via-white/80 to-transparent">
                         <div className="flex items-center justify-between mb-2">
                           <h3 className="text-lg font-bold font-sans text-black tracking-tight leading-none">
-                            Target area
+                            {mobile.target.header}
                           </h3>
                           <span className="text-xs text-[#737373] font-mono tracking-tight font-medium">
-                            Tampa Bay, FL
+                            {mobile.target.sub}
                           </span>
                         </div>
 
@@ -585,8 +586,8 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
 
                         {/* Interactive Click Tip Overlay */}
                         <div className="absolute top-2 right-2 bg-black/60 backdrop-blur-sm text-white text-[9px] px-2 py-0.5 rounded-full flex items-center gap-1 pointer-events-none">
-                          <Sparkles className="w-2.5 h-2.5 text-[#2aff2a]" />
-                          <span>Tap any $ figure to inspect</span>
+                          <Sparkles className="w-2.5 h-2.5 text-blue-400" />
+                          <span>{mobile.target.tapTip}</span>
                         </div>
                       </div>
 
@@ -603,7 +604,7 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                                   ? 'bg-[#e6f4ea] text-[#137333]'
                                   : 'bg-red-50 text-red-700'
                               }`}>
-                                {currentZipData.type === 'targeted' ? 'Targeted' : 'Filtered Out'}
+                                {currentZipData.type === 'targeted' ? mobile.target.targeted : mobile.target.filteredOut}
                               </span>
                             </div>
                             <div className="text-xs text-[#737373] font-sans font-medium mt-1 truncate max-w-[190px]">
@@ -613,12 +614,12 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
 
                           <div className="text-right">
                             <span className="text-[10px] text-[#888888] font-sans block">
-                              Ad Routing
+                              {mobile.target.adRouting}
                             </span>
                             <span className={`text-xs font-bold font-mono ${
                               currentZipData.type === 'targeted' ? 'text-green-600' : 'text-red-500'
                             }`}>
-                              {currentZipData.type === 'targeted' ? 'Active' : 'Blocked'}
+                              {currentZipData.type === 'targeted' ? mobile.target.active : mobile.target.blocked}
                             </span>
                           </div>
                         </div>
@@ -626,7 +627,7 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                         <div className="grid grid-cols-2 gap-3 pt-1 border-t border-gray-100">
                           <div>
                             <span className="text-[10px] text-[#888888] font-sans font-medium block">
-                              Household Income
+                              {mobile.target.householdIncome}
                             </span>
                             <span className={`text-lg font-bold font-sans ${
                               currentZipData.type === 'targeted' ? 'text-black' : 'text-gray-500'
@@ -636,7 +637,7 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                           </div>
                           <div>
                             <span className="text-[10px] text-[#888888] font-sans font-medium block">
-                              Homeowners
+                              {mobile.target.homeowners}
                             </span>
                             <span className="text-lg font-bold font-sans text-black">
                               {currentZipData.homeowner}
@@ -658,10 +659,10 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                           </div>
                           <div className="flex items-center gap-1.5">
                             <span className="text-[11px] font-bold text-white leading-tight">
-                              ChatGPT Search
+                              {mobile.geo.searchTitle}
                             </span>
-                            <span className="text-[8px] px-1.5 py-0.5 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 rounded-full font-mono font-medium">
-                              Rank #1
+                            <span className="text-[8px] px-1.5 py-0.5 bg-blue-500/20 text-blue-400 border border-blue-500/30 rounded-full font-mono font-medium">
+                              {mobile.geo.rankBadge}
                             </span>
                           </div>
                         </div>
@@ -670,8 +671,8 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                           className="flex items-center gap-1 bg-white/10 hover:bg-white/20 text-white/90 border border-white/15 px-2 py-0.5 rounded-full text-[9px] font-medium transition-colors cursor-pointer"
                           title="View full size lightbox"
                         >
-                          <Maximize2 className="w-2.5 h-2.5 text-[#2aff2a]" />
-                          <span>Full View</span>
+                          <Maximize2 className="w-2.5 h-2.5 text-blue-400" />
+                          <span>{mobile.geo.fullView}</span>
                         </button>
                       </div>
 
@@ -690,7 +691,7 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                           {/* Floating interactive hint overlay */}
                           <div className="absolute top-2 right-2 opacity-90 group-hover:opacity-100 transition-opacity pointer-events-none">
                             <span className="bg-black/80 backdrop-blur-md text-white text-[8px] px-2 py-0.5 rounded-full border border-white/20 flex items-center gap-1 shadow-md">
-                              <Maximize2 className="w-2 h-2 text-[#2aff2a]" /> Tap to enlarge
+                              <Maximize2 className="w-2 h-2 text-blue-400" /> {mobile.geo.fullView}
                             </span>
                           </div>
                         </div>
@@ -701,14 +702,14 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                         <div className="bg-[#111218] rounded-xl px-2.5 py-1.5 flex items-center justify-between border border-white/10 shadow-xs">
                           <div>
                             <div className="text-[10px] font-bold text-white leading-tight">
-                              AI Tool Recommendation
+                              {mobile.geo.recommendationTitle}
                             </div>
                             <div className="text-[8.5px] text-gray-400 leading-tight">
-                              ChatGPT cites SLC Connections LLC as #1 option
+                              {mobile.geo.recommendationDesc}
                             </div>
                           </div>
                           <span className="text-[9px] font-semibold text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded-md border border-emerald-500/30">
-                            Ranked Top
+                            {mobile.geo.rankedTop}
                           </span>
                         </div>
                       </div>
@@ -728,12 +729,12 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                             <div className="text-xs font-bold text-black leading-tight">
                               Northline Bath
                             </div>
-                            <span className="text-[9px] text-gray-400 leading-tight">Sponsored</span>
+                            <span className="text-[9px] text-gray-400 leading-tight">{mobile.ad.sponsored}</span>
                           </div>
                         </div>
                         <div className="flex items-center gap-1.5 bg-neutral-100 px-2 py-0.5 rounded-full">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#2aff2a] animate-pulse" />
-                          <span className="text-[9px] text-neutral-600 font-mono font-medium">Active Ad</span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+                          <span className="text-[9px] text-neutral-600 font-mono font-medium">{mobile.ad.activeAd}</span>
                         </div>
                       </div>
 
@@ -770,7 +771,7 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                               <Play className="w-6 h-6 fill-white text-white translate-x-0.5" />
                             </div>
                             <span className="mt-3 px-3.5 py-1 rounded-full bg-black/75 text-white text-[11px] font-medium tracking-wide shadow-md border border-white/15">
-                              Click to play ad
+                              {mobile.ad.clickToPlay}
                             </span>
                           </div>
                         )}
@@ -805,17 +806,17 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                         <div className="bg-gray-50 rounded-xl p-2.5 flex items-center justify-between border border-gray-200/80 shadow-xs">
                           <div>
                             <div className="text-[11px] font-bold text-black leading-tight">
-                              Free in-home quotes
+                              {mobile.ad.freeQuotes}
                             </div>
                             <div className="text-[9px] text-gray-500 leading-tight">
-                              Exclusive for local homeowners
+                              {mobile.ad.exclusiveForHomeowners}
                             </div>
                           </div>
                           <button
                             onClick={onOpenQuiz}
                             className="bg-black hover:bg-neutral-800 text-white text-[10px] font-semibold px-3 py-1.5 rounded-lg shadow-sm transition-colors cursor-pointer"
                           >
-                            Get quote
+                            {mobile.ad.getQuote}
                           </button>
                         </div>
                       </div>
@@ -835,28 +836,28 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                             <div className="text-xs font-bold text-black leading-none">
                               Northline Bath
                             </div>
-                            <span className="text-[9px] text-gray-400">Direct response copy</span>
+                            <span className="text-[9px] text-gray-400">{mobile.copy.badge}</span>
                           </div>
                         </div>
 
                         {/* Copy Card matching video */}
                         <div className="p-4 rounded-2xl bg-gray-50 border border-gray-200 space-y-4">
                           <h4 className="text-base font-sans font-bold text-black leading-snug">
-                            Ever been stuck in a grocery line that never seems to move?
+                            {mobile.copy.headline}
                           </h4>
                           <p className="text-xs text-gray-700 leading-relaxed">
-                            What a bathroom remodel feels like with the wrong bathroom remodeler.
+                            {mobile.copy.body}
                           </p>
 
                           {/* Feature Badges */}
                           <div className="space-y-2 pt-2 border-t border-gray-200">
                             <div className="flex items-center gap-2 text-[11px] text-gray-800 bg-white p-2 rounded-lg border border-gray-200 font-medium">
                               <Check className="w-3.5 h-3.5 text-green-600" />
-                              <span>Waterproof luxury finishes</span>
+                              <span>{mobile.copy.feature1}</span>
                             </div>
                             <div className="flex items-center gap-2 text-[11px] text-gray-800 bg-white p-2 rounded-lg border border-gray-200 font-medium">
                               <Check className="w-3.5 h-3.5 text-green-600" />
-                              <span>5-day completion</span>
+                              <span>{mobile.copy.feature2}</span>
                             </div>
                           </div>
                         </div>
@@ -870,25 +871,25 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                       <div className="space-y-3">
                         <div>
                           <h4 className="text-sm font-bold text-black">
-                            Quick check
+                            {mobile.qualify.title}
                           </h4>
                           <span className="text-[10px] text-gray-400">
-                            Takes 30 seconds
+                            {mobile.qualify.subtitle}
                           </span>
                         </div>
 
                         {/* Question 1: Radius */}
                         <div className="space-y-1">
                           <label className="text-[10px] font-semibold text-gray-700 block">
-                            Are you within a 100 km radius?
+                            {mobile.qualify.qRadius}
                           </label>
                           <div className="flex gap-1.5">
-                            {(['Yes', 'No'] as const).map(opt => (
+                            {[mobile.qualify.yes, mobile.qualify.no].map((opt, idx) => (
                               <button
-                                key={opt}
-                                onClick={() => setRadiusAnswer(opt)}
+                                key={idx}
+                                onClick={() => setRadiusIdx(idx)}
                                 className={`flex-1 py-1 text-[10px] font-medium rounded-lg border transition-colors cursor-pointer ${
-                                  radiusAnswer === opt 
+                                  radiusIdx === idx 
                                     ? 'bg-black text-white border-black' 
                                     : 'bg-white text-gray-600 border-gray-200'
                                 }`}
@@ -902,15 +903,15 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                         {/* Question 2: Homeowner */}
                         <div className="space-y-1">
                           <label className="text-[10px] font-semibold text-gray-700 block">
-                            Are you the homeowner?
+                            {mobile.qualify.qHomeowner}
                           </label>
                           <div className="flex gap-1.5">
-                            {(['Yes', 'No'] as const).map(opt => (
+                            {[mobile.qualify.yes, mobile.qualify.no].map((opt, idx) => (
                               <button
-                                key={opt}
-                                onClick={() => setHomeownerAnswer(opt)}
+                                key={idx}
+                                onClick={() => setHomeownerIdx(idx)}
                                 className={`flex-1 py-1 text-[10px] font-medium rounded-lg border transition-colors cursor-pointer ${
-                                  homeownerAnswer === opt 
+                                  homeownerIdx === idx 
                                     ? 'bg-black text-white border-black' 
                                     : 'bg-white text-gray-600 border-gray-200'
                                 }`}
@@ -924,15 +925,15 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                         {/* Question 3: Payment */}
                         <div className="space-y-1">
                           <label className="text-[10px] font-semibold text-gray-700 block">
-                            How will you be paying?
+                            {mobile.qualify.qPayment}
                           </label>
                           <div className="grid grid-cols-3 gap-1">
-                            {(['Insurance', 'Cash', 'Finance'] as const).map(opt => (
+                            {mobile.qualify.paymentOptions.map((opt, idx) => (
                               <button
-                                key={opt}
-                                onClick={() => setPaymentAnswer(opt)}
+                                key={idx}
+                                onClick={() => setPaymentIdx(idx)}
                                 className={`py-1 text-[9px] font-medium rounded-lg border transition-colors cursor-pointer text-center ${
-                                  paymentAnswer === opt 
+                                  paymentIdx === idx 
                                     ? 'bg-black text-white border-black' 
                                     : 'bg-white text-gray-600 border-gray-200'
                                 }`}
@@ -946,15 +947,15 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                         {/* Question 4: Scope */}
                         <div className="space-y-1">
                           <label className="text-[10px] font-semibold text-gray-700 block">
-                            Scope of work?
+                            {mobile.qualify.qScope}
                           </label>
                           <div className="grid grid-cols-3 gap-1">
-                            {(['Replacement', 'Repair', 'Remodel'] as const).map(opt => (
+                            {mobile.qualify.scopeOptions.map((opt, idx) => (
                               <button
-                                key={opt}
-                                onClick={() => setScopeAnswer(opt)}
+                                key={idx}
+                                onClick={() => setScopeIdx(idx)}
                                 className={`py-1 text-[9px] font-medium rounded-lg border transition-colors cursor-pointer text-center ${
-                                  scopeAnswer === opt 
+                                  scopeIdx === idx 
                                     ? 'bg-black text-white border-black' 
                                     : 'bg-white text-gray-600 border-gray-200'
                                 }`}
@@ -968,15 +969,15 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                         {/* Question 5: Timeline */}
                         <div className="space-y-1">
                           <label className="text-[10px] font-semibold text-gray-700 block">
-                            When do you need this done?
+                            {mobile.qualify.qTimeline}
                           </label>
                           <div className="grid grid-cols-3 gap-1">
-                            {(['ASAP', '1-3 mo', '3+ mo'] as const).map(opt => (
+                            {mobile.qualify.timelineOptions.map((opt, idx) => (
                               <button
-                                key={opt}
-                                onClick={() => setTimelineAnswer(opt)}
+                                key={idx}
+                                onClick={() => setTimelineIdx(idx)}
                                 className={`py-1 text-[9px] font-medium rounded-lg border transition-colors cursor-pointer text-center ${
-                                  timelineAnswer === opt 
+                                  timelineIdx === idx 
                                     ? 'bg-black text-white border-black' 
                                     : 'bg-white text-gray-600 border-gray-200'
                                 }`}
@@ -992,7 +993,7 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                       <div className="pt-2">
                         <button className="w-full py-2 px-3 rounded-xl bg-green-100 border border-green-300 text-green-800 text-[11px] font-bold flex items-center justify-center gap-1.5 shadow-sm">
                           <CheckCircle2 className="w-3.5 h-3.5 text-green-700" />
-                          <span>Qualified</span>
+                          <span>{mobile.qualify.qualified}</span>
                         </button>
                       </div>
                     </div>
@@ -1004,21 +1005,21 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                       <div className="space-y-4">
                         <div>
                           <h4 className="text-sm font-bold text-black">
-                            Pick a time
+                            {mobile.book.title}
                           </h4>
                           <span className="text-[10px] text-gray-400">
-                            Available route slots
+                            {mobile.book.subtitle}
                           </span>
                         </div>
 
                         {/* Dates Carousel */}
                         <div className="grid grid-cols-4 gap-1.5">
-                          {['Mon 11', 'Tue 12', 'Wed 13', 'Thu 14'].map(d => (
+                          {mobile.book.days.map((d, idx) => (
                             <button
-                              key={d}
-                              onClick={() => setSelectedDate(d)}
+                              key={idx}
+                              onClick={() => setSelectedDayIdx(idx)}
                               className={`py-2 text-[10px] font-bold rounded-xl border text-center transition-all cursor-pointer ${
-                                selectedDate === d 
+                                selectedDayIdx === idx 
                                   ? 'bg-black text-white border-black shadow-sm' 
                                   : 'bg-gray-50 text-gray-700 border-gray-200'
                               }`}
@@ -1049,7 +1050,7 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                         </div>
 
                         <p className="text-[10px] text-gray-500 text-center">
-                          Sit-down times route-locked with your crew.
+                          {mobile.book.note}
                         </p>
                       </div>
 
@@ -1066,10 +1067,10 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                           {isBooked ? (
                             <>
                               <CheckCircle2 className="w-3.5 h-3.5 text-green-700" />
-                              <span>Booked</span>
+                              <span>{mobile.book.booked}</span>
                             </>
                           ) : (
-                            <span>Confirm</span>
+                            <span>{mobile.book.confirm}</span>
                           )}
                         </button>
                       </div>
@@ -1087,14 +1088,14 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                           </div>
                           <div>
                             <div className="text-xs font-bold text-black leading-tight">
-                              Instant Estimator
+                              {mobile.estimator.title}
                             </div>
-                            <span className="text-[9px] text-gray-400 leading-tight">AI Measurement & Scope</span>
+                            <span className="text-[9px] text-gray-400 leading-tight">{mobile.estimator.subtitle}</span>
                           </div>
                         </div>
                         <div className="flex items-center gap-1.5 bg-blue-50 border border-blue-200/80 px-2 py-0.5 rounded-full">
                           <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
-                          <span className="text-[9px] text-blue-700 font-mono font-medium">2 Min Quote</span>
+                          <span className="text-[9px] text-blue-700 font-mono font-medium">{mobile.estimator.tag}</span>
                         </div>
                       </div>
 
@@ -1113,14 +1114,14 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                         <div className="bg-gray-50 rounded-xl p-2.5 flex items-center justify-between border border-gray-200/80 shadow-xs">
                           <div>
                             <div className="text-[11px] font-bold text-black leading-tight">
-                              Automated Scope & Price
+                              {mobile.estimator.cardTitle}
                             </div>
                             <div className="text-[9px] text-gray-500 leading-tight">
-                              Sent to homeowner in 2 minutes
+                              {mobile.estimator.cardSubtitle}
                             </div>
                           </div>
                           <span className="text-[10px] font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-md border border-blue-100">
-                            Generated
+                            {mobile.estimator.generated}
                           </span>
                         </div>
                       </div>
@@ -1137,10 +1138,10 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                           </div>
                           <div>
                             <span className="text-xs font-bold text-black block">
-                              Messages
+                              {mobile.remind.title}
                             </span>
                             <span className="text-[9px] text-green-600 font-semibold">
-                              Automated Dispatch
+                              {mobile.remind.dispatchBadge}
                             </span>
                           </div>
                         </div>
@@ -1148,7 +1149,7 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                         {/* Inbound Message 1 */}
                         <div className="flex justify-start">
                           <div className="max-w-[85%] bg-gray-100 text-gray-800 p-2.5 rounded-2xl rounded-tl-sm text-[11px] leading-snug">
-                            Hi Sarah, your estimate is tomorrow at 10:00 with Dave. Reply 1 to confirm, 2 to reschedule.
+                            {mobile.remind.messageText}
                           </div>
                         </div>
 
@@ -1163,7 +1164,7 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                         <div className="flex justify-start">
                           <div className="bg-gray-100 text-gray-800 px-3 py-1.5 rounded-2xl rounded-tl-sm text-[11px] font-medium flex items-center gap-1.5">
                             <Check className="w-3.5 h-3.5 text-green-600" />
-                            <span>Confirmed</span>
+                            <span>{mobile.remind.confirmed}</span>
                           </div>
                         </div>
                       </div>
@@ -1189,7 +1190,7 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
             {/* Caption below phone matching screenshot */}
             <div className="mt-4 text-center">
               <span className="text-xs text-[#666666] font-sans">
-                Map figures are examples.
+                {mobile.target.mapDisclaimer}
               </span>
             </div>
 

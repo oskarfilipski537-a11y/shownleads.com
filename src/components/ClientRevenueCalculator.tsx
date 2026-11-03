@@ -156,9 +156,9 @@ export const ClientRevenueCalculator: React.FC<ClientRevenueCalculatorProps> = (
   const feePct = monthlyRevenue > 0 ? Math.max(0, (performanceFee / monthlyRevenue) * 100) : 0;
 
   return (
-    <div className="w-full mt-24 pt-16 border-t border-[#1a1a1a]" id="revenue-calculator">
+    <div className="w-full mt-24 pt-16" id="revenue-calculator">
       {/* Header with Title and Control Bar (Language Tool + Currency Changing) */}
-      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 pb-8 border-b border-[#1f2026]">
+      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 pb-4">
         <div>
           <div className="flex items-center gap-2 mb-2">
             <span className="text-[11px] font-mono tracking-[0.2em] text-[#8e9aa8] uppercase font-medium">
@@ -175,10 +175,10 @@ export const ClientRevenueCalculator: React.FC<ClientRevenueCalculatorProps> = (
           
           {/* Language Changing Tool */}
           <div className="flex flex-col gap-1.5">
-            <span className="text-[10px] font-mono tracking-[0.14em] uppercase text-[#888888] font-semibold flex items-center gap-1.5">
-              <Globe className="w-3 h-3 text-[#2aff2a]" /> {t.languageLabel}
+            <span className="text-[10px] font-mono tracking-[0.14em] uppercase text-gray-400 font-semibold flex items-center gap-1.5">
+              <Globe className="w-3 h-3 text-blue-400" /> {t.languageLabel}
             </span>
-            <div className="flex items-center bg-[#14151a] border border-[#282b36] rounded-full p-0.5 sm:p-1 shadow-inner">
+            <div className="flex items-center bg-[#0c0e17] border border-white/[0.08] rounded-full p-0.5 sm:p-1 shadow-inner">
               {languages.map((l) => {
                 const isActive = language === l.code;
                 return (
@@ -187,8 +187,8 @@ export const ClientRevenueCalculator: React.FC<ClientRevenueCalculatorProps> = (
                     onClick={() => setLanguage(l.code)}
                     className={`px-2.5 sm:px-3 py-1 rounded-full text-xs font-sans font-medium transition-all duration-200 cursor-pointer flex items-center gap-1.5 ${
                       isActive
-                        ? 'bg-[#2aff2a] text-[#000000] font-semibold shadow-[0_2px_12px_rgba(42,255,42,0.3)]'
-                        : 'text-[#9ba7b5] hover:text-[#fffdf9] hover:bg-[#1f222b]'
+                        ? 'bg-blue-600 text-white font-semibold shadow-[0_2px_12px_rgba(37,99,235,0.4)]'
+                        : 'text-gray-400 hover:text-white hover:bg-white/[0.05]'
                     }`}
                     title={l.label}
                     aria-label={`Switch language to ${l.label}`}
@@ -204,10 +204,10 @@ export const ClientRevenueCalculator: React.FC<ClientRevenueCalculatorProps> = (
 
           {/* Currency Changing Tool */}
           <div className="flex flex-col gap-1.5">
-            <span className="text-[10px] font-mono tracking-[0.14em] uppercase text-[#888888] font-semibold flex items-center gap-1.5">
-              <Coins className="w-3 h-3 text-[#2aff2a]" /> {t.currencyLabel}
+            <span className="text-[10px] font-mono tracking-[0.14em] uppercase text-gray-400 font-semibold flex items-center gap-1.5">
+              <Coins className="w-3 h-3 text-blue-400" /> {t.currencyLabel}
             </span>
-            <div className="flex items-center bg-[#14151a] border border-[#282b36] rounded-full p-0.5 sm:p-1 shadow-inner">
+            <div className="flex items-center bg-[#0c0e17] border border-white/[0.08] rounded-full p-0.5 sm:p-1 shadow-inner">
               {currencies.map((c) => {
                 const isActive = currency === c.code;
                 return (
@@ -216,8 +216,8 @@ export const ClientRevenueCalculator: React.FC<ClientRevenueCalculatorProps> = (
                     onClick={() => setCurrency(c.code)}
                     className={`px-3 py-1 rounded-full text-xs font-sans font-medium transition-all duration-200 cursor-pointer flex items-center gap-1 ${
                       isActive
-                        ? 'bg-[#fffdf9] text-[#101010] font-semibold shadow-[0_2px_12px_rgba(255,253,249,0.25)]'
-                        : 'text-[#9ba7b5] hover:text-[#fffdf9] hover:bg-[#1f222b]'
+                        ? 'bg-white text-black font-semibold shadow-[0_2px_12px_rgba(255,253,249,0.25)]'
+                        : 'text-gray-400 hover:text-white hover:bg-white/[0.05]'
                     }`}
                     title={c.name}
                     aria-label={`Switch currency to ${c.name}`}
@@ -263,9 +263,9 @@ export const ClientRevenueCalculator: React.FC<ClientRevenueCalculatorProps> = (
                 step={1}
                 value={estimatesCount}
                 onChange={(e) => setEstimatesCount(Number(e.target.value))}
-                className="w-full h-1.5 bg-[#222222] rounded-lg appearance-none cursor-pointer accent-[#2aff2a]"
+                className="w-full h-1.5 bg-[#171a26] rounded-lg appearance-none cursor-pointer accent-[#3b82f6]"
                 style={{
-                  background: `linear-gradient(to right, #2aff2a 0%, #2aff2a ${((estimatesCount - 10) / 50) * 100}%, #222222 ${((estimatesCount - 10) / 50) * 100}%, #222222 100%)`
+                  background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${((estimatesCount - 10) / 50) * 100}%, #171a26 ${((estimatesCount - 10) / 50) * 100}%, #171a26 100%)`
                 }}
               />
             </div>
@@ -295,9 +295,9 @@ export const ClientRevenueCalculator: React.FC<ClientRevenueCalculatorProps> = (
                 step={currentPreset.spendStep}
                 value={dailyAdSpend}
                 onChange={(e) => setDailyAdSpend(Number(e.target.value))}
-                className="w-full h-1.5 bg-[#222222] rounded-lg appearance-none cursor-pointer accent-[#2aff2a]"
+                className="w-full h-1.5 bg-[#171a26] rounded-lg appearance-none cursor-pointer accent-[#3b82f6]"
                 style={{
-                  background: `linear-gradient(to right, #2aff2a 0%, #2aff2a ${((dailyAdSpend - currentPreset.spendMin) / (currentPreset.spendMax - currentPreset.spendMin)) * 100}%, #222222 ${((dailyAdSpend - currentPreset.spendMin) / (currentPreset.spendMax - currentPreset.spendMin)) * 100}%, #222222 100%)`
+                  background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${((dailyAdSpend - currentPreset.spendMin) / (currentPreset.spendMax - currentPreset.spendMin)) * 100}%, #171a26 ${((dailyAdSpend - currentPreset.spendMin) / (currentPreset.spendMax - currentPreset.spendMin)) * 100}%, #171a26 100%)`
                 }}
               />
             </div>
@@ -324,9 +324,9 @@ export const ClientRevenueCalculator: React.FC<ClientRevenueCalculatorProps> = (
                 step={currentPreset.jobStep}
                 value={averageJobValue}
                 onChange={(e) => setAverageJobValue(Number(e.target.value))}
-                className="w-full h-1.5 bg-[#222222] rounded-lg appearance-none cursor-pointer accent-[#2aff2a]"
+                className="w-full h-1.5 bg-[#171a26] rounded-lg appearance-none cursor-pointer accent-[#3b82f6]"
                 style={{
-                  background: `linear-gradient(to right, #2aff2a 0%, #2aff2a ${((averageJobValue - currentPreset.jobMin) / (currentPreset.jobMax - currentPreset.jobMin)) * 100}%, #222222 ${((averageJobValue - currentPreset.jobMin) / (currentPreset.jobMax - currentPreset.jobMin)) * 100}%, #222222 100%)`
+                  background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${((averageJobValue - currentPreset.jobMin) / (currentPreset.jobMax - currentPreset.jobMin)) * 100}%, #171a26 ${((averageJobValue - currentPreset.jobMin) / (currentPreset.jobMax - currentPreset.jobMin)) * 100}%, #171a26 100%)`
                 }}
               />
             </div>
@@ -356,9 +356,9 @@ export const ClientRevenueCalculator: React.FC<ClientRevenueCalculatorProps> = (
                 step={1}
                 value={closeRate}
                 onChange={(e) => setCloseRate(Number(e.target.value))}
-                className="w-full h-1.5 bg-[#222222] rounded-lg appearance-none cursor-pointer accent-[#2aff2a]"
+                className="w-full h-1.5 bg-[#171a26] rounded-lg appearance-none cursor-pointer accent-[#3b82f6]"
                 style={{
-                  background: `linear-gradient(to right, #2aff2a 0%, #2aff2a ${((closeRate - 10) / 90) * 100}%, #222222 ${((closeRate - 10) / 90) * 100}%, #222222 100%)`
+                  background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${((closeRate - 10) / 90) * 100}%, #171a26 ${((closeRate - 10) / 90) * 100}%, #171a26 100%)`
                 }}
               />
             </div>
@@ -388,9 +388,9 @@ export const ClientRevenueCalculator: React.FC<ClientRevenueCalculatorProps> = (
                 step={1}
                 value={jobMargin}
                 onChange={(e) => setJobMargin(Number(e.target.value))}
-                className="w-full h-1.5 bg-[#222222] rounded-lg appearance-none cursor-pointer accent-[#2aff2a]"
+                className="w-full h-1.5 bg-[#171a26] rounded-lg appearance-none cursor-pointer accent-[#3b82f6]"
                 style={{
-                  background: `linear-gradient(to right, #2aff2a 0%, #2aff2a ${((jobMargin - 10) / 70) * 100}%, #222222 ${((jobMargin - 10) / 70) * 100}%, #222222 100%)`
+                  background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${((jobMargin - 10) / 70) * 100}%, #171a26 ${((jobMargin - 10) / 70) * 100}%, #171a26 100%)`
                 }}
               />
             </div>
@@ -425,22 +425,22 @@ export const ClientRevenueCalculator: React.FC<ClientRevenueCalculatorProps> = (
             </div>
 
             {/* Divider */}
-            <div className="border-t border-[#1f1f1f]" />
+            <div className="border-t border-white/[0.06]" />
 
             {/* Net Profit */}
             <div className="space-y-1">
-              <span className="text-[10px] font-mono tracking-[0.15em] uppercase text-[#777777] block font-semibold">
+              <span className="text-[10px] font-mono tracking-[0.15em] uppercase text-gray-400 block font-semibold">
                 {t.netProfit}
               </span>
-              <div className="text-3xl sm:text-4xl font-sans font-medium text-[#2aff2a] tracking-tight">
+              <div className="text-3xl sm:text-4xl font-sans font-medium text-blue-400 tracking-tight">
                 {formatCurrency(netProfit)}
               </div>
             </div>
 
             {/* 3 Stats Bar: TOTAL MARKETING | COST PER DEAL | ROI */}
-            <div className="grid grid-cols-3 gap-3 py-4 border-t border-b border-[#1f1f1f]">
+            <div className="grid grid-cols-3 gap-3 py-4 border-t border-b border-white/[0.06]">
               <div>
-                <span className="text-[10px] font-mono tracking-[0.12em] uppercase text-[#777777] block mb-1">
+                <span className="text-[10px] font-mono tracking-[0.12em] uppercase text-gray-400 block mb-1">
                   {t.totalMarketing}
                 </span>
                 <span className="text-sm sm:text-base font-sans font-semibold text-white">
@@ -449,7 +449,7 @@ export const ClientRevenueCalculator: React.FC<ClientRevenueCalculatorProps> = (
               </div>
 
               <div>
-                <span className="text-[10px] font-mono tracking-[0.12em] uppercase text-[#777777] block mb-1">
+                <span className="text-[10px] font-mono tracking-[0.12em] uppercase text-gray-400 block mb-1">
                   {t.costPerDeal}
                 </span>
                 <span className="text-sm sm:text-base font-sans font-semibold text-white">
@@ -458,7 +458,7 @@ export const ClientRevenueCalculator: React.FC<ClientRevenueCalculatorProps> = (
               </div>
 
               <div>
-                <span className="text-[10px] font-mono tracking-[0.12em] uppercase text-[#777777] block mb-1">
+                <span className="text-[10px] font-mono tracking-[0.12em] uppercase text-gray-400 block mb-1">
                   {t.roi}
                 </span>
                 <span className="text-sm sm:text-base font-sans font-semibold text-white">
@@ -472,7 +472,7 @@ export const ClientRevenueCalculator: React.FC<ClientRevenueCalculatorProps> = (
               <div className="h-2 w-full bg-[#1c1c1c] rounded-full overflow-hidden flex">
                 <div 
                   style={{ width: `${netProfitPct}%` }}
-                  className="bg-[#2aff2a] h-full"
+                  className="bg-blue-500 h-full"
                   title={t.legendNetProfit}
                 />
                 <div 
@@ -493,9 +493,9 @@ export const ClientRevenueCalculator: React.FC<ClientRevenueCalculatorProps> = (
               </div>
 
               {/* Legend with colored dots */}
-              <div className="flex flex-wrap items-center justify-between text-[11px] text-[#777777] pt-1">
+              <div className="flex flex-wrap items-center justify-between text-[11px] text-gray-400 pt-1">
                 <span className="inline-flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-[#2aff2a]" /> {t.legendNetProfit}
+                  <span className="w-2 h-2 rounded-full bg-blue-500" /> {t.legendNetProfit}
                 </span>
                 <span className="inline-flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-[#4b5563]" /> {t.legendMaterialsLabor}
@@ -512,17 +512,17 @@ export const ClientRevenueCalculator: React.FC<ClientRevenueCalculatorProps> = (
             {/* Lock In Button */}
             <button
               onClick={onOpenQuiz}
-              className="w-full py-3.5 px-6 rounded-[8px] bg-white hover:bg-[#2aff2a] text-[#000000] font-sans font-semibold text-sm transition-colors cursor-pointer text-center shadow-lg hover:shadow-[0_4px_25px_rgba(42,255,42,0.3)] active:scale-[0.99]"
+              className="w-full py-3.5 px-6 rounded-full bg-white hover:bg-blue-600 hover:text-white text-[#000000] font-sans font-semibold text-sm transition-all cursor-pointer text-center shadow-lg hover:shadow-[0_4px_25px_rgba(59,130,246,0.35)] active:scale-[0.99]"
             >
-              {t.lockInTerritory}
+              {t.lockInTerritory} •
             </button>
 
             {/* Footnote */}
-            <p className="text-center text-xs text-[#777777] pt-1">
+            <p className="text-center text-xs text-gray-400 pt-1">
               {t.needMoreThan60}{' '}
               <button
                 onClick={onOpenQuiz}
-                className="text-white hover:text-[#2aff2a] underline cursor-pointer transition-colors"
+                className="text-white hover:text-blue-400 underline cursor-pointer transition-colors"
               >
                 {t.checkAvailability}
               </button>

@@ -79,13 +79,13 @@ export const SpecialistModal: React.FC<SpecialistModalProps> = ({ isOpen, onClos
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.98, y: 15 }}
             transition={{ duration: 0.4, ease: [0.52, 0.01, 0, 1] }}
-            className="relative w-full max-w-xl z-10 my-auto bg-[#141414] border border-[#403f3f] rounded-[14px] p-6 sm:p-8 shadow-[0_25px_60px_rgba(0,0,0,0.85)] text-left"
+            className="relative w-full max-w-xl z-10 my-auto bg-[#0c0e17]/95 border border-white/10 rounded-[24px] p-6 sm:p-8 shadow-[0_25px_60px_rgba(0,0,0,0.85),0_0_40px_rgba(59,130,246,0.15)] backdrop-blur-xl text-left"
           >
             {/* Close Button */}
             <button
               onClick={onClose}
               aria-label="Close modal"
-              className="absolute top-5 right-5 z-20 w-8 h-8 rounded-[5px] bg-[#101010] hover:bg-[#1a1a1a] border border-[#403f3f] text-[#fffdf9] flex items-center justify-center transition-colors cursor-pointer"
+              className="absolute top-5 right-5 z-20 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-white flex items-center justify-center transition-colors cursor-pointer"
             >
               <X className="w-4 h-4" />
             </button>
@@ -94,17 +94,17 @@ export const SpecialistModal: React.FC<SpecialistModalProps> = ({ isOpen, onClos
               <div>
                 {/* Header */}
                 <div className="mb-6">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[5px] bg-[#101010] border border-[#403f3f] text-[#fffdf9] mb-3">
-                    <UserCheck className="w-3.5 h-3.5 text-[#2aff2a]" />
-                    <span className="text-[11px] uppercase tracking-[0.08em] font-display text-[#fffdf9]">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 mb-3">
+                    <UserCheck className="w-3.5 h-3.5 text-blue-400" />
+                    <span className="text-[11px] uppercase tracking-[0.1em] font-mono font-medium">
                       {content.badge}
                     </span>
                   </div>
 
-                  <h3 className="font-display text-2xl sm:text-3xl text-[#fffdf9] font-normal mb-2 tracking-tight">
+                  <h3 className="font-heading uppercase text-2xl sm:text-3xl text-white font-normal mb-2 tracking-tight">
                     {content.title}
                   </h3>
-                  <p className="font-display text-xs sm:text-sm text-[#fffdf9]/75 font-normal leading-relaxed">
+                  <p className="font-sans text-xs sm:text-sm text-gray-300 font-normal leading-relaxed">
                     {content.desc}
                   </p>
                 </div>
@@ -175,8 +175,8 @@ export const SpecialistModal: React.FC<SpecialistModalProps> = ({ isOpen, onClos
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     <div>
-                      <label className="block text-[11px] uppercase tracking-wider text-[#6f879c] font-display mb-1.5 flex items-center gap-1">
-                        <MapPin className="w-3 h-3 text-[#2aff2a]" />
+                      <label className="block text-[11px] uppercase tracking-wider text-gray-400 font-mono mb-1.5 flex items-center gap-1">
+                        <MapPin className="w-3 h-3 text-blue-400" />
                         <span>{content.cityLabel}</span>
                       </label>
                       <input
@@ -185,11 +185,11 @@ export const SpecialistModal: React.FC<SpecialistModalProps> = ({ isOpen, onClos
                         placeholder={market === 'US' ? 'e.g. Dallas, TX / Chicago' : 'e.g. Dublin / Stockholm / Madrid'}
                         value={formData.city}
                         onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                        className="w-full bg-[#101010] border border-[#403f3f] rounded-[5px] px-3.5 py-2.5 text-xs text-[#fffdf9] placeholder-[#6f879c] focus:outline-none focus:border-[#fffdf9]"
+                        className="w-full bg-[#101010] border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-blue-500"
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] uppercase tracking-wider text-[#6f879c] font-display mb-1.5">
+                      <label className="block text-[11px] uppercase tracking-wider text-gray-400 font-mono mb-1.5">
                         {content.emailLabel}
                       </label>
                       <input
@@ -198,13 +198,13 @@ export const SpecialistModal: React.FC<SpecialistModalProps> = ({ isOpen, onClos
                         placeholder="info@company.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-[#101010] border border-[#403f3f] rounded-[5px] px-3.5 py-2.5 text-xs text-[#fffdf9] placeholder-[#6f879c] focus:outline-none focus:border-[#fffdf9]"
+                        className="w-full bg-[#101010] border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-blue-500"
                       />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     <div>
-                      <label className="block text-[11px] uppercase tracking-wider text-[#6f879c] font-display mb-1.5">
+                      <label className="block text-[11px] uppercase tracking-wider text-gray-400 font-mono mb-1.5">
                         {content.phoneLabel}
                       </label>
                       <input
@@ -213,20 +213,20 @@ export const SpecialistModal: React.FC<SpecialistModalProps> = ({ isOpen, onClos
                         placeholder="+1 (555) 000-0000"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full bg-[#101010] border border-[#403f3f] rounded-[5px] px-3.5 py-2.5 text-xs text-[#fffdf9] placeholder-[#6f879c] focus:outline-none focus:border-[#fffdf9]"
+                        className="w-full bg-[#101010] border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-blue-500"
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] uppercase tracking-wider text-[#6f879c] font-display mb-1.5">
+                      <label className="block text-[11px] uppercase tracking-wider text-gray-400 font-mono mb-1.5">
                         {content.tradeLabel}
                       </label>
                       <select
                         value={formData.tradeSector}
                         onChange={(e) => setFormData({ ...formData, tradeSector: e.target.value })}
-                        className="w-full bg-[#101010] border border-[#403f3f] rounded-[5px] px-3 py-2.5 text-xs text-[#fffdf9] focus:outline-none focus:border-[#fffdf9]"
+                        className="w-full bg-[#101010] border border-white/10 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-blue-500"
                       >
                         {content.tradeOptions.map((sector) => (
-                          <option key={sector} value={sector} className="bg-[#101010] text-[#fffdf9]">
+                          <option key={sector} value={sector} className="bg-[#101010] text-white">
                             {sector}
                           </option>
                         ))}
@@ -235,16 +235,16 @@ export const SpecialistModal: React.FC<SpecialistModalProps> = ({ isOpen, onClos
                   </div>
 
                   <div>
-                    <label className="block text-[11px] uppercase tracking-wider text-[#6f879c] font-display mb-1.5">
+                    <label className="block text-[11px] uppercase tracking-wider text-gray-400 font-mono mb-1.5">
                       {content.timeLabel}
                     </label>
                     <select
                       value={formData.preferredTime}
                       onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
-                      className="w-full bg-[#101010] border border-[#403f3f] rounded-[5px] px-3 py-2.5 text-xs text-[#fffdf9] focus:outline-none focus:border-[#fffdf9]"
+                      className="w-full bg-[#101010] border border-white/10 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-blue-500"
                     >
                       {content.timeOptions.map((time) => (
-                        <option key={time} value={time} className="bg-[#101010] text-[#fffdf9]">
+                        <option key={time} value={time} className="bg-[#101010] text-white">
                           {time}
                         </option>
                       ))}
@@ -252,15 +252,15 @@ export const SpecialistModal: React.FC<SpecialistModalProps> = ({ isOpen, onClos
                   </div>
 
                   {/* Submission Guarantee Banner */}
-                  <div className="p-3 rounded-[6px] bg-[#101010] border border-[#403f3f] flex items-center gap-2.5 text-[11px] text-[#6f879c]">
-                    <ShieldCheck className="w-4 h-4 text-[#2aff2a] shrink-0" />
+                  <div className="p-3 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center gap-2.5 text-[11px] text-blue-200">
+                    <ShieldCheck className="w-4 h-4 text-blue-400 shrink-0" />
                     <span>{content.successNote}</span>
                   </div>
 
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3.5 px-6 rounded-[5px] bg-[#fffdf9] text-[#101010] hover:bg-transparent hover:text-[#fffdf9] border border-[#fffdf9] font-display text-xs uppercase tracking-[0.08em] font-normal transition-all duration-500 cursor-pointer flex items-center justify-center gap-2 shadow-md"
+                    className="w-full py-3.5 px-6 rounded-full bg-white text-black hover:bg-gray-100 font-sans text-xs uppercase tracking-[0.08em] font-semibold transition-all duration-300 cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-white/10 hover:scale-[1.01]"
                   >
                     {isSubmitting ? (
                       <span>...</span>
@@ -276,34 +276,34 @@ export const SpecialistModal: React.FC<SpecialistModalProps> = ({ isOpen, onClos
             ) : (
               /* Success State */
               <div className="py-6 text-center">
-                <div className="w-14 h-14 rounded-full bg-[#101010] border border-[#2aff2a]/40 flex items-center justify-center mx-auto mb-4 text-[#2aff2a]">
+                <div className="w-14 h-14 rounded-full bg-blue-500/10 border border-blue-500/40 flex items-center justify-center mx-auto mb-4 text-blue-400">
                   <CheckCircle2 className="w-7 h-7" />
                 </div>
-                <h4 className="font-display text-2xl text-[#fffdf9] font-normal mb-2">
+                <h4 className="font-heading uppercase text-2xl text-white font-normal mb-2">
                   {content.successTitle}
                 </h4>
-                <p className="text-xs sm:text-sm text-[#fffdf9]/75 max-w-md mx-auto mb-6 leading-relaxed">
+                <p className="text-xs sm:text-sm text-gray-300 max-w-md mx-auto mb-6 leading-relaxed">
                   {content.successDesc}
                 </p>
 
-                <div className="p-4 rounded-[8px] bg-[#101010] border border-[#403f3f] text-xs text-[#6f879c] mb-6 text-left max-w-sm mx-auto space-y-1">
-                  <div className="flex justify-between py-1 border-b border-[#262626]">
+                <div className="p-4 rounded-xl bg-[#101010] border border-white/10 text-xs text-gray-400 mb-6 text-left max-w-sm mx-auto space-y-1">
+                  <div className="flex justify-between py-1 border-b border-white/[0.06]">
                     <span>{content.cityLabel}</span>
-                    <span className="text-[#fffdf9] font-medium">{formData.city || 'Requested Territory'}</span>
+                    <span className="text-white font-medium">{formData.city || 'Requested Territory'}</span>
                   </div>
-                  <div className="flex justify-between py-1 border-b border-[#262626]">
+                  <div className="flex justify-between py-1 border-b border-white/[0.06]">
                     <span>{content.tradeLabel}</span>
-                    <span className="text-[#fffdf9] truncate max-w-[180px]">{formData.tradeSector}</span>
+                    <span className="text-white truncate max-w-[180px]">{formData.tradeSector}</span>
                   </div>
                   <div className="flex justify-between py-1">
                     <span>Performance Basis:</span>
-                    <span className="text-[#2aff2a]">Pay-Per-Estimate ($0 Retainer)</span>
+                    <span className="text-blue-400 font-semibold">Pay-Per-Estimate ($0 Retainer)</span>
                   </div>
                 </div>
 
                 <button
                   onClick={onClose}
-                  className="px-6 py-2.5 rounded-[5px] border border-[#fffdf9] text-[#fffdf9] hover:bg-[#fffdf9] hover:text-[#101010] text-xs uppercase tracking-[0.08em] font-display transition-all cursor-pointer"
+                  className="px-6 py-2.5 rounded-full bg-white text-black hover:bg-gray-100 text-xs uppercase tracking-[0.08em] font-sans font-semibold transition-all cursor-pointer shadow-md"
                 >
                   {content.closeBtn}
                 </button>

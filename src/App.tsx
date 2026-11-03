@@ -13,6 +13,9 @@ import { HowPayPerResultWorks } from './components/HowPayPerResultWorks';
 import { PayPerResultSector } from './components/PayPerResultSector';
 import { FitCheck } from './components/FitCheck';
 import { NumbersProof } from './components/NumbersProof';
+import { PricingPlans } from './components/PricingPlans';
+import { GrowthSystemDetails } from './components/GrowthSystemDetails';
+import { WorkforceExpansion } from './components/WorkforceExpansion';
 import { ComparisonTable } from './components/ComparisonTable';
 import { Testimonials } from './components/Testimonials';
 import { CompaniesWeWorkWith } from './components/CompaniesWeWorkWith';
@@ -112,7 +115,7 @@ export default function App() {
 
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-[#000000] text-[#fffdf9] font-sans antialiased relative selection:bg-[#fffdf9]/20 selection:text-[#fffdf9]">
+      <div className="min-h-screen bg-[#07080c] text-[#fffdf9] font-sans antialiased relative selection:bg-blue-500/30 selection:text-white">
       {/* Ambient Caustic Cursor Dispersion */}
       <CursorGlow />
 
@@ -132,37 +135,46 @@ export default function App() {
           {/* Section 2: Animated Client Logos (Only vector logos, zero text) */}
           <ClientLogos />
 
-          {/* Section 3: Delivering Pay Per Estimate (Performance Model vs Retainers) */}
+          {/* Section 3: The 3 Core Investment Offers (Featuring The Market Leader Growth System @ $8,150/mo) */}
+          <PricingPlans onOpenQuiz={handleOpenQuiz} onTalkToSpecialist={handleOpenSpecialist} />
+
+          {/* Section 4: What The Market Leader Growth System Includes (Multi-channel, AI Estimator, CRM, Strategy) */}
+          <GrowthSystemDetails onOpenQuiz={handleOpenQuiz} onTalkToSpecialist={handleOpenSpecialist} />
+
+          {/* Section 5: The Critical Differentiator: Recruitment & Workforce Expansion System */}
+          <WorkforceExpansion onOpenQuiz={handleOpenQuiz} onTalkToSpecialist={handleOpenSpecialist} />
+
+          {/* Section 6: Delivering Pay Per Estimate (Performance Model vs Retainers) */}
           <DeliveringPayPerResults onOpenQuiz={handleOpenQuiz} />
 
-          {/* Section 4: What Makes ShownLeads Different to Pay Per Lead Companies */}
+          {/* Section 7: What Makes ShownLeads Different to Pay Per Lead Companies */}
           <DifferentiationSector onOpenQuiz={handleOpenQuiz} />
 
-          {/* Section 5: How Does Pay Per Result Work With ShownLeads */}
+          {/* Section 8: How Does Pay Per Result Work With ShownLeads */}
           <HowPayPerResultWorks onOpenQuiz={handleOpenQuiz} />
 
-          {/* Section 6: Dedicated Pay-Per-Result Performance Sector (with Animated iPhone 17 & Calculator) */}
+          {/* Section 9: Dedicated Pay-Per-Result Performance Sector (with Animated iPhone 17 & Calculator) */}
           <PayPerResultSector onOpenQuiz={handleOpenQuiz} />
 
-          {/* Section 7: Built for a Specific Caliber of Partner (Positioned below the calculator) */}
+          {/* Section 10: Built for a Specific Caliber of Partner (Positioned below the calculator) */}
           <FitCheck onOpenQuiz={handleOpenQuiz} />
 
-          {/* Section 8: The Numbers (Animated stat counters) */}
+          {/* Section 11: The Numbers (Animated stat counters) */}
           <NumbersProof />
 
-          {/* Section 9: Verified Contractor Results & WhatsApp Testimonials */}
+          {/* Section 12: Verified Contractor Results & WhatsApp Testimonials */}
           <Testimonials onOpenQuiz={handleOpenQuiz} />
 
-          {/* Section 10: ShownLeads vs Traditional Agencies (Comparison table) */}
+          {/* Section 13: ShownLeads vs Traditional Agencies (Comparison table) */}
           <ComparisonTable />
 
-          {/* Section 11: Companies We Work With (Animated sector above FAQ) */}
+          {/* Section 14: Companies We Work With (Animated sector above FAQ) */}
           <CompaniesWeWorkWith onOpenQuiz={handleOpenQuiz} />
 
-          {/* Section 10: FAQ (Accordion) */}
-          <FAQ />
+          {/* Section 15: FAQ (Accordion with Market Leader Growth System & Split Payment) */}
+          <FAQ onOpenQuiz={handleOpenQuiz} onTalkToSpecialist={handleOpenSpecialist} />
 
-          {/* Section 10: Final CTA & Minimal Footer */}
+          {/* Section 16: Final CTA & Minimal Footer */}
           <FinalCTA onOpenQuiz={handleOpenQuiz} onNavigate={navigateTo} />
         </main>
       )}

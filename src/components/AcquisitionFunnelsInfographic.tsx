@@ -110,28 +110,28 @@ export const AcquisitionFunnelsInfographic: React.FC<AcquisitionFunnelsInfograph
   ];
 
   return (
-    <div className="w-full mt-20 pt-16 border-t border-[#222222]">
+    <div className="w-full mt-20 pt-16">
       {/* Header */}
       <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-14">
         <div className="mb-3 inline-flex items-center gap-2">
-          <span className="text-[11px] uppercase tracking-[0.14em] text-[#6f879c] font-sans font-medium">
+          <span className="text-[11px] uppercase tracking-[0.14em] text-blue-400 font-sans font-semibold">
             ACQUISITION INFRASTRUCTURE • 2 DUAL FUNNEL PATHS
           </span>
         </div>
         <h3 className="font-heading uppercase text-2xl sm:text-4xl lg:text-[2.5rem] text-[#fffdf9] font-normal tracking-[0.02em] mb-4 leading-tight">
-          Two high-converting conversion funnels <span className="neon-silver-text">running simultaneously</span>.
+          Two high-converting conversion funnels <span className="neon-silver-text font-serif italic lowercase">running simultaneously</span>.
         </h3>
         <p className="font-sans text-xs sm:text-sm text-[#fffdf9]/70 font-normal max-w-2xl mx-auto leading-relaxed">
           We capture both high-consideration scheduled appointments and instant high-urgency homeowner phone calls, giving your team predictable, verified estimate volume.
         </p>
 
         {/* Funnel Selector Tabs */}
-        <div className="mt-8 inline-flex items-center p-1 rounded-[10px] bg-[#141414] border border-[#262626]">
+        <div className="mt-8 inline-flex items-center p-1 rounded-full bg-[#10121a] border border-white/10">
           <button
             onClick={() => setActiveFunnel('both')}
-            className={`px-4 py-1.5 rounded-[8px] text-xs font-sans transition-all cursor-pointer ${
+            className={`px-4 py-2 rounded-full text-xs font-sans transition-all cursor-pointer ${
               activeFunnel === 'both'
-                ? 'bg-[#222] text-[#fffdf9] font-medium shadow-xs border border-[#333]'
+                ? 'bg-white text-black font-semibold shadow-md'
                 : 'text-[#6f879c] hover:text-[#fffdf9]'
             }`}
           >
@@ -139,9 +139,9 @@ export const AcquisitionFunnelsInfographic: React.FC<AcquisitionFunnelsInfograph
           </button>
           <button
             onClick={() => setActiveFunnel('funnel1')}
-            className={`px-4 py-1.5 rounded-[8px] text-xs font-sans transition-all cursor-pointer ${
+            className={`px-4 py-2 rounded-full text-xs font-sans transition-all cursor-pointer ${
               activeFunnel === 'funnel1'
-                ? 'bg-[#222] text-[#fffdf9] font-medium shadow-xs border border-[#333]'
+                ? 'bg-white text-black font-semibold shadow-md'
                 : 'text-[#6f879c] hover:text-[#fffdf9]'
             }`}
           >
@@ -149,9 +149,9 @@ export const AcquisitionFunnelsInfographic: React.FC<AcquisitionFunnelsInfograph
           </button>
           <button
             onClick={() => setActiveFunnel('funnel2')}
-            className={`px-4 py-1.5 rounded-[8px] text-xs font-sans transition-all cursor-pointer ${
+            className={`px-4 py-2 rounded-full text-xs font-sans transition-all cursor-pointer ${
               activeFunnel === 'funnel2'
-                ? 'bg-[#222] text-[#fffdf9] font-medium shadow-xs border border-[#333]'
+                ? 'bg-white text-black font-semibold shadow-md'
                 : 'text-[#6f879c] hover:text-[#fffdf9]'
             }`}
           >
@@ -167,13 +167,13 @@ export const AcquisitionFunnelsInfographic: React.FC<AcquisitionFunnelsInfograph
         {/* FUNNEL 1: Survey & Self-Booking Calendar Funnel                      */}
         {/* ==================================================================== */}
         {(activeFunnel === 'both' || activeFunnel === 'funnel1') && (
-          <div className="rounded-[16px] bg-[#111111] border border-[#242424] p-6 sm:p-8 relative overflow-hidden shadow-2xl">
+          <div className="rounded-[22px] bg-[#0c0e17] border border-white/10 p-6 sm:p-8 relative overflow-hidden shadow-2xl backdrop-blur-xl">
             {/* Top Funnel Bar */}
-            <div className="flex flex-wrap items-center justify-between gap-4 pb-6 mb-6 border-b border-[#1f1f1f]">
+            <div className="flex flex-wrap items-center justify-between gap-4 pb-6 mb-6">
               <div>
                 <div className="inline-flex items-center gap-2 mb-1.5">
-                  <span className="w-2 h-2 rounded-full bg-[#2aff2a]" />
-                  <span className="text-[11px] uppercase tracking-wider text-[#2aff2a] font-display font-semibold">
+                  <span className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
+                  <span className="text-[11px] uppercase tracking-wider text-blue-400 font-display font-semibold">
                     FUNNEL 01 • SCHEDULED APPOINTMENT PATH
                   </span>
                 </div>
@@ -184,7 +184,7 @@ export const AcquisitionFunnelsInfographic: React.FC<AcquisitionFunnelsInfograph
               <div className="flex items-center gap-3 text-xs text-[#6f879c]">
                 <span className="text-[#fffdf9] font-medium">Ideal For:</span>
                 <span>Planned Roof Replacements & Large Remodels</span>
-                <span className="px-2.5 py-0.5 rounded-full bg-[#181818] border border-[#2c2c2c] text-[#2aff2a] text-[10px] font-mono">
+                <span className="px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-[10px] font-mono">
                   32% Avg Close Rate
                 </span>
               </div>
@@ -195,14 +195,14 @@ export const AcquisitionFunnelsInfographic: React.FC<AcquisitionFunnelsInfograph
               {funnel1Steps.map((step, idx) => {
                 const Icon = step.icon;
                 return (
-                  <div key={idx} className="relative flex flex-col justify-between p-4 rounded-[12px] bg-[#141414] border border-[#222222] hover:border-[#383838] transition-all group">
+                  <div key={idx} className="relative flex flex-col justify-between p-4 rounded-[14px] bg-[#10121a] border border-white/5 hover:border-blue-500/40 transition-all group">
                     <div>
                       {/* Step Number & Connector */}
                       <div className="flex items-center justify-between mb-3">
-                        <span className="text-[10px] font-mono font-bold text-[#6f879c] group-hover:text-[#2aff2a] transition-colors">
+                        <span className="text-[10px] font-mono font-bold text-[#6f879c] group-hover:text-blue-400 transition-colors">
                           STAGE {step.step}
                         </span>
-                        <div className="w-7 h-7 rounded-[8px] bg-[#1c1c1c] border border-[#2c2c2c] flex items-center justify-center text-[#fffdf9] group-hover:border-[#2aff2a]/50 group-hover:text-[#2aff2a] transition-colors">
+                        <div className="w-7 h-7 rounded-[8px] bg-[#161824] border border-white/10 flex items-center justify-center text-[#fffdf9] group-hover:border-blue-500/50 group-hover:text-blue-400 transition-colors">
                           <Icon className="w-3.5 h-3.5" />
                         </div>
                       </div>
@@ -211,7 +211,7 @@ export const AcquisitionFunnelsInfographic: React.FC<AcquisitionFunnelsInfograph
                       <h5 className="font-display text-sm font-semibold text-[#fffdf9] mb-1 leading-snug">
                         {step.title}
                       </h5>
-                      <span className="text-[10px] text-[#2aff2a] font-mono block mb-2">
+                      <span className="text-[10px] text-blue-400 font-mono block mb-2">
                         {step.badge}
                       </span>
 
@@ -222,7 +222,7 @@ export const AcquisitionFunnelsInfographic: React.FC<AcquisitionFunnelsInfograph
                     </div>
 
                     {/* Bottom Tag */}
-                    <div className="pt-2 border-t border-[#1f1f1f] flex items-center justify-between text-[10px] text-[#6f879c]">
+                    <div className="pt-2 flex items-center justify-between text-[10px] text-[#6f879c]">
                       <span>{step.tag}</span>
                       {idx < funnel1Steps.length - 1 && (
                         <ArrowRight className="w-3 h-3 text-[#3a3a3a] hidden md:block" />
@@ -234,14 +234,14 @@ export const AcquisitionFunnelsInfographic: React.FC<AcquisitionFunnelsInfograph
             </div>
 
             {/* Quick Flow Summary Strip */}
-            <div className="mt-5 p-3 rounded-[10px] bg-[#161616] border border-[#202020] flex flex-wrap items-center justify-between gap-3 text-xs text-[#fffdf9]/70">
+            <div className="mt-5 p-3 rounded-[12px] bg-[#10121a] border border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs text-[#fffdf9]/70">
               <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#2aff2a] shrink-0" />
+                <ShieldCheck className="w-4 h-4 text-blue-400 shrink-0" />
                 <span>
                   <strong>Strict Quality Control:</strong> Homeowners who rent, lack insurance, or request minor patchwork are automatically disqualified before the calendar opens.
                 </span>
               </div>
-              <span className="text-[#2aff2a] font-mono text-[11px] shrink-0">
+              <span className="text-blue-400 font-mono text-[11px] shrink-0 font-medium">
                 Performance Rule: $0 on No-Shows
               </span>
             </div>
@@ -252,13 +252,13 @@ export const AcquisitionFunnelsInfographic: React.FC<AcquisitionFunnelsInfograph
         {/* FUNNEL 2: Direct Response Click-to-Call Inbound Funnel               */}
         {/* ==================================================================== */}
         {(activeFunnel === 'both' || activeFunnel === 'funnel2') && (
-          <div className="rounded-[16px] bg-[#111111] border border-[#242424] p-6 sm:p-8 relative overflow-hidden shadow-2xl">
+          <div className="rounded-[22px] bg-[#0c0e17] border border-white/10 p-6 sm:p-8 relative overflow-hidden shadow-2xl backdrop-blur-xl">
             {/* Top Funnel Bar */}
-            <div className="flex flex-wrap items-center justify-between gap-4 pb-6 mb-6 border-b border-[#1f1f1f]">
+            <div className="flex flex-wrap items-center justify-between gap-4 pb-6 mb-6">
               <div>
                 <div className="inline-flex items-center gap-2 mb-1.5">
-                  <span className="w-2 h-2 rounded-full bg-[#38bdf8]" />
-                  <span className="text-[11px] uppercase tracking-wider text-[#38bdf8] font-display font-semibold">
+                  <span className="w-2 h-2 rounded-full bg-sky-400 shadow-[0_0_8px_rgba(56,189,248,0.8)]" />
+                  <span className="text-[11px] uppercase tracking-wider text-sky-400 font-display font-semibold">
                     FUNNEL 02 • DIRECT-CALL INBOUND PATH
                   </span>
                 </div>
@@ -269,7 +269,7 @@ export const AcquisitionFunnelsInfographic: React.FC<AcquisitionFunnelsInfograph
               <div className="flex items-center gap-3 text-xs text-[#6f879c]">
                 <span className="text-[#fffdf9] font-medium">Ideal For:</span>
                 <span>Active Leaks, Storm Damage & Urgent Inquiries</span>
-                <span className="px-2.5 py-0.5 rounded-full bg-[#181818] border border-[#2c2c2c] text-[#38bdf8] text-[10px] font-mono">
+                <span className="px-2.5 py-0.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-[10px] font-mono">
                   36% Avg Close Rate
                 </span>
               </div>
@@ -280,14 +280,14 @@ export const AcquisitionFunnelsInfographic: React.FC<AcquisitionFunnelsInfograph
               {funnel2Steps.map((step, idx) => {
                 const Icon = step.icon;
                 return (
-                  <div key={idx} className="relative flex flex-col justify-between p-4 rounded-[12px] bg-[#141414] border border-[#222222] hover:border-[#383838] transition-all group">
+                  <div key={idx} className="relative flex flex-col justify-between p-4 rounded-[14px] bg-[#10121a] border border-white/5 hover:border-sky-500/40 transition-all group">
                     <div>
                       {/* Step Number & Connector */}
                       <div className="flex items-center justify-between mb-3">
-                        <span className="text-[10px] font-mono font-bold text-[#6f879c] group-hover:text-[#38bdf8] transition-colors">
+                        <span className="text-[10px] font-mono font-bold text-[#6f879c] group-hover:text-sky-400 transition-colors">
                           STAGE {step.step}
                         </span>
-                        <div className="w-7 h-7 rounded-[8px] bg-[#1c1c1c] border border-[#2c2c2c] flex items-center justify-center text-[#fffdf9] group-hover:border-[#38bdf8]/50 group-hover:text-[#38bdf8] transition-colors">
+                        <div className="w-7 h-7 rounded-[8px] bg-[#161824] border border-white/10 flex items-center justify-center text-[#fffdf9] group-hover:border-sky-400/50 group-hover:text-sky-400 transition-colors">
                           <Icon className="w-3.5 h-3.5" />
                         </div>
                       </div>
@@ -296,7 +296,7 @@ export const AcquisitionFunnelsInfographic: React.FC<AcquisitionFunnelsInfograph
                       <h5 className="font-display text-sm font-semibold text-[#fffdf9] mb-1 leading-snug">
                         {step.title}
                       </h5>
-                      <span className="text-[10px] text-[#38bdf8] font-mono block mb-2">
+                      <span className="text-[10px] text-sky-400 font-mono block mb-2">
                         {step.badge}
                       </span>
 
@@ -307,7 +307,7 @@ export const AcquisitionFunnelsInfographic: React.FC<AcquisitionFunnelsInfograph
                     </div>
 
                     {/* Bottom Tag */}
-                    <div className="pt-2 border-t border-[#1f1f1f] flex items-center justify-between text-[10px] text-[#6f879c]">
+                    <div className="pt-2 flex items-center justify-between text-[10px] text-[#6f879c]">
                       <span>{step.tag}</span>
                       {idx < funnel2Steps.length - 1 && (
                         <ArrowRight className="w-3 h-3 text-[#3a3a3a] hidden md:block" />
@@ -319,14 +319,14 @@ export const AcquisitionFunnelsInfographic: React.FC<AcquisitionFunnelsInfograph
             </div>
 
             {/* Quick Flow Summary Strip */}
-            <div className="mt-5 p-3 rounded-[10px] bg-[#161616] border border-[#202020] flex flex-wrap items-center justify-between gap-3 text-xs text-[#fffdf9]/70">
+            <div className="mt-5 p-3 rounded-[12px] bg-[#10121a] border border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs text-[#fffdf9]/70">
               <div className="flex items-center gap-2">
-                <Zap className="w-4 h-4 text-[#38bdf8] shrink-0" />
+                <Zap className="w-4 h-4 text-sky-400 shrink-0" />
                 <span>
                   <strong>High-Speed Human Response:</strong> Inbound calls answered by specialized US-trained construction intake reps in under 3 rings to prevent homeowners from calling competitors.
                 </span>
               </div>
-              <span className="text-[#38bdf8] font-mono text-[11px] shrink-0">
+              <span className="text-sky-400 font-mono text-[11px] shrink-0 font-medium">
                 Instant Calendar Dispatch
               </span>
             </div>
