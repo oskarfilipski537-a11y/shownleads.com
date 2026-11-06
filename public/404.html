@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShownLeads</title>
+    <script>
+      // Single Page App redirect for static hosts that don't support native rewrites
+      var path = window.location.pathname;
+      var query = window.location.search;
+      var hash = window.location.hash;
+      window.location.replace('/#' + path.replace(/^\//, '') + (query ? query : '') + (hash ? hash : ''));
+    </script>
+  </head>
+  <body style="background-color: #07080c; color: #fff; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;">
+    <p>Redirecting to ShownLeads...</p>
+  </body>
+</html>

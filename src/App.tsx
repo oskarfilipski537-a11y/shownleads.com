@@ -43,7 +43,9 @@ function getInitialPage(): AppPage {
   if (typeof window !== 'undefined') {
     const path = window.location.pathname.replace(/^\//, '').toLowerCase();
     const hash = window.location.hash.replace(/^#\/?/, '').toLowerCase();
-    const candidate = path || hash;
+    const searchParams = new URLSearchParams(window.location.search);
+    const searchPage = (searchParams.get('p') || searchParams.get('page') || '').toLowerCase();
+    const candidate = path || hash || searchPage;
 
     if (candidate.startsWith('company')) return 'company';
     if (candidate.startsWith('lead-gen')) return 'lead-gen';
@@ -51,8 +53,8 @@ function getInitialPage(): AppPage {
     if (candidate.startsWith('our-companies') || candidate.startsWith('companies')) return 'our-companies';
     if (candidate.startsWith('our-services') || candidate.startsWith('services')) return 'our-services';
     if (candidate.startsWith('case-studies')) return 'case-studies';
-    if (candidate.startsWith('privacy')) return 'privacy-policy';
-    if (candidate.startsWith('terms') || candidate.startsWith('sms-terms')) return 'terms-and-conditions';
+    if (candidate.includes('privacy')) return 'privacy-policy';
+    if (candidate.includes('terms') || candidate.includes('condition')) return 'terms-and-conditions';
   }
   return 'home';
 }
