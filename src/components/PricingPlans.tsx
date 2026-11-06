@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { motion } from 'motion/react';
-import { Check, ArrowUpRight, Sparkles, ShieldCheck, Zap } from 'lucide-react';
+import React from 'react';
+import { Check, ArrowUpRight, Sparkles } from 'lucide-react';
 
 interface PricingPlansProps {
   onOpenQuiz?: () => void;
@@ -11,84 +10,81 @@ export const PricingPlans: React.FC<PricingPlansProps> = ({
   onOpenQuiz, 
   onTalkToSpecialist 
 }) => {
-  const [billingCycle, setBillingCycle] = useState<'monthly' | 'performance'>('monthly');
-
   return (
     <section 
       id="pricing-plans" 
-      className="relative py-28 sm:py-36 bg-[#07080c] overflow-hidden"
+      className="relative py-20 sm:py-28 lg:py-32 bg-[#07080c] overflow-hidden"
     >
-      {/* Framer Luminous Blue Radial Aura */}
-      <div className="absolute top-0 inset-x-0 h-[600px] pointer-events-none aurora-hero-glow -z-0 opacity-80" />
+      {/* Luminous Sapphire Radial Aura */}
+      <div className="absolute top-0 inset-x-0 h-[500px] pointer-events-none aurora-hero-glow -z-0 opacity-70" />
 
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         
-        {/* Section Header with Framer Serif Italic Accent */}
-        <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
-          <div className="mb-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-950/70 border border-blue-500/30 text-blue-300 text-xs font-sans font-medium">
+        {/* Section Header */}
+        <div className="max-w-2xl mx-auto text-center mb-10 sm:mb-14">
+          <div className="mb-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-sans font-medium">
             <Sparkles className="w-3.5 h-3.5 text-blue-400" />
-            <span className="uppercase tracking-widest text-[11px]">Investment &amp; Engagement Models</span>
+            <span className="uppercase tracking-wider text-[11px]">Simple Pricing</span>
           </div>
 
-          <h2 className="font-heading uppercase text-4xl sm:text-6xl lg:text-[4rem] text-[#fffdf9] font-normal tracking-[0.02em] mb-5 leading-tight">
+          <h2 className="font-heading uppercase text-3xl sm:text-5xl lg:text-[3.5rem] text-[#fffdf9] font-normal tracking-[0.02em] mb-3 leading-tight">
             Pricing{' '}
             <span className="font-serif italic font-normal text-blue-400 tracking-normal normal-case">
               Plans
             </span>
           </h2>
 
-          <p className="font-sans text-base sm:text-lg text-[#fffdf9]/80 font-normal max-w-xl mx-auto leading-relaxed">
-            Choose between pay-per-sit appointments or our all-inclusive comprehensive market leader growth partnership.
+          <p className="font-sans text-sm sm:text-base text-[#fffdf9]/75 font-normal max-w-md mx-auto leading-relaxed">
+            Pay only for shown appointments, or get everything done for you in our growth system.
           </p>
         </div>
 
-        {/* The 3 Pricing Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+        {/* The 3 Pricing Cards Grid - Super Optimized for Mobile & Desktop */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 max-w-6xl mx-auto items-stretch">
           
-          {/* Card 1: Option 1 - Qualified Shown Appointment */}
-          <div className="rounded-3xl bg-[#0c0e17]/85 border border-white/[0.08] hover:border-white/20 p-8 sm:p-9 flex flex-col justify-between backdrop-blur-md transition-all duration-300 shadow-xl">
+          {/* Card 1: Option 1 - $97 Qualified Shown Sit */}
+          <div className="rounded-[22px] sm:rounded-3xl bg-[#0c0e17]/90 border border-white/10 hover:border-white/20 p-6 sm:p-8 flex flex-col justify-between backdrop-blur-md transition-all duration-300 shadow-lg">
             <div>
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-sans uppercase tracking-widest text-gray-400 font-semibold">
-                  Starter / Option 1
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-[11px] font-sans uppercase tracking-wider text-gray-400 font-semibold">
+                  Option 1
                 </span>
-                <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-white/[0.05] text-gray-300 border border-white/[0.08]">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-white/[0.05] text-gray-300 border border-white/10">
                   Pay-Per-Sit
                 </span>
               </div>
 
-              <h3 className="font-heading uppercase text-2xl sm:text-3xl text-[#fffdf9] tracking-wide mb-2">
+              <h3 className="font-heading uppercase text-xl sm:text-2xl text-[#fffdf9] tracking-wide mb-1.5">
                 Qualified Shown Appointment
               </h3>
 
-              <p className="font-sans text-xs text-gray-400 mb-6 leading-relaxed">
-                Direct pay-per-appointment model for contractors who only want pre-vetted homeowner sits without broader scaling infrastructure.
+              <p className="font-sans text-xs text-gray-400 mb-5 leading-relaxed">
+                Pay only when a real homeowner shows up for an estimate.
               </p>
 
               {/* Price Display */}
-              <div className="mb-6 pb-6 border-b border-white/[0.08]">
-                <div className="flex items-baseline gap-1">
-                  <span className="font-heading text-4xl sm:text-5xl text-[#fffdf9]">$97</span>
-                  <span className="font-sans text-xs text-gray-400 uppercase tracking-wider">/ Shown Appointment</span>
+              <div className="mb-5 pb-5 border-b border-white/10">
+                <div className="flex items-baseline gap-1.5">
+                  <span className="font-heading text-4xl sm:text-5xl text-[#fffdf9] font-normal">$97</span>
+                  <span className="font-sans text-xs text-gray-400 uppercase tracking-wider">/ Shown Sit</span>
                 </div>
-                <div className="text-[11px] font-mono text-gray-400 mt-2">
-                  • Ad spend funded separately by contractor<br />
-                  • Standard replacement credits if homeowner fails to attend
+                <div className="text-[11px] text-gray-400 font-sans mt-1">
+                  Pay $0 if the homeowner no-shows.
                 </div>
               </div>
 
-              {/* Feature List */}
-              <div className="space-y-3 mb-8">
+              {/* Simplified Feature List (8-year-old readable) */}
+              <div className="space-y-2.5 mb-6">
                 {[
-                  "Single-family homeowner verification",
-                  "Confirmed project scope and intent",
-                  "Automated calendar booking into your route",
-                  "SMS & email attendance reminders",
-                  "Show-up guarantee (no charge on verified no-show)",
-                  "No long-term retainer commitment"
+                  "Real homeowners only",
+                  "Ready for attic insulation work",
+                  "Booked straight to your calendar",
+                  "Text and email reminders sent",
+                  "Pay $0 if they don't show up",
+                  "No long-term contract"
                 ].map((feat, idx) => (
-                  <div key={idx} className="flex items-start gap-2.5 text-xs text-gray-300 font-sans">
-                    <Check className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                  <div key={idx} className="flex items-center gap-2.5 text-xs text-gray-300 font-sans">
+                    <Check className="w-4 h-4 text-blue-400 shrink-0" />
                     <span>{feat}</span>
                   </div>
                 ))}
@@ -97,76 +93,57 @@ export const PricingPlans: React.FC<PricingPlansProps> = ({
 
             <button
               onClick={onOpenQuiz}
-              className="w-full py-4 rounded-2xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/[0.12] text-white font-sans text-xs uppercase tracking-widest font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer"
+              className="w-full py-3 sm:py-3.5 rounded-full bg-white text-black font-sans text-xs uppercase tracking-wider font-semibold flex items-center justify-center gap-2 hover:bg-gray-100 transition-all cursor-pointer shadow-md"
             >
               <span>GET STARTED</span>
               <ArrowUpRight className="w-4 h-4" />
             </button>
           </div>
 
-          {/* Card 2 (Center - Highlighted): The Market Leader Growth System ($8,150/mo) */}
-          <div className="relative rounded-3xl bg-gradient-to-b from-[#0f172a] via-[#0b1021] to-[#070a14] border-2 border-[#2563eb] p-8 sm:p-9 flex flex-col justify-between backdrop-blur-xl shadow-[0_0_60px_rgba(37,99,235,0.35)] lg:-translate-y-4 transition-all duration-300">
-            {/* "MOST POPULAR" Pill Badge */}
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#2563eb] text-white text-[11px] uppercase font-sans font-bold tracking-widest shadow-md flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>MOST POPULAR • FULL PARTNERSHIP</span>
-            </div>
-
+          {/* Card 2: The Market Leader Growth System ($8,150/mo) - Highlighted */}
+          <div className="relative rounded-[22px] sm:rounded-3xl bg-gradient-to-b from-[#10172a] via-[#0b1021] to-[#070a14] border-2 border-blue-500 p-6 sm:p-8 flex flex-col justify-between backdrop-blur-xl shadow-[0_0_40px_rgba(37,99,235,0.25)] transition-all duration-300">
             <div>
-              <div className="flex items-center justify-between mb-4 pt-1">
-                <span className="text-xs font-sans uppercase tracking-widest text-blue-400 font-semibold">
-                  Comprehensive Growth Partnership
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-[11px] font-sans uppercase tracking-wider text-blue-400 font-semibold">
+                  Growth System
                 </span>
-                <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-300 border border-blue-400/30">
-                  Ad Spend Included
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 border border-blue-400/30 font-medium">
+                  All-In-One
                 </span>
               </div>
 
-              <h3 className="font-heading uppercase text-2xl sm:text-3xl text-[#fffdf9] tracking-wide mb-2">
+              <h3 className="font-heading uppercase text-xl sm:text-2xl text-[#fffdf9] tracking-wide mb-1.5">
                 The Market Leader Growth System
               </h3>
 
-              <p className="font-sans text-xs text-blue-200/80 mb-6 leading-relaxed">
-                Our flagship all-inclusive growth partnership: customer acquisition, recruitment funnels, proprietary AI estimator tool, and scalable CRM infrastructure.
+              <p className="font-sans text-xs text-blue-200/80 mb-5 leading-relaxed">
+                Everything you need to grow your attic insulation business.
               </p>
 
               {/* Price Display */}
-              <div className="mb-6 pb-6 border-b border-white/[0.12]">
-                <div className="flex items-baseline gap-1">
-                  <span className="font-heading text-4xl sm:text-5xl text-[#fffdf9]">$8,150</span>
+              <div className="mb-5 pb-5 border-b border-white/10">
+                <div className="flex items-baseline gap-1.5">
+                  <span className="font-heading text-4xl sm:text-5xl text-[#fffdf9] font-normal">$8,150</span>
                   <span className="font-sans text-xs text-blue-300 uppercase tracking-wider">/ Month</span>
                 </div>
-                
-                {/* 2-Stage Payment Structure */}
-                <div className="mt-3 p-3 rounded-xl bg-blue-950/60 border border-blue-500/30 text-left">
-                  <div className="text-[11px] font-semibold text-blue-300 uppercase tracking-wider mb-1">
-                    Two-Stage Split Implementation:
-                  </div>
-                  <div className="text-[11px] font-sans text-gray-300 space-y-1">
-                    <div>• <strong>50% upfront: $4,075</strong> to begin onboarding, planning, and infrastructure development.</div>
-                    <div>• <strong>50%: $4,075</strong> when campaigns are live and agreed infrastructure has been built.</div>
-                    <div className="text-[10px] text-blue-300/90 font-mono mt-1 pt-1 border-t border-blue-500/20">
-                      Zero setup fee. Advertising spend is included.
-                    </div>
-                  </div>
+                <div className="text-[11px] text-blue-300/90 font-sans mt-1">
+                  Advertising costs are already included.
                 </div>
               </div>
 
-              {/* Feature List */}
-              <div className="space-y-3 mb-8">
+              {/* Simplified Feature List */}
+              <div className="space-y-2.5 mb-6">
                 {[
-                  "Advertising spend INCLUDED in package price",
-                  "Multi-channel ads: Meta (FB & IG), local media & news",
-                  "Recruitment & Workforce Expansion: Installer hiring funnels",
-                  "Candidate pre-screening forms & applicant pipeline",
-                  "Proprietary AI Estimator Tool: 2-minute instant homeowner quote",
-                  "Full CRM, pipeline tracking & multi-touch SMS automation",
-                  "Dedicated senior account strategist & weekly performance reviews",
-                  "Strict 1-contractor territory lock per city"
+                  "Advertising through Meta, ChatGPT, local radio, and news articles.",
+                  "Recruitments",
+                  "Fast 2-minute online estimate tool",
+                  "Automatic text and email follow-ups",
+                  "Weekly updates with your team lead",
+                  "Only 1 company per city (no competitors)"
                 ].map((feat, idx) => (
-                  <div key={idx} className="flex items-start gap-2.5 text-xs text-gray-200 font-sans">
+                  <div key={idx} className="flex items-start gap-2.5 text-xs text-white font-sans">
                     <Check className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
-                    <span className={idx < 5 ? "font-medium text-white" : ""}>{feat}</span>
+                    <span className={idx < 2 ? "font-semibold text-white" : "text-gray-200"}>{feat}</span>
                   </div>
                 ))}
               </div>
@@ -174,57 +151,56 @@ export const PricingPlans: React.FC<PricingPlansProps> = ({
 
             <button
               onClick={onTalkToSpecialist || onOpenQuiz}
-              className="w-full py-4 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-sans text-xs uppercase tracking-widest font-bold flex items-center justify-center gap-2 transition-all cursor-pointer shadow-[0_0_30px_rgba(37,99,235,0.5)] hover:scale-[1.02] active:scale-[0.98]"
+              className="w-full py-3.5 sm:py-4 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-sans text-xs uppercase tracking-wider font-bold flex items-center justify-center gap-2 transition-all cursor-pointer shadow-[0_0_25px_rgba(37,99,235,0.4)] hover:scale-[1.02] active:scale-[0.98]"
             >
-              <span>APPLY FOR MARKET LEADER PARTNERSHIP</span>
+              <span>APPLY FOR GROWTH PARTNERSHIP</span>
               <ArrowUpRight className="w-4 h-4" />
             </button>
           </div>
 
-          {/* Card 3: Option 2 - Price-Educated Shown Appointment */}
-          <div className="rounded-3xl bg-[#0c0e17]/85 border border-white/[0.08] hover:border-white/20 p-8 sm:p-9 flex flex-col justify-between backdrop-blur-md transition-all duration-300 shadow-xl">
+          {/* Card 3: Option 2 - $197 Price-Educated Shown Sit */}
+          <div className="rounded-[22px] sm:rounded-3xl bg-[#0c0e17]/90 border border-white/10 hover:border-white/20 p-6 sm:p-8 flex flex-col justify-between backdrop-blur-md transition-all duration-300 shadow-lg">
             <div>
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-sans uppercase tracking-widest text-gray-400 font-semibold">
-                  Premium Sit / Option 2
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-[11px] font-sans uppercase tracking-wider text-gray-400 font-semibold">
+                  Option 2
                 </span>
-                <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-white/[0.05] text-gray-300 border border-white/[0.08]">
-                  Price-Conditioned
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-white/[0.05] text-gray-300 border border-white/10">
+                  Price-Educated
                 </span>
               </div>
 
-              <h3 className="font-heading uppercase text-2xl sm:text-3xl text-[#fffdf9] tracking-wide mb-2">
-                Price-Educated Shown Appointment
+              <h3 className="font-heading uppercase text-xl sm:text-2xl text-[#fffdf9] tracking-wide mb-1.5">
+                Price-Educated Shown Sit
               </h3>
 
-              <p className="font-sans text-xs text-gray-400 mb-6 leading-relaxed">
-                Enhanced pay-per-sit model with deep US call-center pre-conditioning to ensure homeowners understand investment levels before you drive out.
+              <p className="font-sans text-xs text-gray-400 mb-5 leading-relaxed">
+                We call homeowners first and make sure they know your prices before you visit.
               </p>
 
               {/* Price Display */}
-              <div className="mb-6 pb-6 border-b border-white/[0.08]">
-                <div className="flex items-baseline gap-1">
-                  <span className="font-heading text-4xl sm:text-5xl text-[#fffdf9]">$197</span>
-                  <span className="font-sans text-xs text-gray-400 uppercase tracking-wider">/ Shown Appointment</span>
+              <div className="mb-5 pb-5 border-b border-white/10">
+                <div className="flex items-baseline gap-1.5">
+                  <span className="font-heading text-4xl sm:text-5xl text-[#fffdf9] font-normal">$197</span>
+                  <span className="font-sans text-xs text-gray-400 uppercase tracking-wider">/ Shown Sit</span>
                 </div>
-                <div className="text-[11px] font-mono text-gray-400 mt-2">
-                  • + $197 one-time onboarding and qualification setup fee<br />
-                  • Ad spend funded separately by contractor
+                <div className="text-[11px] text-gray-400 font-sans mt-1">
+                  Pay $0 if the homeowner no-shows.
                 </div>
               </div>
 
-              {/* Feature List */}
-              <div className="space-y-3 mb-8">
+              {/* Simplified Feature List (8-year-old readable) */}
+              <div className="space-y-2.5 mb-6">
                 {[
-                  "Dedicated US call setter phone screening",
-                  "Homeowners educated on insulation budget ranges",
-                  "Vetted for homeowner presence & decision-maker attendance",
-                  "Direct calendar dispatch to estimator route",
-                  "Replacement credits if homeowner fails to attend",
-                  "Audio recording of screening call provided"
+                  "We call every homeowner first",
+                  "They know your prices before you visit",
+                  "Both decision-makers must be home",
+                  "Booked straight to your calendar",
+                  "Pay $0 if they don't show up",
+                  "Listen to the call recording"
                 ].map((feat, idx) => (
-                  <div key={idx} className="flex items-start gap-2.5 text-xs text-gray-300 font-sans">
-                    <Check className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                  <div key={idx} className="flex items-center gap-2.5 text-xs text-gray-300 font-sans">
+                    <Check className="w-4 h-4 text-blue-400 shrink-0" />
                     <span>{feat}</span>
                   </div>
                 ))}
@@ -233,7 +209,7 @@ export const PricingPlans: React.FC<PricingPlansProps> = ({
 
             <button
               onClick={onOpenQuiz}
-              className="w-full py-4 rounded-2xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/[0.12] text-white font-sans text-xs uppercase tracking-widest font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer"
+              className="w-full py-3 sm:py-3.5 rounded-full bg-white text-black font-sans text-xs uppercase tracking-wider font-semibold flex items-center justify-center gap-2 hover:bg-gray-100 transition-all cursor-pointer shadow-md"
             >
               <span>GET STARTED</span>
               <ArrowUpRight className="w-4 h-4" />
@@ -242,10 +218,10 @@ export const PricingPlans: React.FC<PricingPlansProps> = ({
 
         </div>
 
-        {/* Footnote on Scope & Differences */}
-        <div className="max-w-3xl mx-auto mt-12 text-center text-xs text-gray-400 font-sans leading-relaxed">
+        {/* Clean, Simple Footnote */}
+        <div className="max-w-xl mx-auto mt-8 sm:mt-10 text-center text-xs text-gray-400 font-sans">
           <p>
-            *The lower-priced $97 and $197 options provide qualified homeowner appointments on a pay-per-shown-appointment basis. The Market Leader Growth System ($8,150/mo) is a comprehensive growth partnership combining customer acquisition (ad spend included), workforce recruitment funnels, proprietary AI estimator integration, and enterprise CRM infrastructure.
+            You only pay when a real homeowner sits down with your team. Zero long-term contracts.
           </p>
         </div>
 

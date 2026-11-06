@@ -140,10 +140,10 @@ export const AppointmentsPage: React.FC<AppointmentsPageProps> = ({
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* TIER 1: Qualified Shown Appointment ($97) */}
-            <div className="p-7 rounded-[16px] bg-[#121316] border border-[#26282e] hover:border-[#403f3f] transition-all flex flex-col justify-between space-y-6">
+            <div className="p-7 rounded-[22px] bg-[#0c0e17] border border-white/10 hover:border-white/20 transition-all flex flex-col justify-between space-y-6">
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="px-2.5 py-1 rounded-[4px] bg-[#17191d] border border-[#2c2f36] text-[11px] uppercase tracking-wider text-[#8e9aa8] font-sans font-medium">
+                  <span className="px-2.5 py-1 rounded-full bg-white/[0.05] border border-white/10 text-[11px] uppercase tracking-wider text-gray-400 font-sans font-medium">
                     Option 1
                   </span>
                   <span className="text-xs text-blue-400 font-sans font-semibold">Pay-Per-Sit</span>
@@ -156,22 +156,26 @@ export const AppointmentsPage: React.FC<AppointmentsPageProps> = ({
                   $97 <span className="text-xs font-sans text-[#8e9aa8]">/ Shown Sit</span>
                 </div>
 
-                <p className="font-sans text-xs text-[#8e9aa8] leading-relaxed mt-4">
-                  For contractors seeking qualified homeowner estimate appointments without broader scaling infrastructure. Ad spend funded separately.
+                <p className="font-sans text-xs text-[#8e9aa8] leading-relaxed mt-3">
+                  Pay only when a real homeowner shows up for an estimate.
                 </p>
 
-                <ul className="space-y-3 text-xs text-[#fffdf9]/90 font-sans border-t border-[#22242a] pt-5 mt-6">
+                <ul className="space-y-2.5 text-xs text-[#fffdf9]/90 font-sans border-t border-white/10 pt-5 mt-5">
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
-                    <span>Single-family homeowner verification</span>
+                    <span>Real homeowners only</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
-                    <span>Direct calendar booking into your route</span>
+                    <span>Ready for attic insulation work</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
-                    <span>Replacement credit on verified no-show</span>
+                    <span>Booked straight to your calendar</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
+                    <span>Pay $0 if they don't show up</span>
                   </li>
                 </ul>
               </div>
@@ -185,14 +189,10 @@ export const AppointmentsPage: React.FC<AppointmentsPageProps> = ({
             </div>
 
             {/* TIER 2: The Market Leader Growth System ($8,150/mo) - Highlighted */}
-            <div className="p-7 rounded-[22px] bg-gradient-to-b from-[#0f172a] to-[#0a0d18] border-2 border-blue-500 shadow-[0_12px_50px_rgba(37,99,235,0.35)] flex flex-col justify-between space-y-6 relative md:-translate-y-3">
-              <div className="absolute -top-3 right-6 px-3.5 py-1 rounded-full bg-blue-600 text-white text-[10px] uppercase font-mono font-bold tracking-wider shadow-lg">
-                Most Popular • Growth Partnership
-              </div>
-
+            <div className="p-7 rounded-[22px] bg-gradient-to-b from-[#0f172a] via-[#0b1021] to-[#070a14] border-2 border-blue-500 shadow-[0_12px_50px_rgba(37,99,235,0.35)] flex flex-col justify-between space-y-6 relative">
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="px-2.5 py-1 rounded-full bg-blue-950 border border-blue-400/40 text-[11px] uppercase tracking-wider text-blue-300 font-mono font-semibold">
+                  <span className="px-2.5 py-1 rounded-full bg-blue-500/20 border border-blue-400/40 text-[11px] uppercase tracking-wider text-blue-300 font-mono font-semibold">
                     The Market Leader System
                   </span>
                   <span className="text-xs text-blue-300 font-sans font-semibold">All-Inclusive</span>
@@ -205,48 +205,47 @@ export const AppointmentsPage: React.FC<AppointmentsPageProps> = ({
                   $8,150 <span className="text-xs font-sans text-gray-400">/ Month</span>
                 </div>
 
-                <p className="font-sans text-xs text-blue-200/90 leading-relaxed mt-4">
-                  Coordinated customer acquisition (ad spend included), workforce recruitment funnels, proprietary AI estimator, and CRM infrastructure.
+                <p className="font-sans text-xs text-blue-200/90 leading-relaxed mt-3">
+                  Everything you need to grow your attic insulation business.
                 </p>
 
-                <div className="p-3 rounded-xl bg-blue-950/70 border border-blue-500/20 text-[11px] font-sans text-gray-300 mt-4 space-y-1">
-                  <div>• <strong>50% upfront: $4,075</strong> (onboarding &amp; setup)</div>
-                  <div>• <strong>50%: $4,075</strong> upon campaign launch &amp; infrastructure build</div>
-                </div>
-
-                <ul className="space-y-2.5 text-xs text-[#fffdf9] font-sans border-t border-blue-500/20 pt-4 mt-4">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
-                    <span><strong>Ad spend included</strong> in monthly package</span>
+                <ul className="space-y-2.5 text-xs text-white font-sans border-t border-blue-500/20 pt-5 mt-5">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                    <span>Advertising through Meta, ChatGPT, local radio, and news articles.</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
-                    <span>Installer recruitment &amp; hiring funnels</span>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                    <span>Recruitments</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
-                    <span>Proprietary AI Estimator Tool integration</span>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                    <span>Fast 2-minute online estimate tool</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
-                    <span>Exclusive single-contractor city lock</span>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                    <span>Automatic text and email follow-ups</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                    <span>Only 1 company per city (no competitors)</span>
                   </li>
                 </ul>
               </div>
 
               <button
                 onClick={onOpenSpecialist || onOpenQuiz}
-                className="w-full py-4 rounded-full bg-white text-black hover:bg-gray-100 text-xs font-sans uppercase tracking-wider font-bold shadow-[0_0_25px_rgba(255,255,255,0.3)] transition-all hover:scale-[1.02]"
+                className="w-full py-4 rounded-full bg-blue-600 hover:bg-blue-500 text-white text-xs font-sans uppercase tracking-wider font-bold shadow-[0_0_25px_rgba(37,99,235,0.4)] transition-all hover:scale-[1.02]"
               >
                 Apply for Growth Partnership ↗
               </button>
             </div>
 
             {/* TIER 3: Price-Educated Shown Appointment ($197) */}
-            <div className="p-7 rounded-[16px] bg-[#121316] border border-[#26282e] hover:border-[#403f3f] transition-all flex flex-col justify-between space-y-6">
+            <div className="p-7 rounded-[22px] bg-[#0c0e17] border border-white/10 hover:border-white/20 transition-all flex flex-col justify-between space-y-6">
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="px-2.5 py-1 rounded-[4px] bg-[#17191d] border border-[#2c2f36] text-[11px] uppercase tracking-wider text-[#8e9aa8] font-sans font-medium">
+                  <span className="px-2.5 py-1 rounded-full bg-white/[0.05] border border-white/10 text-[11px] uppercase tracking-wider text-gray-400 font-sans font-medium">
                     Option 2
                   </span>
                   <span className="text-xs text-blue-400 font-sans font-semibold">Price-Educated</span>
@@ -259,22 +258,26 @@ export const AppointmentsPage: React.FC<AppointmentsPageProps> = ({
                   $197 <span className="text-xs font-sans text-[#8e9aa8]">/ Shown Sit</span>
                 </div>
 
-                <p className="font-sans text-xs text-[#8e9aa8] leading-relaxed mt-4">
-                  For contractors wanting deep US call-center pre-conditioning to ensure homeowners understand insulation budget ranges before arrival.
+                <p className="font-sans text-xs text-[#8e9aa8] leading-relaxed mt-3">
+                  We call homeowners first and make sure they know your prices before you visit.
                 </p>
 
-                <ul className="space-y-3 text-xs text-[#fffdf9]/90 font-sans border-t border-[#22242a] pt-5 mt-6">
+                <ul className="space-y-2.5 text-xs text-[#fffdf9]/90 font-sans border-t border-white/10 pt-5 mt-5">
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
-                    <span>US call setter screening &amp; price-conditioning</span>
+                    <span>We call every homeowner first</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
-                    <span>Both decision-makers verified present</span>
+                    <span>They know your prices ahead of time</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
-                    <span>$197 one-time setup fee; ad spend separate</span>
+                    <span>Both decision-makers must be home</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
+                    <span>Pay $0 if they don't show up</span>
                   </li>
                 </ul>
               </div>

@@ -378,6 +378,23 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </div>
               </div>
 
+              {/* Legal Links in Mobile Drawer */}
+              <div className="pt-2 flex items-center justify-center gap-3 text-[11px] font-sans text-[#7e8c9d]">
+                <button 
+                  onClick={() => handleNavClick('privacy-policy')} 
+                  className="hover:text-white transition-colors cursor-pointer"
+                >
+                  Privacy Policy
+                </button>
+                <span>•</span>
+                <button 
+                  onClick={() => handleNavClick('terms-and-conditions')} 
+                  className="hover:text-white transition-colors cursor-pointer"
+                >
+                  SMS Terms &amp; Conditions
+                </button>
+              </div>
+
               <div className="pt-2 border-t border-[#26282e]">
                 <button
                   onClick={() => {

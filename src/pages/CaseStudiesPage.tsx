@@ -76,8 +76,8 @@ export const CaseStudiesPage: React.FC<CaseStudiesPageProps> = ({
 
   const filteredStudies = TESTIMONIALS_DATA.filter((item) => {
     if (selectedCategory === 'all') return true;
-    if (selectedCategory === 'contracting') return item.id === 'cashel-home-improvement';
-    if (selectedCategory === 'academy') return item.id === 'beauty-no8';
+    if (selectedCategory === 'partner') return item.category === 'partner';
+    if (selectedCategory === 'dispatch') return item.category === 'dispatch';
     return true;
   });
 
@@ -112,80 +112,99 @@ export const CaseStudiesPage: React.FC<CaseStudiesPageProps> = ({
         </div>
 
         {/* Hero Section */}
-        <div className="max-w-4xl mx-auto text-center mb-14 sm:mb-20">
+        <div className="max-w-4xl mx-auto text-center mb-12 sm:mb-16">
           <div className="mb-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
             <span className="text-[11px] uppercase tracking-[0.14em] text-blue-200 font-mono font-medium">
-              Client Transformations • 100% Performance Model
+              VERIFIED CONTRACTOR RESULTS • ZERO RETAINERS
             </span>
           </div>
 
-          <h1 className="font-heading uppercase text-3xl sm:text-5xl lg:text-6xl text-[#fffdf9] font-normal tracking-[0.02em] mb-5 leading-[1.04]">
+          <h1 className="font-heading uppercase text-3xl sm:text-5xl lg:text-6xl text-[#fffdf9] font-normal tracking-[0.02em] mb-4 leading-[1.04]">
             PROVEN RESULTS <br className="hidden sm:inline" />
-            <span className="text-blue-400 font-serif italic lowercase tracking-normal">&amp; client case studies</span>
+            <span className="text-blue-400 font-serif italic lowercase tracking-normal">&amp; real contractor stories</span>
           </h1>
 
           <p className="font-sans text-sm sm:text-base lg:text-lg text-gray-300 font-normal max-w-2xl mx-auto leading-relaxed mb-8">
-            Real customer acquisition metrics across home contracting and vocational training academies. Zero retainers, 100% fixed performance basis.
+            Real metrics from contractors in their first 30 days on our pay-per-estimate dispatch system. Zero retainers, 100% verified homeowner sits.
           </p>
 
           {/* Quick Aggregate Stats Bar */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 rounded-[18px] bg-[#0c0e17] border border-white/10 max-w-3xl mx-auto text-left shadow-lg">
             <div className="p-2.5">
-              <div className="font-display text-xl sm:text-2xl text-blue-400 leading-tight">25,000+</div>
-              <div className="text-[11px] uppercase tracking-wider text-gray-400 font-mono mt-0.5">Qualified Leads Delivered</div>
+              <div className="font-display text-xl sm:text-2xl text-blue-400 leading-tight">$800k+</div>
+              <div className="text-[11px] uppercase tracking-wider text-gray-400 font-mono mt-0.5">Closed Revenue</div>
             </div>
             <div className="p-2.5 border-l border-white/10">
-              <div className="font-display text-xl sm:text-2xl text-white leading-tight">$3,000 2x/Wk</div>
-              <div className="text-[11px] uppercase tracking-wider text-gray-400 font-mono mt-0.5">Contractor Invoices</div>
+              <div className="font-display text-xl sm:text-2xl text-white leading-tight">115+</div>
+              <div className="text-[11px] uppercase tracking-wider text-gray-400 font-mono mt-0.5">Shown Estimates</div>
             </div>
             <div className="p-2.5 border-t sm:border-t-0 sm:border-l border-white/10">
-              <div className="font-display text-xl sm:text-2xl text-white leading-tight">15 Active</div>
-              <div className="text-[11px] uppercase tracking-wider text-gray-400 font-mono mt-0.5">Academy Enrollments</div>
+              <div className="font-display text-xl sm:text-2xl text-white leading-tight">35%</div>
+              <div className="text-[11px] uppercase tracking-wider text-gray-400 font-mono mt-0.5">Average Close Rate</div>
             </div>
             <div className="p-2.5 border-t sm:border-t-0 sm:border-l border-white/10">
-              <div className="font-display text-xl sm:text-2xl text-blue-400 leading-tight">$0 Retainer</div>
-              <div className="text-[11px] uppercase tracking-wider text-gray-400 font-mono mt-0.5">Zero Agency Retainers</div>
+              <div className="font-display text-xl sm:text-2xl text-blue-400 leading-tight">$0</div>
+              <div className="text-[11px] uppercase tracking-wider text-gray-400 font-mono mt-0.5">Agency Retainers</div>
             </div>
           </div>
         </div>
 
-        {/* Filter Categories */}
-        <div className="flex items-center justify-center gap-2 mb-10 overflow-x-auto pb-2">
-          <button
-            onClick={() => setSelectedCategory('all')}
-            className={`px-4 py-2 rounded-full text-xs uppercase tracking-[0.08em] font-sans font-medium transition-all cursor-pointer ${
-              selectedCategory === 'all'
-                ? 'bg-white text-black shadow-sm font-semibold'
-                : 'bg-[#14161a] text-gray-400 border border-white/10 hover:text-white'
-            }`}
-          >
-            All Case Studies ({TESTIMONIALS_DATA.length})
-          </button>
-          <button
-            onClick={() => setSelectedCategory('contracting')}
-            className={`px-4 py-2 rounded-full text-xs uppercase tracking-[0.08em] font-sans font-medium transition-all cursor-pointer ${
-              selectedCategory === 'contracting'
-                ? 'bg-white text-black shadow-sm font-semibold'
-                : 'bg-[#14161a] text-gray-400 border border-white/10 hover:text-white'
-            }`}
-          >
-            Painting &amp; Home Improvement (1)
-          </button>
-          <button
-            onClick={() => setSelectedCategory('academy')}
-            className={`px-4 py-2 rounded-full text-xs uppercase tracking-[0.08em] font-sans font-medium transition-all cursor-pointer ${
-              selectedCategory === 'academy'
-                ? 'bg-white text-black shadow-sm font-semibold'
-                : 'bg-[#14161a] text-gray-400 border border-white/10 hover:text-white'
-            }`}
-          >
-            Beauty &amp; Training Academy (1)
-          </button>
+        {/* Filter Categories Pill Capsule */}
+        <div className="flex items-center justify-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-1.5 p-1.5 rounded-full bg-[#0c0e17]/95 border border-white/10 shadow-xl backdrop-blur-xl overflow-x-auto max-w-full">
+            <button
+              onClick={() => setSelectedCategory('all')}
+              className={`px-4 sm:px-5 py-2 rounded-full text-xs uppercase tracking-[0.08em] font-sans transition-all cursor-pointer flex items-center gap-2 shrink-0 ${
+                selectedCategory === 'all'
+                  ? 'bg-white text-black font-semibold shadow-md'
+                  : 'text-gray-400 hover:text-white hover:bg-white/5'
+              }`}
+            >
+              <span>All Case Studies</span>
+              <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-full ${
+                selectedCategory === 'all' ? 'bg-black/10 text-black' : 'bg-white/10 text-gray-300'
+              }`}>
+                {TESTIMONIALS_DATA.length}
+              </span>
+            </button>
+
+            <button
+              onClick={() => setSelectedCategory('partner')}
+              className={`px-4 sm:px-5 py-2 rounded-full text-xs uppercase tracking-[0.08em] font-sans transition-all cursor-pointer flex items-center gap-2 shrink-0 ${
+                selectedCategory === 'partner'
+                  ? 'bg-white text-black font-semibold shadow-md'
+                  : 'text-gray-400 hover:text-white hover:bg-white/5'
+              }`}
+            >
+              <span>Verified Partners</span>
+              <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-full ${
+                selectedCategory === 'partner' ? 'bg-black/10 text-black' : 'bg-white/10 text-gray-300'
+              }`}>
+                4
+              </span>
+            </button>
+
+            <button
+              onClick={() => setSelectedCategory('dispatch')}
+              className={`px-4 sm:px-5 py-2 rounded-full text-xs uppercase tracking-[0.08em] font-sans transition-all cursor-pointer flex items-center gap-2 shrink-0 ${
+                selectedCategory === 'dispatch'
+                  ? 'bg-white text-black font-semibold shadow-md'
+                  : 'text-gray-400 hover:text-white hover:bg-white/5'
+              }`}
+            >
+              <span>WhatsApp Dispatches</span>
+              <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-full ${
+                selectedCategory === 'dispatch' ? 'bg-black/10 text-black' : 'bg-white/10 text-gray-300'
+              }`}>
+                3
+              </span>
+            </button>
+          </div>
         </div>
 
-        {/* Case Studies Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-20">
+        {/* Super-Optimised Case Studies Grid Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto mb-20">
           {filteredStudies.map((item) => (
             <article
               key={item.id}
@@ -199,96 +218,128 @@ export const CaseStudiesPage: React.FC<CaseStudiesPageProps> = ({
                 }
               }}
               aria-label={`Open case study for ${item.company}`}
-              className="group relative flex flex-col justify-between p-7 sm:p-9 rounded-[16px] bg-[#121316] border border-[#26282e] hover:border-[#fffdf9]/40 hover:-translate-y-1 transition-all duration-300 shadow-[0_12px_32px_-8px_rgba(0,0,0,0.7)] cursor-pointer select-none"
+              className="group relative flex flex-col justify-between p-6 sm:p-8 rounded-[24px] bg-gradient-to-b from-[#0e111d]/95 to-[#080a11]/98 border border-white/[0.08] hover:border-blue-500/50 hover:shadow-[0_20px_50px_-12px_rgba(37,99,235,0.25)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer overflow-hidden backdrop-blur-xl select-none"
             >
-              {/* Top Hairline Rim Highlight */}
-              <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-[#fffdf9]/20 to-transparent pointer-events-none" />
+              {/* Top Hairline Glow Rim */}
+              <div className="absolute inset-x-0 -top-px h-[2px] bg-gradient-to-r from-transparent via-blue-500/60 to-transparent pointer-events-none opacity-70 group-hover:opacity-100 transition-opacity" />
 
-              <div className="space-y-6">
-                {/* Header: Clean Logo Presentation & Meta Tags */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-white/[0.06]">
-                  {/* Clean Minimalist Logo Container */}
-                  <div className="h-14 sm:h-16 w-auto min-w-[130px] max-w-[200px] rounded-xl bg-[#0c0e17] border border-white/10 flex items-center justify-center px-4 py-2 relative group-hover:border-blue-500/40 transition-colors">
-                    {item.logoUrl ? (
-                      <img
-                        src={item.logoUrl}
-                        alt={`${item.company} Logo`}
-                        referrerPolicy="no-referrer"
-                        className="max-h-10 sm:max-h-11 max-w-full object-contain filter drop-shadow brightness-105"
-                        loading="eager"
-                      />
+              {/* Ambient radial blur inside card on hover */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/[0.03] rounded-full blur-3xl pointer-events-none group-hover:bg-blue-500/[0.08] transition-colors" />
+
+              <div className="space-y-5 relative z-10">
+                {/* Header: Photo / Screenshot Avatar & Meta Tags */}
+                <div className="flex items-center justify-between gap-4 pb-4 border-b border-white/[0.08]">
+                  <div className="flex items-center gap-3.5">
+                    {item.imageUrl ? (
+                      <div className="relative shrink-0">
+                        <img
+                          src={item.imageUrl}
+                          alt={item.author}
+                          referrerPolicy="no-referrer"
+                          className={`object-cover ${
+                            item.category === 'dispatch'
+                              ? 'w-13 h-15 rounded-xl border border-emerald-500/40 shadow-sm'
+                              : 'w-14 h-14 rounded-2xl border-2 border-blue-500/40 shadow-md group-hover:border-blue-400 group-hover:scale-105 transition-all duration-300'
+                          }`}
+                          loading="eager"
+                        />
+                        {item.category === 'dispatch' && (
+                          <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-[#0c0e17] flex items-center justify-center">
+                            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                          </div>
+                        )}
+                      </div>
                     ) : (
-                      <span className="font-heading text-base text-[#fffdf9] tracking-wide">{item.company}</span>
+                      <div className="w-13 h-13 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center font-display text-sm text-blue-400 shrink-0">
+                        {item.avatarInitials}
+                      </div>
                     )}
+                    <div>
+                      <h4 className="font-heading text-lg sm:text-xl text-white group-hover:text-blue-300 transition-colors tracking-tight">
+                        {item.company}
+                      </h4>
+                      <p className="text-xs text-gray-400 font-sans mt-0.5 flex items-center gap-1.5">
+                        <span>{item.author}</span>
+                        <span className="text-gray-600">•</span>
+                        <span>{item.region}</span>
+                      </p>
+                    </div>
                   </div>
 
-                  {/* Metadata Chips */}
-                  <div className="flex flex-wrap sm:flex-col sm:items-end gap-1.5 text-xs">
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-[10px] uppercase tracking-wider text-blue-300 font-mono">
-                      {item.industry}
+                  {/* Metadata Tag */}
+                  <div className="flex flex-col items-end gap-1 shrink-0">
+                    <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] uppercase tracking-wider font-mono ${
+                      item.category === 'dispatch'
+                        ? 'bg-emerald-500/10 border border-emerald-500/25 text-emerald-300'
+                        : 'bg-blue-500/10 border border-blue-500/25 text-blue-300'
+                    }`}>
+                      <span className={`w-1.5 h-1.5 rounded-full ${
+                        item.category === 'dispatch' ? 'bg-emerald-400 animate-pulse' : 'bg-blue-400'
+                      }`} />
+                      <span>{item.industry}</span>
                     </span>
-                    <span className="text-[11px] text-gray-400 font-sans">
-                      {item.region} • {item.timeframe}
+                    <span className="text-[11px] text-gray-500 font-mono">
+                      {item.timeframe}
                     </span>
                   </div>
                 </div>
 
-                {/* Company Name & Core Transformation Result */}
-                <div className="space-y-3">
+                {/* Core Transformation Result Headline */}
+                <div className="space-y-1.5">
                   <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
                     <span className="text-[10px] uppercase tracking-[0.14em] font-mono font-semibold text-blue-400">
-                      Verified Transformation
+                      Verified Result
                     </span>
                   </div>
 
-                  <h3 className="font-heading text-2xl sm:text-[1.75rem] text-[#fffdf9] font-normal leading-snug tracking-wide">
+                  <h3 className="font-heading text-xl sm:text-[1.35rem] text-[#fffdf9] font-normal leading-snug tracking-normal">
                     &ldquo;{item.specificResult}&rdquo;
                   </h3>
                 </div>
 
-                {/* Minimalist Metrics Ribbon */}
-                <div className="grid grid-cols-3 gap-3 py-4 px-4 rounded-xl bg-[#0c0e17] border border-white/10">
-                  <div>
-                    <div className="font-display text-xl sm:text-2xl text-blue-400 tracking-tight leading-none">
+                {/* Minimalist Metrics Ribbon (3 High-Contrast Tiles) */}
+                <div className="grid grid-cols-3 gap-2.5 sm:gap-3 py-3.5 px-3.5 rounded-2xl bg-[#121524]/90 border border-white/[0.08] group-hover:border-white/15 transition-colors">
+                  <div className="text-center px-1">
+                    <div className="font-display text-lg sm:text-xl font-bold text-blue-400 tracking-tight leading-none truncate">
                       {item.metric}
                     </div>
                     <div className="text-[10px] text-gray-400 uppercase tracking-wider font-mono mt-1.5 truncate">
-                      Delivered Outcome
+                      {item.metricLabel}
                     </div>
                   </div>
 
-                  <div className="border-l border-white/10 pl-3">
-                    <div className="font-display text-lg sm:text-xl text-[#fffdf9] tracking-tight leading-none">
-                      {item.id === 'cashel-home-improvement' ? '2 Jobs/Wk' : '1 Signup'}
+                  <div className="text-center border-l border-white/10 px-1">
+                    <div className="font-display text-base sm:text-lg font-bold text-[#fffdf9] tracking-tight leading-none truncate">
+                      {item.stats?.closedJobs ? `${item.stats.closedJobs} Closed` : 'Deposit Taken'}
                     </div>
                     <div className="text-[10px] text-gray-400 uppercase tracking-wider font-mono mt-1.5 truncate">
-                      Old Baseline
+                      Deals Won
                     </div>
                   </div>
 
-                  <div className="border-l border-white/10 pl-3">
-                    <div className="font-display text-lg sm:text-xl text-[#fffdf9] tracking-tight leading-none">
-                      {item.id === 'cashel-home-improvement' ? '92% Show' : '89% Show'}
+                  <div className="text-center border-l border-white/10 px-1">
+                    <div className="font-display text-base sm:text-lg font-bold text-[#fffdf9] tracking-tight leading-none truncate">
+                      {item.stats?.shownEstimates ? `${item.stats.shownEstimates} Sits` : '100% Show'}
                     </div>
                     <div className="text-[10px] text-gray-400 uppercase tracking-wider font-mono mt-1.5 truncate">
-                      Show-Up Rate
+                      Shown Sits
                     </div>
                   </div>
                 </div>
 
-                {/* Before vs After Micro-Bar */}
-                <div className="space-y-2 text-xs pt-1">
-                  <div className="flex items-start gap-2.5 text-gray-400">
-                    <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 text-[9px] font-mono font-semibold uppercase tracking-wider shrink-0 mt-0.5">
+                {/* Before vs After Visual Comparison Tiles */}
+                <div className="space-y-2 pt-1">
+                  <div className="flex items-start gap-2.5 p-2.5 rounded-xl bg-red-500/[0.04] border border-red-500/15 text-xs text-gray-300">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-red-500/15 text-red-400 text-[9px] font-mono font-semibold uppercase tracking-wider shrink-0 mt-0.5">
                       Before
                     </span>
-                    <span className="leading-relaxed text-gray-400 text-xs">
+                    <span className="leading-relaxed text-gray-300 text-xs">
                       {item.beforeStatus?.[0]}
                     </span>
                   </div>
-                  <div className="flex items-start gap-2.5 text-white">
-                    <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 text-[9px] font-mono font-semibold uppercase tracking-wider shrink-0 mt-0.5">
+
+                  <div className="flex items-start gap-2.5 p-2.5 rounded-xl bg-blue-500/[0.05] border border-blue-500/20 text-xs text-white">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-300 text-[9px] font-mono font-semibold uppercase tracking-wider shrink-0 mt-0.5">
                       After
                     </span>
                     <span className="leading-relaxed text-white font-medium text-xs">
@@ -297,26 +348,24 @@ export const CaseStudiesPage: React.FC<CaseStudiesPageProps> = ({
                   </div>
                 </div>
 
-                {/* Direct Authentic Quote Excerpt */}
-                <p className="text-xs sm:text-[13px] text-gray-300 italic font-sans leading-relaxed border-l-2 border-blue-500/30 pl-3 py-0.5">
-                  &ldquo;{item.quote}&rdquo;
-                </p>
-
-                <div className="text-xs text-gray-400 font-sans">
-                  <span className="text-white font-medium">{item.author}</span> • {item.role}, {item.company}
+                {/* Direct Quote Excerpt */}
+                <div className="p-3 rounded-xl bg-white/[0.02] border-l-2 border-blue-500/50">
+                  <p className="text-xs sm:text-[13px] text-gray-300 italic font-sans leading-relaxed">
+                    &ldquo;{item.quote}&rdquo;
+                  </p>
                 </div>
               </div>
 
               {/* Minimalist Card Footer */}
-              <div className="pt-5 mt-6 border-t border-white/10 flex items-center justify-between gap-3">
+              <div className="pt-4 mt-5 border-t border-white/[0.08] flex items-center justify-between gap-3 relative z-10">
                 <div className="flex items-center gap-2 text-[11px] text-gray-400 font-sans">
                   <ShieldCheck className="w-3.5 h-3.5 text-blue-400" />
-                  <span>Verified CRM Invoices</span>
+                  <span>Verified Contractor Record</span>
                 </div>
 
-                <div className="inline-flex items-center gap-1.5 text-xs font-sans font-medium uppercase tracking-[0.08em] text-[#fffdf9] group-hover:text-blue-400 transition-colors">
-                  <span>Read Full Case Study</span>
-                  <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <div className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-black font-sans font-semibold text-xs uppercase tracking-[0.08em] group-hover:bg-blue-400 group-hover:text-black transition-all duration-200 shadow-sm">
+                  <span>Read Breakdown</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
               </div>
             </article>
@@ -384,23 +433,23 @@ export const CaseStudiesPage: React.FC<CaseStudiesPageProps> = ({
         </div>
 
         {/* Page Bottom CTA Section */}
-        <div className="max-w-4xl mx-auto rounded-[16px] bg-[#141414] border border-[#403f3f] p-8 sm:p-14 text-center">
-          <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#101010] border border-[#2e3238] text-xs uppercase tracking-[0.1em] text-[#6f879c] font-sans">
+        <div className="max-w-4xl mx-auto rounded-[24px] bg-[#0c0e17] border border-white/10 p-8 sm:p-14 text-center shadow-xl">
+          <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-xs uppercase tracking-[0.1em] text-blue-400 font-mono">
             <span>PERFORMANCE ONBOARDING</span>
           </div>
 
           <h2 className="font-heading uppercase text-2xl sm:text-4xl text-[#fffdf9] font-normal tracking-tight mb-4">
-            Ready To Become Our Next <span className="neon-silver-text">Success Story?</span>
+            Ready To Become Our Next <span className="text-blue-400 font-serif italic lowercase">success story?</span>
           </h2>
 
           <p className="font-sans text-sm sm:text-base text-[#8e9aa8] max-w-xl mx-auto leading-relaxed mb-8">
-            Check if your trade sector and city territory are available. Zero retainer risk, pay only when qualified prospects show up to your appointments.
+            Check if your trade and city are open. Zero retainers, only pay when qualified homeowners show up for estimates.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={onOpenQuiz}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[6px] bg-[#fffdf9] text-[#101010] font-sans font-medium text-xs sm:text-sm uppercase tracking-[0.08em] hover:bg-[#eae6de] hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer shadow-lg"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white text-black font-sans font-semibold text-xs sm:text-sm uppercase tracking-[0.08em] hover:bg-gray-100 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer shadow-lg"
             >
               <span>See If You Qualify</span>
               <ArrowUpRight className="w-4 h-4" />
@@ -409,9 +458,9 @@ export const CaseStudiesPage: React.FC<CaseStudiesPageProps> = ({
             {onOpenSpecialist && (
               <button
                 onClick={onOpenSpecialist}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[6px] bg-[#181a1f] border border-[#403f3f] text-[#fffdf9] font-sans font-medium text-xs sm:text-sm uppercase tracking-[0.08em] hover:bg-[#202329] hover:border-[#fffdf9] transition-all cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#181a1f] border border-white/10 text-[#fffdf9] font-sans font-medium text-xs sm:text-sm uppercase tracking-[0.08em] hover:bg-[#202329] hover:border-white/30 transition-all cursor-pointer"
               >
-                <PhoneCall className="w-4 h-4 text-[#6f879c]" />
+                <PhoneCall className="w-4 h-4 text-blue-400" />
                 <span>Talk to a Lead Specialist</span>
               </button>
             )}
@@ -430,17 +479,17 @@ export const CaseStudiesPage: React.FC<CaseStudiesPageProps> = ({
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-3xl my-auto rounded-[16px] bg-[#121316] border border-[#2e3238] shadow-[0_25px_60px_rgba(0,0,0,0.9)] overflow-hidden"
+            className="relative w-full max-w-3xl my-auto rounded-[20px] bg-[#0c0e17] border border-white/15 shadow-[0_25px_60px_rgba(0,0,0,0.9)] overflow-hidden"
           >
             {/* Top Rim Highlight */}
-            <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-[#fffdf9]/30 to-transparent pointer-events-none" />
+            <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent pointer-events-none" />
 
             {/* Modal Header Bar */}
-            <div className="px-6 sm:px-8 py-4 bg-[#0c0e17] border-b border-white/10 flex items-center justify-between gap-4">
+            <div className="px-6 sm:px-8 py-4 bg-[#080910] border-b border-white/10 flex items-center justify-between gap-4">
               <div className="flex items-center gap-2.5">
                 <ShieldCheck className="w-4 h-4 text-blue-400" />
                 <span className="text-xs font-sans uppercase tracking-[0.1em] text-white font-medium">
-                  Verified Transformation Deep Dive
+                  Verified Case Study
                 </span>
               </div>
 
@@ -474,20 +523,22 @@ export const CaseStudiesPage: React.FC<CaseStudiesPageProps> = ({
               {/* Brand & Verified Headline */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/10">
                 <div className="flex items-center gap-4">
-                  <div className="h-14 w-32 rounded-xl bg-[#10121a] border border-white/10 p-2 flex items-center justify-center shrink-0">
-                    {selectedCaseStudy.logoUrl ? (
-                      <img
-                        src={selectedCaseStudy.logoUrl}
-                        alt={`${selectedCaseStudy.company} Logo`}
-                        referrerPolicy="no-referrer"
-                        className="max-h-10 max-w-full object-contain filter drop-shadow brightness-105"
-                      />
-                    ) : (
-                      <span className="font-heading text-sm text-[#fffdf9]">
-                        {selectedCaseStudy.company}
-                      </span>
-                    )}
-                  </div>
+                  {selectedCaseStudy.imageUrl ? (
+                    <img
+                      src={selectedCaseStudy.imageUrl}
+                      alt={selectedCaseStudy.author}
+                      referrerPolicy="no-referrer"
+                      className={`object-cover shrink-0 ${
+                        selectedCaseStudy.category === 'dispatch'
+                          ? 'w-14 h-16 rounded-xl border border-emerald-500/40 shadow-sm'
+                          : 'w-14 h-14 rounded-full border-2 border-blue-500/40 shadow-md'
+                      }`}
+                    />
+                  ) : (
+                    <div className="w-14 h-14 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center font-display text-base text-blue-400 shrink-0">
+                      {selectedCaseStudy.avatarInitials}
+                    </div>
+                  )}
                   <div>
                     <h2
                       id="case-study-title"
@@ -496,7 +547,7 @@ export const CaseStudiesPage: React.FC<CaseStudiesPageProps> = ({
                       {selectedCaseStudy.company}
                     </h2>
                     <div className="text-xs text-gray-400 font-sans mt-0.5">
-                      {selectedCaseStudy.industry} • {selectedCaseStudy.region}
+                      {selectedCaseStudy.author} • {selectedCaseStudy.industry} • {selectedCaseStudy.region}
                     </div>
                   </div>
                 </div>

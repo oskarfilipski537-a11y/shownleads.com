@@ -34,6 +34,8 @@ import { AppointmentsPage } from './pages/AppointmentsPage';
 import { OurCompaniesPage } from './pages/OurCompaniesPage';
 import { OurServicesPage } from './pages/OurServicesPage';
 import { CaseStudiesPage } from './pages/CaseStudiesPage';
+import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
+import { TermsPage } from './pages/TermsPage';
 
 import { AppPage } from './types';
 
@@ -49,6 +51,8 @@ function getInitialPage(): AppPage {
     if (candidate.startsWith('our-companies') || candidate.startsWith('companies')) return 'our-companies';
     if (candidate.startsWith('our-services') || candidate.startsWith('services')) return 'our-services';
     if (candidate.startsWith('case-studies')) return 'case-studies';
+    if (candidate.startsWith('privacy')) return 'privacy-policy';
+    if (candidate.startsWith('terms') || candidate.startsWith('sms-terms')) return 'terms-and-conditions';
   }
   return 'home';
 }
@@ -240,6 +244,26 @@ export default function App() {
             onOpenQuiz={handleOpenQuiz}
             onOpenSpecialist={handleOpenSpecialist}
             onNavigateHome={() => navigateTo('home')}
+          />
+          <FinalCTA onOpenQuiz={handleOpenQuiz} onNavigate={navigateTo} />
+        </main>
+      )}
+
+      {currentPage === 'privacy-policy' && (
+        <main id="main-content">
+          <PrivacyPolicyPage
+            onNavigateHome={() => navigateTo('home')}
+            onNavigate={navigateTo}
+          />
+          <FinalCTA onOpenQuiz={handleOpenQuiz} onNavigate={navigateTo} />
+        </main>
+      )}
+
+      {currentPage === 'terms-and-conditions' && (
+        <main id="main-content">
+          <TermsPage
+            onNavigateHome={() => navigateTo('home')}
+            onNavigate={navigateTo}
           />
           <FinalCTA onOpenQuiz={handleOpenQuiz} onNavigate={navigateTo} />
         </main>

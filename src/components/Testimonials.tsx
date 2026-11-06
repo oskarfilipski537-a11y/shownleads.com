@@ -358,62 +358,84 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenQuiz }) => {
           </p>
         </div>
 
-        {/* 4-Column Grid Matching Uploaded Card Design */}
+        {/* 4-Column Grid Super-Optimised Card Design */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6 mb-20">
           {currentContent.cards.map((card, idx) => (
             <div
               key={idx}
-              className="rounded-3xl bg-[#0c0e17]/90 border border-white/[0.08] hover:border-blue-500/40 transition-all duration-300 overflow-hidden flex flex-col justify-between shadow-xl group backdrop-blur-md"
+              className="relative rounded-3xl bg-gradient-to-b from-[#0e111d]/95 to-[#080a11]/98 border border-white/[0.08] hover:border-blue-500/40 hover:shadow-[0_16px_40px_-10px_rgba(37,99,235,0.2)] hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col justify-between shadow-xl group backdrop-blur-md"
             >
-              {/* Card Top: Contractor Image */}
-              <div className="relative w-full aspect-[4/3] sm:aspect-[1.15/1] overflow-hidden bg-[#161820]">
-                <img
-                  src={card.image}
-                  alt={`${card.name} - ${card.company}`}
-                  className="w-full h-full object-cover object-top filter brightness-[0.95] contrast-[1.05] group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0c0e17] via-transparent to-transparent opacity-80" />
-              </div>
+              {/* Top Hairline Glow Accent */}
+              <div className="absolute inset-x-0 -top-px h-[2px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent pointer-events-none opacity-60 group-hover:opacity-100 transition-opacity" />
 
-              {/* Card Bottom: Content matching screenshot layout */}
-              <div className="p-5 sm:p-6 flex flex-col flex-grow justify-between">
-                <div>
-                  {/* 5 Stars Rating matching uploaded design */}
-                  <div className="flex items-center gap-1 mb-3.5" aria-label="5 star rating">
+              <div>
+                {/* Card Top: Contractor Image with Top Badge */}
+                <div className="relative w-full aspect-[4/3] sm:aspect-[1.15/1] overflow-hidden bg-[#161820]">
+                  <img
+                    src={card.image}
+                    alt={`${card.name} - ${card.company}`}
+                    className="w-full h-full object-cover object-top filter brightness-[0.95] contrast-[1.05] group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#080a11] via-[#080a11]/20 to-transparent opacity-90" />
+                  
+                  {/* Floating Niche Badge */}
+                  <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-[10px] font-mono text-blue-300 uppercase tracking-wider">
+                    {card.niche}
+                  </div>
+                </div>
+
+                {/* Card Middle: Content */}
+                <div className="p-5 sm:p-6 pb-2">
+                  {/* 5 Stars Rating */}
+                  <div className="flex items-center gap-1 mb-3" aria-label="5 star rating">
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className="w-4 h-4 fill-[#f97316] text-[#f97316]"
+                        className="w-3.5 h-3.5 fill-[#f97316] text-[#f97316]"
                       />
                     ))}
+                    <span className="text-[11px] font-mono text-gray-400 ml-1.5">5.0 Verified</span>
                   </div>
 
-                  {/* Client quote / review */}
-                  <p className="font-sans text-sm sm:text-[14.5px] text-[#fffdf9]/90 font-normal leading-relaxed mb-4">
+                  {/* Client quote */}
+                  <p className="font-sans text-xs sm:text-[13.5px] text-[#fffdf9]/90 font-normal leading-relaxed mb-4">
                     “{card.quote}”
                   </p>
 
                   {/* Result Pill */}
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-blue-950/40 border border-blue-500/30 text-xs font-mono text-blue-200 mb-5 w-full">
+                  <div className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-blue-950/40 border border-blue-500/30 text-xs font-mono text-blue-200 mb-3 w-full">
                     <span className="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0" />
-                    <span className="truncate">{card.result}</span>
+                    <span className="truncate font-medium">{card.result}</span>
+                  </div>
+
+                  {/* Mini Stats Ribbon */}
+                  <div className="grid grid-cols-3 gap-1.5 py-2 px-2.5 rounded-xl bg-[#121524]/80 border border-white/[0.06] text-center text-xs mb-3">
+                    <div>
+                      <div className="font-display font-bold text-blue-400 leading-none text-xs sm:text-sm">{card.stats.ticketValue}</div>
+                      <div className="text-[9px] text-gray-400 font-mono uppercase mt-0.5">Value</div>
+                    </div>
+                    <div className="border-l border-white/10">
+                      <div className="font-display font-bold text-white leading-none text-xs sm:text-sm">{card.stats.closedJobs}</div>
+                      <div className="text-[9px] text-gray-400 font-mono uppercase mt-0.5">Closed</div>
+                    </div>
+                    <div className="border-l border-white/10">
+                      <div className="font-display font-bold text-white leading-none text-xs sm:text-sm">{card.stats.shownEstimates}</div>
+                      <div className="text-[9px] text-gray-400 font-mono uppercase mt-0.5">Sits</div>
+                    </div>
                   </div>
                 </div>
+              </div>
 
-                {/* Divider Line */}
-                <div className="pt-4 border-t border-white/[0.06]">
-                  {/* [Client Name] */}
-                  <div className="font-heading uppercase text-lg sm:text-xl text-[#fffdf9] font-medium tracking-tight mb-1">
+              {/* Card Bottom: Client Info */}
+              <div className="p-5 sm:p-6 pt-0">
+                <div className="pt-3 border-t border-white/[0.08]">
+                  <div className="font-heading uppercase text-base sm:text-lg text-[#fffdf9] font-medium tracking-tight mb-0.5">
                     {card.name}
                   </div>
-
-                  {/* [Company] · [Niche] */}
                   <div className="font-sans text-xs text-gray-400 truncate">
                     <span>{card.company}</span>
-                    <span className="mx-1.5 text-gray-600">·</span>
-                    <span className="text-gray-300">{card.niche}</span>
                   </div>
                 </div>
               </div>
@@ -449,42 +471,50 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenQuiz }) => {
               <div
                 key={idx}
                 onClick={() => setActiveImageModal(wa.image)}
-                className="rounded-[22px] bg-[#0c0d12] border border-[#232733] hover:border-[#25d366]/50 p-2.5 sm:p-3 transition-all duration-300 shadow-2xl group cursor-pointer relative flex flex-col justify-between"
+                className="relative rounded-[24px] bg-gradient-to-b from-[#0e111d]/95 to-[#080a11]/98 border border-white/[0.08] hover:border-emerald-500/50 hover:shadow-[0_16px_40px_-10px_rgba(16,185,129,0.2)] hover:-translate-y-1.5 p-3 sm:p-3.5 transition-all duration-300 shadow-2xl group cursor-pointer flex flex-col justify-between overflow-hidden backdrop-blur-md"
               >
-                {/* Header bar mimicking WhatsApp chat */}
-                <div className="flex items-center justify-between px-3 py-2 border-b border-[#1c202a] mb-2 text-xs font-sans">
-                  <div className="flex items-center gap-2">
-                    <MessageCircle className="w-3.5 h-3.5 text-[#25d366]" />
-                    <span className="text-[#cfd9e4] font-medium text-[11px] tracking-wide">
-                      {wa.tag}
+                {/* Top hairline emerald glow */}
+                <div className="absolute inset-x-0 -top-px h-[2px] bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent pointer-events-none opacity-60 group-hover:opacity-100 transition-opacity" />
+
+                <div>
+                  {/* Header bar mimicking WhatsApp chat */}
+                  <div className="flex items-center justify-between px-3 py-2 border-b border-white/[0.06] mb-2.5 text-xs font-sans">
+                    <div className="flex items-center gap-2">
+                      <div className="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center">
+                        <MessageCircle className="w-3 h-3 text-[#25d366]" />
+                      </div>
+                      <span className="text-[#cfd9e4] font-medium text-[11px] tracking-wide">
+                        {wa.tag}
+                      </span>
+                    </div>
+                    <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/25 flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      <span>Live Record</span>
                     </span>
                   </div>
-                  <span className="text-[10px] font-mono text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded-full border border-blue-500/30">
-                    Live
-                  </span>
-                </div>
 
-                {/* Screenshot Image Container */}
-                <div className="relative rounded-[16px] overflow-hidden bg-[#14161f] border border-[#1e222d] shadow-inner">
-                  <img
-                    src={wa.image}
-                    alt={wa.caption}
-                    className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-300"
-                    loading="lazy"
-                  />
-                  {/* Subtle hover overlay to prompt zoom */}
-                  <div className="absolute inset-0 bg-[#000000]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#101010]/90 backdrop-blur-md border border-[#fffdf9]/40 text-xs font-sans text-[#fffdf9]">
-                      <ZoomIn className="w-3.5 h-3.5" />
-                      <span>View Chat</span>
-                    </span>
+                  {/* Screenshot Image Container */}
+                  <div className="relative rounded-[18px] overflow-hidden bg-[#14161f] border border-white/[0.08] shadow-inner aspect-[9/13]">
+                    <img
+                      src={wa.image}
+                      alt={wa.caption}
+                      className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    {/* Subtle hover overlay to prompt zoom */}
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-black font-semibold text-xs shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                        <ZoomIn className="w-3.5 h-3.5" />
+                        <span>Zoom Dispatch</span>
+                      </span>
+                    </div>
                   </div>
                 </div>
 
                 {/* Footer caption */}
                 <div className="pt-3 px-2 flex items-center justify-between text-xs font-sans">
-                  <span className="text-[#8e9aa8] text-[11px] truncate">{wa.caption}</span>
-                  <span className="text-[10px] font-mono text-[#6f879c] shrink-0 ml-2">{wa.location}</span>
+                  <span className="text-gray-300 text-[11px] font-medium truncate">{wa.caption}</span>
+                  <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20 shrink-0 ml-2">{wa.location}</span>
                 </div>
               </div>
             ))}

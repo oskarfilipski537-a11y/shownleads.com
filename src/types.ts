@@ -5,7 +5,9 @@ export type AppPage =
   | 'appointments' 
   | 'our-companies' 
   | 'our-services' 
-  | 'case-studies';
+  | 'case-studies'
+  | 'privacy-policy'
+  | 'terms-and-conditions';
 
 export interface QuizOption {
   id: string;
@@ -63,7 +65,14 @@ export interface TestimonialItem {
   timeframe?: string;
   verifiedSnippet?: string;
   logoUrl?: string;
+  imageUrl?: string;
+  category?: 'partner' | 'dispatch';
   specificResult?: string;
+  stats?: {
+    shownEstimates?: number;
+    closedJobs?: number;
+    ticketValue?: string;
+  };
   deepDive?: {
     overview: string;
     theChallenge: string[];

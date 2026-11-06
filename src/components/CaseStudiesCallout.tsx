@@ -23,23 +23,23 @@ export const CaseStudiesCallout: React.FC<CaseStudiesCalloutProps> = ({
             </h3>
 
             <p className="font-sans text-xs sm:text-sm text-[#8e9aa8] leading-relaxed">
-              Explore how attic insulation contractors scaled to predictable $3,000+ invoices and booked calendars with $0 in monthly retainers.
+              Explore how kitchen, roofing, and remodel contractors closed up to $285,000 in their first 30 days with $0 in monthly retainers.
             </p>
 
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-1 text-xs text-[#6f879c] font-sans">
               <span className="flex items-center gap-1.5">
                 <TrendingUp className="w-3.5 h-3.5 text-blue-400" />
-                15x Intake Rate
+                $285k in 30 Days
               </span>
               <span className="text-[#3a3d45]">•</span>
               <span className="flex items-center gap-1.5">
                 <TrendingUp className="w-3.5 h-3.5 text-blue-400" />
-                $3k+ Invoices Weekly
+                9 Roofs in 4 Weeks
               </span>
               <span className="text-[#3a3d45]">•</span>
               <span className="flex items-center gap-1.5">
                 <ShieldCheck className="w-3.5 h-3.5 text-blue-400" />
-                100% Verified CRM Invoices
+                100% Verified Sit-Downs
               </span>
             </div>
           </div>
