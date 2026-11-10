@@ -127,18 +127,18 @@ export const AppointmentsPage: React.FC<AppointmentsPageProps> = ({
           </div>
         </div>
 
-        {/* THREE CORE OFFERS: $97, $197, AND $8,150 MARKET LEADER SYSTEM */}
-        <div className="max-w-6xl mx-auto mb-20">
+        {/* TWO CORE SHOWN SIT OFFERS: $97 AND $197 */}
+        <div className="max-w-4xl mx-auto mb-20">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="font-heading uppercase text-2xl sm:text-4xl text-[#fffdf9] font-normal mb-3">
-              Understanding The Three Engagement Models
+              Understanding Our Shown Appointment Options
             </h2>
             <p className="font-sans text-xs sm:text-sm text-[#8e9aa8] leading-relaxed">
-              From pay-per-shown appointments to our comprehensive $8,150/mo Market Leader Growth System with ad costs and recruitment included.
+              Pay strictly per shown appointment. If the homeowner does not show up, you owe $0.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* TIER 1: Qualified Shown Appointment ($97) */}
             <div className="p-7 rounded-[22px] bg-[#0c0e17] border border-white/10 hover:border-white/20 transition-all flex flex-col justify-between space-y-6">
               <div>
@@ -188,60 +188,7 @@ export const AppointmentsPage: React.FC<AppointmentsPageProps> = ({
               </button>
             </div>
 
-            {/* TIER 2: The Market Leader Growth System ($8,150/mo) - Highlighted */}
-            <div className="p-7 rounded-[22px] bg-gradient-to-b from-[#0f172a] via-[#0b1021] to-[#070a14] border-2 border-blue-500 shadow-[0_12px_50px_rgba(37,99,235,0.35)] flex flex-col justify-between space-y-6 relative">
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="px-2.5 py-1 rounded-full bg-blue-500/20 border border-blue-400/40 text-[11px] uppercase tracking-wider text-blue-300 font-mono font-semibold">
-                    The Market Leader System
-                  </span>
-                  <span className="text-xs text-blue-300 font-sans font-semibold">All-Inclusive</span>
-                </div>
-
-                <h3 className="font-heading text-2xl text-[#fffdf9] uppercase">
-                  Growth System Partnership
-                </h3>
-                <div className="font-display text-3xl sm:text-4xl text-blue-300 mt-2">
-                  $8,150 <span className="text-xs font-sans text-gray-400">/ Month</span>
-                </div>
-
-                <p className="font-sans text-xs text-blue-200/90 leading-relaxed mt-3">
-                  Everything you need to grow your attic insulation business.
-                </p>
-
-                <ul className="space-y-2.5 text-xs text-white font-sans border-t border-blue-500/20 pt-5 mt-5">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
-                    <span>Advertising through Meta, ChatGPT, local radio, and news articles.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
-                    <span>Recruitments</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
-                    <span>Fast 2-minute online estimate tool</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
-                    <span>Automatic text and email follow-ups</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
-                    <span>Only 1 company per city (no competitors)</span>
-                  </li>
-                </ul>
-              </div>
-
-              <button
-                onClick={onOpenSpecialist || onOpenQuiz}
-                className="w-full py-4 rounded-full bg-blue-600 hover:bg-blue-500 text-white text-xs font-sans uppercase tracking-wider font-bold shadow-[0_0_25px_rgba(37,99,235,0.4)] transition-all hover:scale-[1.02]"
-              >
-                Apply for Growth Partnership ↗
-              </button>
-            </div>
-
-            {/* TIER 3: Price-Educated Shown Appointment ($197) */}
+            {/* TIER 2: Price-Educated Shown Appointment ($197) */}
             <div className="p-7 rounded-[22px] bg-[#0c0e17] border border-white/10 hover:border-white/20 transition-all flex flex-col justify-between space-y-6">
               <div>
                 <div className="flex items-center justify-between mb-4">

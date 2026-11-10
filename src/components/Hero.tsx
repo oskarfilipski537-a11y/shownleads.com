@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Phone, Sparkles } from 'lucide-react';
+import { ArrowRight, Phone } from 'lucide-react';
 import { AnimatedBackground } from './AnimatedBackground';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -49,16 +49,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuiz, onTalkToSpecialist }) =>
           animate="visible"
           className="flex flex-col items-center text-center max-w-5xl mx-auto"
         >
-          {/* Subtle Tagline Pill */}
-          <motion.div
-            variants={itemVariants}
-            className="mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0d1326]/90 border border-blue-500/30 text-xs font-sans text-blue-300 shadow-[0_0_25px_rgba(37,99,235,0.25)]"
-          >
-            <Sparkles className="w-3.5 h-3.5 text-blue-400" />
-            <span className="tracking-wide uppercase font-medium text-[11px] sm:text-xs">
-              The Market Leader Growth System • Attic Insulation Contractors
-            </span>
-          </motion.div>
+
 
           {/* Primary Headline with Framer-style Serif Italic Accent */}
           <motion.h1

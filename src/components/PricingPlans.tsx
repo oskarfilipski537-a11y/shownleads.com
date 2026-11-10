@@ -35,12 +35,12 @@ export const PricingPlans: React.FC<PricingPlansProps> = ({
           </h2>
 
           <p className="font-sans text-sm sm:text-base text-[#fffdf9]/75 font-normal max-w-md mx-auto leading-relaxed">
-            Pay only for shown appointments, or get everything done for you in our growth system.
+            Pay only for shown appointments. Choose the option that fits your sales process.
           </p>
         </div>
 
-        {/* The 3 Pricing Cards Grid - Super Optimized for Mobile & Desktop */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 max-w-6xl mx-auto items-stretch">
+        {/* The 2 Pay-Per-Sit Pricing Cards Grid - Super Optimized for Mobile & Desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto items-stretch">
           
           {/* Card 1: Option 1 - $97 Qualified Shown Sit */}
           <div className="rounded-[22px] sm:rounded-3xl bg-[#0c0e17]/90 border border-white/10 hover:border-white/20 p-6 sm:p-8 flex flex-col justify-between backdrop-blur-md transition-all duration-300 shadow-lg">
@@ -100,65 +100,7 @@ export const PricingPlans: React.FC<PricingPlansProps> = ({
             </button>
           </div>
 
-          {/* Card 2: The Market Leader Growth System ($8,150/mo) - Highlighted */}
-          <div className="relative rounded-[22px] sm:rounded-3xl bg-gradient-to-b from-[#10172a] via-[#0b1021] to-[#070a14] border-2 border-blue-500 p-6 sm:p-8 flex flex-col justify-between backdrop-blur-xl shadow-[0_0_40px_rgba(37,99,235,0.25)] transition-all duration-300">
-            <div>
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-[11px] font-sans uppercase tracking-wider text-blue-400 font-semibold">
-                  Growth System
-                </span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 border border-blue-400/30 font-medium">
-                  All-In-One
-                </span>
-              </div>
-
-              <h3 className="font-heading uppercase text-xl sm:text-2xl text-[#fffdf9] tracking-wide mb-1.5">
-                The Market Leader Growth System
-              </h3>
-
-              <p className="font-sans text-xs text-blue-200/80 mb-5 leading-relaxed">
-                Everything you need to grow your attic insulation business.
-              </p>
-
-              {/* Price Display */}
-              <div className="mb-5 pb-5 border-b border-white/10">
-                <div className="flex items-baseline gap-1.5">
-                  <span className="font-heading text-4xl sm:text-5xl text-[#fffdf9] font-normal">$8,150</span>
-                  <span className="font-sans text-xs text-blue-300 uppercase tracking-wider">/ Month</span>
-                </div>
-                <div className="text-[11px] text-blue-300/90 font-sans mt-1">
-                  Advertising costs are already included.
-                </div>
-              </div>
-
-              {/* Simplified Feature List */}
-              <div className="space-y-2.5 mb-6">
-                {[
-                  "Advertising through Meta, ChatGPT, local radio, and news articles.",
-                  "Recruitments",
-                  "Fast 2-minute online estimate tool",
-                  "Automatic text and email follow-ups",
-                  "Weekly updates with your team lead",
-                  "Only 1 company per city (no competitors)"
-                ].map((feat, idx) => (
-                  <div key={idx} className="flex items-start gap-2.5 text-xs text-white font-sans">
-                    <Check className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
-                    <span className={idx < 2 ? "font-semibold text-white" : "text-gray-200"}>{feat}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <button
-              onClick={onTalkToSpecialist || onOpenQuiz}
-              className="w-full py-3.5 sm:py-4 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-sans text-xs uppercase tracking-wider font-bold flex items-center justify-center gap-2 transition-all cursor-pointer shadow-[0_0_25px_rgba(37,99,235,0.4)] hover:scale-[1.02] active:scale-[0.98]"
-            >
-              <span>APPLY FOR GROWTH PARTNERSHIP</span>
-              <ArrowUpRight className="w-4 h-4" />
-            </button>
-          </div>
-
-          {/* Card 3: Option 2 - $197 Price-Educated Shown Sit */}
+          {/* Card 2: Option 2 - $197 Price-Educated Shown Sit */}
           <div className="rounded-[22px] sm:rounded-3xl bg-[#0c0e17]/90 border border-white/10 hover:border-white/20 p-6 sm:p-8 flex flex-col justify-between backdrop-blur-md transition-all duration-300 shadow-lg">
             <div>
               <div className="flex items-center justify-between mb-3">

@@ -11,14 +11,10 @@ import { DeliveringPayPerResults } from './components/DeliveringPayPerResults';
 import { DifferentiationSector } from './components/DifferentiationSector';
 import { HowPayPerResultWorks } from './components/HowPayPerResultWorks';
 import { PayPerResultSector } from './components/PayPerResultSector';
-import { FitCheck } from './components/FitCheck';
 import { NumbersProof } from './components/NumbersProof';
 import { PricingPlans } from './components/PricingPlans';
-import { GrowthSystemDetails } from './components/GrowthSystemDetails';
-import { WorkforceExpansion } from './components/WorkforceExpansion';
 import { ComparisonTable } from './components/ComparisonTable';
 import { Testimonials } from './components/Testimonials';
-import { CompaniesWeWorkWith } from './components/CompaniesWeWorkWith';
 import { FAQ } from './components/FAQ';
 import { FinalCTA } from './components/FinalCTA';
 import { CursorGlow } from './components/CursorGlow';
@@ -141,14 +137,8 @@ export default function App() {
           {/* Section 2: Animated Client Logos (Only vector logos, zero text) */}
           <ClientLogos />
 
-          {/* Section 3: The 3 Core Investment Offers (Featuring The Market Leader Growth System @ $8,150/mo) */}
+          {/* Section 3: The 2 Core Pay-Per-Sit Investment Offers ($97 & $197) */}
           <PricingPlans onOpenQuiz={handleOpenQuiz} onTalkToSpecialist={handleOpenSpecialist} />
-
-          {/* Section 4: What The Market Leader Growth System Includes (Multi-channel, AI Estimator, CRM, Strategy) */}
-          <GrowthSystemDetails onOpenQuiz={handleOpenQuiz} onTalkToSpecialist={handleOpenSpecialist} />
-
-          {/* Section 5: The Critical Differentiator: Recruitment & Workforce Expansion System */}
-          <WorkforceExpansion onOpenQuiz={handleOpenQuiz} onTalkToSpecialist={handleOpenSpecialist} />
 
           {/* Section 6: Delivering Pay Per Estimate (Performance Model vs Retainers) */}
           <DeliveringPayPerResults onOpenQuiz={handleOpenQuiz} />
@@ -162,22 +152,16 @@ export default function App() {
           {/* Section 9: Dedicated Pay-Per-Result Performance Sector (with Animated iPhone 17 & Calculator) */}
           <PayPerResultSector onOpenQuiz={handleOpenQuiz} />
 
-          {/* Section 10: Built for a Specific Caliber of Partner (Positioned below the calculator) */}
-          <FitCheck onOpenQuiz={handleOpenQuiz} />
-
-          {/* Section 11: The Numbers (Animated stat counters) */}
+          {/* Section 10: The Numbers (Animated stat counters) */}
           <NumbersProof />
 
-          {/* Section 12: Verified Contractor Results & WhatsApp Testimonials */}
+          {/* Section 11: Verified Contractor Results & WhatsApp Testimonials */}
           <Testimonials onOpenQuiz={handleOpenQuiz} />
 
-          {/* Section 13: ShownLeads vs Traditional Agencies (Comparison table) */}
+          {/* Section 12: ShownLeads vs Traditional Agencies (Comparison table) */}
           <ComparisonTable />
 
-          {/* Section 14: Companies We Work With (Animated sector above FAQ) */}
-          <CompaniesWeWorkWith onOpenQuiz={handleOpenQuiz} />
-
-          {/* Section 15: FAQ (Accordion with Market Leader Growth System & Split Payment) */}
+          {/* Section 11: FAQ (Pay-per-sit model and territory exclusivity) */}
           <FAQ onOpenQuiz={handleOpenQuiz} onTalkToSpecialist={handleOpenSpecialist} />
 
           {/* Section 16: Final CTA & Minimal Footer */}

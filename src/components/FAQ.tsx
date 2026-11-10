@@ -10,24 +10,19 @@ interface FAQProps {
 export const FAQ: React.FC<FAQProps> = ({ onOpenQuiz, onTalkToSpecialist }) => {
   const faqList = [
     {
-      id: 'faq-growth-system-what',
-      question: 'What is The Market Leader Growth System?',
-      answer: 'It is our complete growth package. We run your ads across Meta, ChatGPT, local radio, and news articles, help you hire installers, give you a 2-minute online estimate tool, and send automatic appointment reminders.'
-    },
-    {
-      id: 'faq-ad-spend-included',
-      question: 'Are advertising costs included in the $8,150 package?',
-      answer: 'Yes. All advertising costs on Meta (Facebook and Instagram), radio, and news articles are included in the $8,150 monthly price. There are no extra setup fees or hidden bills.'
-    },
-    {
-      id: 'faq-recruitment-workforce',
-      question: 'How does the installer hiring help work?',
-      answer: 'We run targeted hiring ads in your city and pre-screen applicants for driver licenses and attic insulation experience. You get a list of qualified installers ready to interview.'
+      id: 'faq-pay-per-sit',
+      question: 'How do the $97 and $197 pay-per-sit options work?',
+      answer: 'You only pay when a verified homeowner actually sits down with you for an estimate. If the homeowner cancels or does not show up, you owe $0.'
     },
     {
       id: 'faq-options-difference',
-      question: 'How do the $97 and $197 pay-per-sit options work?',
-      answer: 'You only pay when a verified homeowner actually sits down with you for an estimate. If the homeowner cancels or does not show up, you owe $0.'
+      question: 'What is the difference between the $97 and $197 options?',
+      answer: 'On the $97 option, homeowners are pre-qualified and booked to your calendar. On the $197 option, we also call them beforehand to educate them on your pricing and confirm all decision-makers are present.'
+    },
+    {
+      id: 'faq-no-show-guarantee',
+      question: 'What happens if a homeowner cancels or no-shows?',
+      answer: 'You pay nothing. We only charge for shown estimates where you actually sit down with the homeowner.'
     },
     {
       id: 'faq-ai-estimator',
