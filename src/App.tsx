@@ -241,7 +241,7 @@ export default function App() {
             onNavigateHome={() => navigateTo('home')}
             onNavigate={navigateTo}
           />
-          <FinalCTA onOpenQuiz={handleOpenQuiz} onNavigate={navigateTo} />
+          <FinalCTA onOpenQuiz={handleOpenQuiz} onNavigate={navigateTo} hideBookingWidget={true} />
         </main>
       )}
 
@@ -251,7 +251,7 @@ export default function App() {
             onNavigateHome={() => navigateTo('home')}
             onNavigate={navigateTo}
           />
-          <FinalCTA onOpenQuiz={handleOpenQuiz} onNavigate={navigateTo} />
+          <FinalCTA onOpenQuiz={handleOpenQuiz} onNavigate={navigateTo} hideBookingWidget={true} />
         </main>
       )}
 

@@ -54,9 +54,9 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({
 
           <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-gray-400 pb-6 border-b border-white/[0.08]">
             <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white font-medium">
-              Last updated: November 6, 2026
+              Last updated: November 12, 2026
             </span>
-            <span>GDPR &amp; A2P 10DLC Compliant</span>
+            <span>GDPR</span>
             <span className="text-gray-600">•</span>
             <button
               onClick={() => onNavigate('terms-and-conditions')}
@@ -72,7 +72,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({
           {/* Introduction Card */}
           <div className="p-6 sm:p-7 rounded-[20px] bg-[#0c0e17] border border-white/10 shadow-lg">
             <p className="text-white text-base sm:text-lg leading-relaxed font-normal">
-              This policy explains how <strong className="text-white font-semibold">ShownLeads</strong>, a trading name of <strong className="text-white font-semibold">Oskar Jan Filipski</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;), collects and uses personal information when you visit <strong className="text-blue-400 font-medium">shownleads.com</strong> or book an estimate through our forms.
+              This policy explains how ShownLeads, a trading name of Oskar Jan Filipski (&ldquo;we&rdquo;, &ldquo;us&rdquo;), collects and uses personal information when you visit shownleads.com or our booking page, or book a strategy call through our booking form.
             </p>
           </div>
 
@@ -126,11 +126,11 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({
             <ul className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <li className="p-4 rounded-xl bg-[#0c0e17] border border-white/10 space-y-1">
                 <span className="text-xs uppercase font-mono text-blue-400 block font-semibold">Contact Data</span>
-                <span className="text-xs text-gray-300">Name, mobile phone number, and email address you submit in our booking forms.</span>
+                <span className="text-xs text-gray-300">Name, email address and mobile phone number you submit in our booking form.</span>
               </li>
               <li className="p-4 rounded-xl bg-[#0c0e17] border border-white/10 space-y-1">
-                <span className="text-xs uppercase font-mono text-blue-400 block font-semibold">Appointment Details</span>
-                <span className="text-xs text-gray-300">Your preferred date and time and your service address area.</span>
+                <span className="text-xs uppercase font-mono text-blue-400 block font-semibold">Call Details</span>
+                <span className="text-xs text-gray-300">The date and time of the strategy call you book and the answers you give on the booking form.</span>
               </li>
               <li className="p-4 rounded-xl bg-[#0c0e17] border border-white/10 space-y-1">
                 <span className="text-xs uppercase font-mono text-blue-400 block font-semibold">Technical Data</span>
@@ -152,11 +152,11 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({
             <div className="p-5 rounded-2xl bg-[#0c0e17] border border-white/10 space-y-3">
               <div className="flex items-start gap-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 shrink-0" />
-                <p>To book your attic insulation estimate and pass the appointment details to the contractor who will visit you.</p>
+                <p>To book your strategy call and to contact you about it.</p>
               </div>
               <div className="flex items-start gap-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 shrink-0" />
-                <p>To send appointment confirmations and reminders by text message, if you agreed to receive them.</p>
+                <p>To send confirmations and reminders about your booked call by text message, if you agreed to receive them.</p>
               </div>
               <div className="flex items-start gap-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 shrink-0" />
@@ -178,13 +178,13 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({
 
             <div className="p-6 rounded-[22px] bg-gradient-to-b from-[#0e1220] to-[#0a0d17] border border-blue-500/30 space-y-4 shadow-xl">
               <p className="leading-relaxed">
-                If you tick the consent box on our booking form, we send text messages about your estimate appointment, such as confirmations and reminders. Message frequency varies and is <strong className="text-white">up to 5 messages per appointment</strong>. Message and data rates may apply. Reply <span className="px-2 py-0.5 rounded bg-white/10 font-mono text-white text-xs font-semibold">STOP</span> at any time to opt out, or <span className="px-2 py-0.5 rounded bg-white/10 font-mono text-white text-xs font-semibold">HELP</span> for help. Consent to receive texts is not a condition of any purchase.
+                If you tick the consent box on our booking form, we send text messages about the strategy call you booked, such as confirmations and reminders. Message frequency varies and is up to 5 messages per booking. Message and data rates may apply. Reply <span className="px-2 py-0.5 rounded bg-white/10 font-mono text-white text-xs font-semibold">STOP</span> at any time to opt out, or <span className="px-2 py-0.5 rounded bg-white/10 font-mono text-white text-xs font-semibold">HELP</span> for help. Consent to receive texts is not a condition of any purchase.
               </p>
 
               <div className="p-4 rounded-xl bg-[#080911] border border-blue-500/20 flex items-start gap-3 text-xs leading-relaxed text-blue-100">
                 <AlertCircle className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
                 <p>
-                  <strong className="text-white">Strict Privacy Guarantee:</strong> No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Text messaging originator opt-in data and consent will not be shared with any third parties. The booking details you submit are provided only to the contractor attending your appointment, solely to carry out that appointment.
+                  <strong className="text-white">Strict Privacy Guarantee:</strong> No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Text messaging originator opt-in data and consent will not be shared with any third parties. We use your mobile number only to send the messages described above.
                 </p>
               </div>
             </div>
@@ -197,7 +197,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({
             </h2>
             <div className="p-5 rounded-2xl bg-[#0c0e17] border border-white/10">
               <p className="leading-relaxed">
-                We do not sell your personal information. We share it only with the contractor attending your booked appointment and with service providers who host our systems and deliver messages on our behalf, under confidentiality obligations. We may disclose information if the law requires it.
+                We do not sell your personal information. We share it only with service providers who host our systems, process bookings and deliver messages on our behalf, under confidentiality obligations. We may disclose information if the law requires it.
               </p>
             </div>
           </section>

@@ -54,7 +54,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({
 
           <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-gray-400 pb-6 border-b border-white/[0.08]">
             <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white font-medium">
-              Last updated: November 6, 2026
+              Last updated: November 12, 2026
             </span>
             <span>Appointment Messaging Program</span>
             <span className="text-gray-600">•</span>
@@ -81,10 +81,10 @@ export const TermsPage: React.FC<TermsPageProps> = ({
             </div>
             <div className="p-6 rounded-[22px] bg-[#0c0e17] border border-white/10 shadow-lg space-y-3">
               <p className="text-base text-white leading-relaxed">
-                <strong className="text-white font-semibold">ShownLeads</strong> (operated by <strong className="text-white font-semibold">Oskar Jan Filipski</strong>) sends appointment-related text messages to homeowners who book an attic insulation estimate through our forms and agree to receive texts.
+                ShownLeads (operated by Oskar Jan Filipski) sends appointment-related text messages to business owners who book a strategy call with us through our booking form and agree to receive texts.
               </p>
               <p className="text-sm text-gray-300 leading-relaxed">
-                Messages are confirmations and reminders for the appointment you booked. <strong className="text-white">We do not send marketing or promotional messages through this program.</strong>
+                Messages are confirmations and reminders about the call you booked, up to 5 per booking. <strong className="text-white">We do not send marketing or promotional messages through this program, we do not text homeowners or consumers through it, and we do not send messages on behalf of other businesses.</strong>
               </p>
             </div>
           </section>
@@ -101,7 +101,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({
             </div>
             <div className="p-5 rounded-2xl bg-[#0c0e17] border border-white/10">
               <p className="leading-relaxed">
-                You opt in by entering your mobile number on our booking form and ticking the unchecked consent box. <strong className="text-white">Consent is not a condition of any purchase.</strong>
+                You opt in by entering your mobile number on our booking form and ticking the unchecked consent box next to the text-message agreement. <strong className="text-white">Consent is not a condition of any purchase.</strong>
               </p>
             </div>
           </section>
@@ -114,7 +114,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({
                 Message frequency
               </h3>
               <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
-                Message frequency varies. You will receive <strong className="text-blue-400 font-semibold">up to 5 messages per booked appointment</strong>.
+                Message frequency varies. You will receive up to 5 messages per booking.
               </p>
             </div>
 
@@ -162,6 +162,21 @@ export const TermsPage: React.FC<TermsPageProps> = ({
             </div>
           </div>
 
+          {/* Example Messages */}
+          <section className="space-y-4">
+            <h2 className="font-heading uppercase text-xl sm:text-2xl text-white tracking-wide">
+              Example Messages
+            </h2>
+            <div className="p-5 rounded-2xl bg-[#0c0e17] border border-white/10 space-y-3 font-sans text-xs sm:text-sm text-gray-300">
+              <div className="p-3.5 rounded-xl bg-white/[0.04] border border-white/10 text-gray-200">
+                ShownLeads: Hi Mike, your strategy call is confirmed for Fri, Nov 13 at 3:00 PM CT. Reply STOP to opt out, HELP for help.
+              </div>
+              <div className="p-3.5 rounded-xl bg-white/[0.04] border border-white/10 text-gray-200">
+                ShownLeads: Reminder: your strategy call with us starts in 1 hour. Need to reschedule? Reply here. Reply STOP to opt out.
+              </div>
+            </div>
+          </section>
+
           {/* Carriers */}
           <section className="space-y-4">
             <h2 className="font-heading uppercase text-xl sm:text-2xl text-white tracking-wide">
@@ -191,7 +206,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({
               <div className="p-4 rounded-xl bg-[#080911] border border-blue-500/20 flex items-start gap-3 text-xs leading-relaxed text-blue-100">
                 <AlertCircle className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
                 <p>
-                  <strong className="text-white">Strict Privacy Commitment:</strong> No mobile information is shared with third parties or affiliates for marketing or promotional purposes.
+                  No mobile information is shared with third parties or affiliates for marketing or promotional purposes. Text messaging opt-in data and consent are not shared with any third parties.
                 </p>
               </div>
             </div>

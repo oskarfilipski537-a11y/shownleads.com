@@ -7,13 +7,15 @@ import { useLanguage } from '../context/LanguageContext';
 interface FinalCTAProps {
   onOpenQuiz?: () => void;
   onNavigate?: (page: AppPage, hash?: string) => void;
+  hideBookingWidget?: boolean;
 }
 
-export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenQuiz, onNavigate }) => {
+export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenQuiz, onNavigate, hideBookingWidget = false }) => {
   const { t } = useLanguage();
   const [activeModal, setActiveModal] = useState<'privacy' | 'terms' | null>(null);
 
   useEffect(() => {
+    if (hideBookingWidget) return;
     // Dynamically load GoHighLevel / LeadConnector form embed script
     const existingScript = document.querySelector('script[src="https://link.msgsndr.com/js/form_embed.js"]');
     if (!existingScript) {
@@ -23,15 +25,16 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenQuiz, onNavigate }) =>
       script.async = true;
       document.body.appendChild(script);
     }
-  }, []);
+  }, [hideBookingWidget]);
 
   return (
     <>
       {/* FINAL CTA / GOHIGHLEVEL BOOKING EMBED */}
-      <section
-        id="final-cta"
-        className="relative py-16 sm:py-24 bg-[#07080c] overflow-hidden"
-      >
+      {!hideBookingWidget && (
+        <section
+          id="final-cta"
+          className="relative py-16 sm:py-24 bg-[#07080c] overflow-hidden"
+        >
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
           {/* Card Container (Fundory 24px glass card) */}
           <div className="relative rounded-[24px] bg-[#0c0e17] border border-white/10 p-4 sm:p-6 lg:p-8 text-center max-w-4xl mx-auto shadow-[0_20px_60px_rgba(0,0,0,0.8),0_0_40px_rgba(59,130,246,0.15)] backdrop-blur-xl">
@@ -50,6 +53,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenQuiz, onNavigate }) =>
           </div>
         </div>
       </section>
+      )}
 
       {/* STRUCTURED FOOTER */}
       <footer
