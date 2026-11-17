@@ -202,7 +202,7 @@ if (fs.existsSync(distDir)) {
       { name: 'case-studies', canonicalPath: '/case-studies', staticHtml: templateHtml },
       { name: 'company', canonicalPath: '/company', staticHtml: templateHtml },
       { name: 'appointments', canonicalPath: '/appointments', staticHtml: templateHtml },
-      { name: 'lead-gen', canonicalPath: '/lead-gen', staticHtml: templateHtml },
+      { name: 'appointment-setting', canonicalPath: '/appointment-setting', staticHtml: templateHtml },
       { name: 'our-companies', canonicalPath: '/our-companies', staticHtml: templateHtml },
       { name: 'our-services', canonicalPath: '/our-services', staticHtml: templateHtml },
     ];
@@ -218,6 +218,25 @@ if (fs.existsSync(distDir)) {
       // Also provide a .html version for direct file servers
       fs.writeFileSync(path.join(distDir, `${route.name}.html`), routeHtml);
     }
+
+    // Static redirect fallback from legacy /lead-gen URL to /appointment-setting
+    const leadGenRedirectHtml = `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0; url=/appointment-setting" />
+    <link rel="canonical" href="https://www.shownleads.com/appointment-setting" />
+    <title>Redirecting to /appointment-setting</title>
+    <script>window.location.replace('/appointment-setting');</script>
+  </head>
+  <body>
+    <p>Redirecting to <a href="/appointment-setting">/appointment-setting</a>...</p>
+  </body>
+</html>`;
+    const legacyLeadGenDir = path.join(distDir, 'lead-gen');
+    fs.mkdirSync(legacyLeadGenDir, { recursive: true });
+    fs.writeFileSync(path.join(legacyLeadGenDir, 'index.html'), leadGenRedirectHtml);
+    fs.writeFileSync(path.join(distDir, 'lead-gen.html'), leadGenRedirectHtml);
 
     console.log('Post-build: static prerendered HTML generated for legal routes & SPA fallbacks created.');
   }

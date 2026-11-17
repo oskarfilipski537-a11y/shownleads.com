@@ -1,7 +1,7 @@
 export type AppPage = 
   | 'home' 
   | 'company' 
-  | 'lead-gen' 
+  | 'appointment-setting' 
   | 'appointments' 
   | 'our-companies' 
   | 'our-services' 

@@ -1,5 +1,17 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/lead-gen",
+      "destination": "/appointment-setting",
+      "permanent": true
+    },
+    {
+      "source": "/lead-gen/",
+      "destination": "/appointment-setting",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/api/(.*)",

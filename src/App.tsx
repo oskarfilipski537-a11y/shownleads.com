@@ -44,7 +44,11 @@ function getInitialPage(): AppPage {
     const candidate = path || hash || searchPage;
 
     if (candidate.startsWith('company')) return 'company';
-    if (candidate.startsWith('lead-gen')) return 'lead-gen';
+    if (candidate.startsWith('lead-gen')) {
+      window.history.replaceState({}, '', '/appointment-setting');
+      return 'appointment-setting';
+    }
+    if (candidate.startsWith('appointment-setting')) return 'appointment-setting';
     if (candidate.startsWith('appointments')) return 'appointments';
     if (candidate.startsWith('our-companies') || candidate.startsWith('companies')) return 'our-companies';
     if (candidate.startsWith('our-services') || candidate.startsWith('services')) return 'our-services';
@@ -195,7 +199,7 @@ export default function App() {
         </main>
       )}
 
-      {currentPage === 'lead-gen' && (
+      {currentPage === 'appointment-setting' && (
         <main id="main-content">
           <LeadGenPage
             onOpenQuiz={handleOpenQuiz}

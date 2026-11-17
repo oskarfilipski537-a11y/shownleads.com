@@ -28,12 +28,12 @@ export const LeadGenPage: React.FC<LeadGenPageProps> = ({
   onNavigateHome
 }) => {
   const [selectedTicket, setSelectedTicket] = useState<number>(3500);
-  const [leadsPerMonth, setLeadsPerMonth] = useState<number>(20);
+  const [appointmentsPerMonth, setAppointmentsPerMonth] = useState<number>(20);
 
   // Simple ROI estimate
-  const estimatedCloses = Math.max(1, Math.round(leadsPerMonth * 0.25));
+  const estimatedCloses = Math.max(1, Math.round(appointmentsPerMonth * 0.25));
   const estimatedRevenue = estimatedCloses * selectedTicket;
-  const estimatedCost = leadsPerMonth * 55;
+  const estimatedCost = appointmentsPerMonth * 55;
   const netEstimatedProfit = estimatedRevenue - estimatedCost;
 
   const qualificationCriteria = [
@@ -59,12 +59,12 @@ export const LeadGenPage: React.FC<LeadGenPageProps> = ({
     },
     {
       title: "5. Within Your Exact Territory Radius",
-      desc: "Every lead is geo-filtered strictly to your active zip codes or travel boundaries. You never waste time on projects outside your zone.",
+      desc: "Every booked estimate appointment is geo-filtered strictly to your active zip codes or travel boundaries. You never waste time on projects outside your zone.",
       tag: "Geo-Fenced"
     },
     {
       title: "6. Scope & Need Pre-Outlined",
-      desc: "Leads specify exact requirements, square footage, or service goals so your estimators enter conversations fully informed.",
+      desc: "Homeowners specify exact requirements, square footage, or service goals so your estimators enter booked estimate appointments fully informed.",
       tag: "Detailed Scope"
     }
   ];
@@ -95,7 +95,7 @@ export const LeadGenPage: React.FC<LeadGenPageProps> = ({
           <div className="flex items-center gap-2 text-xs text-[#6f879c] font-sans">
             <span className="cursor-pointer hover:text-[#fffdf9]" onClick={onNavigateHome}>Home</span>
             <span>/</span>
-            <span className="text-blue-400 font-medium">Lead Gen</span>
+            <span className="text-blue-400 font-medium">Appointment Setting</span>
           </div>
         </div>
 
@@ -104,17 +104,17 @@ export const LeadGenPage: React.FC<LeadGenPageProps> = ({
           <div className="mb-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 shadow-sm">
             <Target className="w-3.5 h-3.5 text-blue-400" />
             <span className="text-[11px] uppercase tracking-[0.14em] text-blue-200 font-mono font-medium">
-              Pay Per Qualified Lead • Zero Monthly Retainers
+              Appointment Setting • Zero Monthly Retainers
             </span>
           </div>
 
           <h1 className="font-heading uppercase text-3xl sm:text-5xl lg:text-6xl text-[#fffdf9] font-normal tracking-[0.02em] mb-5 leading-[1.04]">
-            PAY ONLY FOR LEADS THAT <br className="hidden sm:inline" />
+            PAY ONLY FOR BOOKED ESTIMATE APPOINTMENTS THAT <br className="hidden sm:inline" />
             <span className="text-blue-400 font-serif italic lowercase tracking-normal">meet your exact buyer specifications</span>
           </h1>
 
           <p className="font-sans text-sm sm:text-base lg:text-lg text-gray-300 font-normal max-w-2xl mx-auto leading-relaxed mb-8">
-            Stop funding expensive monthly retainers with zero quality control. On our performance model, you only pay for prospects who have passed through our strict multi-point qualification filters.
+            Stop funding expensive monthly retainers with zero quality control. With our appointment setting model, you only pay for booked estimate appointments that have passed through our strict multi-point qualification filters.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -132,13 +132,13 @@ export const LeadGenPage: React.FC<LeadGenPageProps> = ({
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white/[0.06] border border-white/10 text-white font-sans font-medium text-xs sm:text-sm uppercase tracking-[0.08em] hover:bg-white/[0.12] transition-all cursor-pointer backdrop-blur-md"
               >
                 <PhoneCall className="w-4 h-4 text-blue-400" />
-                <span>Talk to a Lead Specialist</span>
+                <span>Talk to an Appointment Setting Specialist</span>
               </button>
             )}
           </div>
         </div>
 
-        {/* SECTION: WHAT IS A QUALIFIED LEAD TO US? */}
+        {/* SECTION: WHAT IS A BOOKED ESTIMATE APPOINTMENT TO US? */}
         <div className="max-w-5xl mx-auto mb-20">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-[11px] uppercase tracking-[0.12em] text-blue-400 font-mono mb-3">
@@ -146,10 +146,10 @@ export const LeadGenPage: React.FC<LeadGenPageProps> = ({
               <span>The ShownLeads Qualification Standard</span>
             </div>
             <h2 className="font-heading uppercase text-2xl sm:text-4xl text-[#fffdf9] font-normal mb-3">
-              What Is A “Qualified Lead” To Us?
+              What Is A “Booked Estimate Appointment” To Us?
             </h2>
             <p className="font-sans text-xs sm:text-sm text-gray-400 leading-relaxed">
-              Most lead generation companies count an email address or cheap click as a lead. At ShownLeads, an inquiry is strictly NOT considered qualified unless it clears every single checkpoint below:
+              Most agencies count an email address or cheap click as a result. Through our appointment setting process, an inquiry is strictly NOT booked as a qualified estimate appointment unless it clears every single checkpoint below:
             </p>
           </div>
 
@@ -179,16 +179,16 @@ export const LeadGenPage: React.FC<LeadGenPageProps> = ({
             ))}
           </div>
 
-          {/* Lead Replacement Guarantee Banner */}
+          {/* Appointment Integrity Guarantee Banner */}
           <div className="mt-8 p-5 rounded-[18px] bg-[#0c0e17] border border-blue-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left shadow-xl">
             <div className="flex items-center gap-3">
               <ShieldCheck className="w-6 h-6 text-blue-400 shrink-0" />
               <div>
                 <h4 className="text-sm font-sans font-semibold text-[#fffdf9]">
-                  100% Lead Integrity Guarantee
+                  100% Appointment Integrity Guarantee
                 </h4>
                 <p className="text-xs text-gray-400 font-sans">
-                  If any delivered lead fails our qualification criteria or provides a disconnected phone number, you receive an immediate replacement credit. Zero questions asked.
+                  If any booked estimate appointment fails our qualification criteria or provides a disconnected phone number, you owe $0 and receive an immediate replacement slot. Zero questions asked.
                 </p>
               </div>
             </div>
@@ -289,7 +289,7 @@ export const LeadGenPage: React.FC<LeadGenPageProps> = ({
               Performance Model Economics Simulator
             </h3>
             <p className="font-sans text-xs sm:text-sm text-gray-400">
-              Model your prospective returns based on your average ticket size and desired monthly lead volume.
+              Model your prospective returns based on your average ticket size and desired monthly booked estimate appointments.
             </p>
           </div>
 
@@ -318,22 +318,22 @@ export const LeadGenPage: React.FC<LeadGenPageProps> = ({
 
               <div>
                 <div className="flex justify-between text-xs font-sans mb-2">
-                  <span className="text-gray-400 uppercase tracking-wider">Target Qualified Leads / Mo:</span>
-                  <span className="text-white font-semibold">{leadsPerMonth} Leads</span>
+                  <span className="text-gray-400 uppercase tracking-wider">Target Booked Estimate Appointments / Mo:</span>
+                  <span className="text-white font-semibold">{appointmentsPerMonth} Appointments</span>
                 </div>
                 <input
                   type="range"
                   min="10"
                   max="60"
                   step="5"
-                  value={leadsPerMonth}
-                  onChange={(e) => setLeadsPerMonth(Number(e.target.value))}
+                  value={appointmentsPerMonth}
+                  onChange={(e) => setAppointmentsPerMonth(Number(e.target.value))}
                   className="w-full accent-blue-500 cursor-pointer"
                 />
                 <div className="flex justify-between text-[10px] text-gray-500 mt-1 font-mono">
-                  <span>10 Leads</span>
-                  <span>35 Leads</span>
-                  <span>60 Leads</span>
+                  <span>10 Appointments</span>
+                  <span>35 Appointments</span>
+                  <span>60 Appointments</span>
                 </div>
               </div>
             </div>
@@ -348,7 +348,7 @@ export const LeadGenPage: React.FC<LeadGenPageProps> = ({
                 <span className="text-blue-400 font-display text-lg">${estimatedRevenue.toLocaleString()}</span>
               </div>
               <div className="flex justify-between items-center text-xs pb-3 border-b border-white/[0.06]">
-                <span className="text-gray-400 font-sans">Lead Qualification Cost ($55/lead):</span>
+                <span className="text-gray-400 font-sans">Appointment Setting Cost ($55/appointment):</span>
                 <span className="text-gray-300 font-semibold">${estimatedCost.toLocaleString()}</span>
               </div>
               <div className="flex justify-between items-center text-sm pt-1">
@@ -370,7 +370,7 @@ export const LeadGenPage: React.FC<LeadGenPageProps> = ({
             </div>
 
             <h2 className="font-heading uppercase text-2xl sm:text-4xl text-[#fffdf9] font-normal tracking-tight mb-4">
-              Claim Your Territory For <span className="text-blue-400 font-serif italic lowercase tracking-normal">pay-per-qualified-lead</span>
+              Claim Your Territory For <span className="text-blue-400 font-serif italic lowercase tracking-normal">appointment setting</span>
             </h2>
 
             <p className="font-sans text-sm sm:text-base text-gray-300 max-w-xl mx-auto leading-relaxed mb-8">
@@ -392,7 +392,7 @@ export const LeadGenPage: React.FC<LeadGenPageProps> = ({
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white/[0.06] border border-white/10 text-white font-sans font-medium text-xs sm:text-sm uppercase tracking-[0.08em] hover:bg-white/[0.12] transition-all cursor-pointer backdrop-blur-md"
                 >
                   <PhoneCall className="w-4 h-4 text-blue-400" />
-                  <span>Talk to a Lead Specialist</span>
+                  <span>Talk to an Appointment Setting Specialist</span>
                 </button>
               )}
             </div>

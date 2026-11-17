@@ -11,6 +11,10 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const port = 3000;
 
+app.get(['/lead-gen', '/lead-gen/'], (_req, res) => {
+  res.redirect(301, '/appointment-setting');
+});
+
 app.use(express.json());
 
 const ai = new GoogleGenAI({
