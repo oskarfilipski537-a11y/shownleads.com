@@ -35,7 +35,7 @@ export const PricingPlans: React.FC<PricingPlansProps> = ({
           </h2>
 
           <p className="font-sans text-sm sm:text-base text-[#fffdf9]/75 font-normal max-w-md mx-auto leading-relaxed">
-            Pay only for shown appointments. Choose the option that fits your sales process.
+            For attic insulation contractors and business owners: pay only for booked estimate appointments that show.
           </p>
         </div>
 
@@ -59,7 +59,7 @@ export const PricingPlans: React.FC<PricingPlansProps> = ({
               </h3>
 
               <p className="font-sans text-xs text-gray-400 mb-5 leading-relaxed">
-                Pay only when a real homeowner shows up for an estimate.
+                Pay only when a qualified homeowner shows up for a booked estimate appointment.
               </p>
 
               {/* Price Display */}
@@ -79,7 +79,7 @@ export const PricingPlans: React.FC<PricingPlansProps> = ({
                   "Real homeowners only",
                   "Ready for attic insulation work",
                   "Booked straight to your calendar",
-                  "Text and email reminders sent",
+                  "Appointment reminders sent",
                   "Pay $0 if they don't show up",
                   "No long-term contract"
                 ].map((feat, idx) => (
@@ -113,11 +113,11 @@ export const PricingPlans: React.FC<PricingPlansProps> = ({
               </div>
 
               <h3 className="font-heading uppercase text-xl sm:text-2xl text-[#fffdf9] tracking-wide mb-1.5">
-                Price-Educated Shown Sit
+                Price-Educated Shown Appointment
               </h3>
 
               <p className="font-sans text-xs text-gray-400 mb-5 leading-relaxed">
-                We call homeowners first and make sure they know your prices before you visit.
+                We call homeowners first so they understand your pricing before your estimate visit.
               </p>
 
               {/* Price Display */}
@@ -163,7 +163,7 @@ export const PricingPlans: React.FC<PricingPlansProps> = ({
         {/* Clean, Simple Footnote */}
         <div className="max-w-xl mx-auto mt-8 sm:mt-10 text-center text-xs text-gray-400 font-sans">
           <p>
-            You only pay when a real homeowner sits down with your team. Zero long-term contracts.
+            You only pay when a homeowner shows up for a booked estimate appointment with your team. Zero long-term contracts.
           </p>
         </div>
 

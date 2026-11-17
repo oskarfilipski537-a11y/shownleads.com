@@ -11,28 +11,28 @@ export const FAQ: React.FC<FAQProps> = ({ onOpenQuiz, onTalkToSpecialist }) => {
   const faqList = [
     {
       id: 'faq-pay-per-sit',
-      question: 'How do the $97 and $197 pay-per-sit options work?',
-      answer: 'You only pay when a verified homeowner actually sits down with you for an estimate. If the homeowner cancels or does not show up, you owe $0.'
+      question: 'How do the $97 and $197 booked estimate appointment options work?',
+      answer: 'We run the ads, qualify homeowners and book estimate appointments on your calendar, and you pay per appointment that shows. If a homeowner cancels or does not show up, you owe $0.'
     },
     {
       id: 'faq-options-difference',
       question: 'What is the difference between the $97 and $197 options?',
-      answer: 'On the $97 option, homeowners are pre-qualified and booked to your calendar. On the $197 option, we also call them beforehand to educate them on your pricing and confirm all decision-makers are present.'
+      answer: 'On the $97 option, qualified homeowners are scheduled directly onto your calendar for an estimate. On the $197 option, we also call homeowners beforehand to educate them on your pricing range and confirm decision-makers will attend.'
     },
     {
       id: 'faq-no-show-guarantee',
       question: 'What happens if a homeowner cancels or no-shows?',
-      answer: 'You pay nothing. We only charge for shown estimates where you actually sit down with the homeowner.'
+      answer: 'You pay nothing. You only pay for booked estimate appointments where the homeowner actually shows up to meet with your team.'
     },
     {
       id: 'faq-ai-estimator',
-      question: 'What is the instant 2-minute estimator tool?',
-      answer: 'It is an online tool on your website where homeowners answer a few quick questions about their attic to get an instant estimate in 2 minutes instead of waiting 2 days.'
+      question: 'Who is ShownLeads built for?',
+      answer: 'ShownLeads is a business-to-business appointment-setting service built for attic insulation contractors and business owners who want booked, price-educated estimate appointments instead of buying shared contact lists.'
     },
     {
       id: 'faq-territory-exclusivity',
       question: 'Can my competitors in the same city hire you?',
-      answer: 'No. We strictly work with only 1 attic insulation contractor per city. Once your area is locked, we turn down all competitors in your service radius.'
+      answer: 'No. We partner with only 1 attic insulation contractor per city. Once your service area is taken, we do not onboard competing contractors in your territory.'
     }
   ];
 
@@ -65,7 +65,7 @@ export const FAQ: React.FC<FAQProps> = ({ onOpenQuiz, onTalkToSpecialist }) => {
           </h2>
           
           <p className="font-sans text-xs sm:text-sm text-[#fffdf9]/70 font-normal max-w-md mx-auto leading-relaxed">
-            Simple answers about how we work, pricing, and city exclusivity.
+            Clear answers for attic insulation contractors and business owners about pricing, booked estimate appointments, and city exclusivity.
           </p>
         </div>
 

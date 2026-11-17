@@ -78,8 +78,8 @@ export const NumbersProof: React.FC = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.06]">
             <div>
               <StatCounter
-                target={94}
-                suffix="%"
+                target={97}
+                prefix="$"
                 label={t.stat1Label}
                 description={t.stat1Desc}
               />
@@ -87,8 +87,8 @@ export const NumbersProof: React.FC = () => {
 
             <div>
               <StatCounter
-                target={100}
-                suffix="%"
+                target={197}
+                prefix="$"
                 label={t.stat2Label}
                 description={t.stat2Desc}
               />
@@ -96,8 +96,7 @@ export const NumbersProof: React.FC = () => {
 
             <div>
               <StatCounter
-                target={3500}
-                prefix="+$"
+                target={1}
                 label={t.stat3Label}
                 description={t.stat3Desc}
               />

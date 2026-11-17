@@ -46,278 +46,278 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenQuiz }) => {
     waItems: WhatsAppTestimonial[];
   }> = {
     en: {
-      tag: 'VERIFIED CONTRACTOR RESULTS',
-      titlePart1: 'PROVEN RESULTS. ',
-      titleSpan: 'REAL PARTNERS.',
-      subtitle: 'Real contractor metrics from their first 30 days on our pay-per-estimate dispatch system. Zero retainers, 100% verified sit-downs.',
-      ctaButton: 'See If Your Trade & City Are Open',
+      tag: 'HOW OUR PROCESS WORKS',
+      titlePart1: 'BUILT FOR ATTIC ',
+      titleSpan: 'INSULATION CONTRACTORS.',
+      subtitle: 'Designed for attic insulation contractors and business owners. We run the ads, qualify homeowners and book estimate appointments on your calendar, and you pay per appointment that shows.',
+      ctaButton: 'See If Your City Is Available',
       cards: [
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854408/Image_20_vuryj6.jpg',
-          name: 'Mark Callahan',
-          company: 'Callahan Custom Kitchens',
-          niche: 'Kitchen Remodelling',
-          quote: 'ShownLeads completely filled our calendar with high-budget homeowners. We closed 11 full kitchen renovations in our first month without touching a cold lead.',
-          result: '32 shown estimates · 11 closed jobs ($285k acquired)',
-          stats: { shownEstimates: 32, closedJobs: 11, ticketValue: '$285,000' }
+          name: 'Local Ad Campaigns',
+          company: 'Targeted Homeowner Reach',
+          niche: 'Step 01 · Advertising',
+          quote: 'We run paid ads tailored for homeowners in your service area who are looking for attic insulation estimates.',
+          result: 'Built for attic insulation contractors',
+          stats: { shownEstimates: 1, closedJobs: 1, ticketValue: 'Local Ads' }
         },
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854944/Image_24_ppwwz3.jpg',
-          name: 'David Miller',
-          company: 'Miller Roofing & Exteriors',
-          niche: 'Metal Roof Replacement',
-          quote: 'Every single appointment showed up prepared with their budget ready. We locked in 9 high-ticket metal roof replacements within 4 weeks.',
-          result: '26 shown estimates · 9 closed jobs ($198k acquired)',
-          stats: { shownEstimates: 26, closedJobs: 9, ticketValue: '$198,000' }
+          name: 'Homeowner Screening',
+          company: 'Property & Scope Checks',
+          niche: 'Step 02 · Qualification',
+          quote: 'We qualify homeowners on location, property ownership, and attic project scope before scheduling any visit.',
+          result: 'No shared contact lists sold',
+          stats: { shownEstimates: 2, closedJobs: 1, ticketValue: 'Qualified' }
         },
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854408/Image_17_w0msvz.jpg',
-          name: 'Thomas & Elena Vance',
-          company: 'Vance Luxury Design',
-          niche: 'Bathroom Remodelling',
-          quote: 'The human setters are a game changer. We got 21 vetted sit-downs and converted 8 luxury master bathroom remodels immediately.',
-          result: '21 shown estimates · 8 closed jobs ($152k acquired)',
-          stats: { shownEstimates: 21, closedJobs: 8, ticketValue: '$152,000' }
+          name: 'Price Education',
+          company: 'Clear Expectations',
+          niche: 'Step 03 · Preparation',
+          quote: 'On our price-educated option, we speak with homeowners beforehand so they understand your pricing before you arrive.',
+          result: 'Reminders sent prior to appointment',
+          stats: { shownEstimates: 3, closedJobs: 1, ticketValue: 'Prepared' }
         },
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854408/Image_18_cc9t7y.jpg',
-          name: 'Robert Kowalski',
-          company: 'Apex Surface & Flatwork',
-          niche: 'Epoxy & Concrete Driveways',
-          quote: 'Zero tire-kickers or bargain hunters. 34 confirmed homeowner sits resulted in 12 concrete driveway and epoxy projects on our books.',
-          result: '34 shown estimates · 12 closed jobs ($134k acquired)',
-          stats: { shownEstimates: 34, closedJobs: 12, ticketValue: '$134,000' }
+          name: 'Booked Calendar Sits',
+          company: 'Pay Per Shown Appointment',
+          niche: 'Step 04 · Appointment',
+          quote: 'Booked estimate appointments go straight onto your calendar. If a homeowner cancels or does not show up, you owe $0.',
+          result: 'Pay only when the homeowner shows',
+          stats: { shownEstimates: 4, closedJobs: 0, ticketValue: '$97–$197' }
         }
       ],
-      waTag: 'DIRECT DISPATCH LOGS',
-      waTitlePart1: 'LIVE FROM THE FIELD. ',
-      waTitleSpan: 'CLIENT CHATS.',
-      waSubtitle: 'Real-time screenshot updates directly from our partner contractor group chats as estimates get booked and jobs close.',
+      waTag: 'DISPATCH COMMUNICATION',
+      waTitlePart1: 'DIRECT CONTRACTOR ',
+      waTitleSpan: 'SCHEDULING UPDATES.',
+      waSubtitle: 'Examples of direct scheduling and appointment confirmation updates used while coordinating booked estimate appointments.',
       waItems: [
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854844/Image_21_zmxtae.jpg',
-          tag: 'Client Thread #1',
-          caption: 'Signed contract on the spot · Deposit received',
-          location: 'Dallas, TX'
+          tag: 'Dispatch Example #1',
+          caption: 'Booked estimate confirmation update',
+          location: 'Scheduling'
         },
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854844/Image_22_fy7cvl.jpg',
-          tag: 'Client Thread #2',
-          caption: 'Full master remodel quote closed · Route locked',
-          location: 'Chicago, IL'
+          tag: 'Dispatch Example #2',
+          caption: 'Calendar slot coordination message',
+          location: 'Route Sync'
         },
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854844/Image_23_rba7bx.jpg',
-          tag: 'Client Thread #3',
-          caption: '3 sit-downs completed today · 2 deposits taken',
-          location: 'Austin, TX'
+          tag: 'Dispatch Example #3',
+          caption: 'Homeowner attendance confirmation',
+          location: 'Follow-Up'
         }
       ]
     },
     sv: {
-      tag: 'VERIFIERADE KUNDRESULTAT',
-      titlePart1: 'BEPRÖVADE RESULTAT. ',
-      titleSpan: 'VERKLIGA PARTNERS.',
-      subtitle: 'Mätbara resultat från hantverksföretag under deras första 30 dagar med vår pay-per-estimate modell. Noll fasta arvoden, 100% genomförda offertmöten.',
-      ctaButton: 'Se om din bransch och stad är ledig',
+      tag: 'SÅ FUNGERAR PROCESSEN',
+      titlePart1: 'BYGGT FÖR ',
+      titleSpan: 'ISOLERINGSFÖRETAG.',
+      subtitle: 'För entreprenörer och företagare inom vindsisolering. Vi sköter annonsering, kvalificering och kalenderbokning, och du betalar per genomfört möte.',
+      ctaButton: 'Se om din stad är ledig',
       cards: [
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854408/Image_20_vuryj6.jpg',
-          name: 'Mark Callahan',
-          company: 'Callahan Kök & Inredning',
-          niche: 'Köksrenovering',
-          quote: 'ShownLeads fyllde vår kalender helt med köpstarka villaägare. Vi stängde 11 fulla köksrenoveringar första månaden utan ett enda kallt samtal.',
-          result: '32 genomförda offerter · 11 vunna jobb (2,85 Mkr)',
-          stats: { shownEstimates: 32, closedJobs: 11, ticketValue: '2 850 000 kr' }
+          name: 'Lokal Annonsering',
+          company: 'Riktade Kampanjer',
+          niche: 'Steg 01 · Annonser',
+          quote: 'Vi kör betalda annonser riktade till husägare i ditt upptagningsområde som söker offert på vindsisolering.',
+          result: 'Anpassat för vindsisolering',
+          stats: { shownEstimates: 1, closedJobs: 1, ticketValue: 'Lokalt' }
         },
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854944/Image_24_ppwwz3.jpg',
-          name: 'David Miller',
-          company: 'Miller Tak & Fasad',
-          niche: 'Plåttak & Takbyte',
-          quote: 'Varje enskild kund satt redo vid mötet med godkänd budget. Vi säkrade 9 större plåttaksbyten på under 4 veckor.',
-          result: '26 genomförda offerter · 9 vunna jobb (1,98 Mkr)',
-          stats: { shownEstimates: 26, closedJobs: 9, ticketValue: '1 980 000 kr' }
+          name: 'Kvalificering av Husägare',
+          company: 'Kontroll av Omfattning',
+          niche: 'Steg 02 · Urval',
+          quote: 'Vi kontrollerar ägandeskap, plats och projektomfattning innan ett offertbesök bokas in.',
+          result: 'Inga delade kontaktlistor',
+          stats: { shownEstimates: 2, closedJobs: 1, ticketValue: 'Granskad' }
         },
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854408/Image_17_w0msvz.jpg',
-          name: 'Thomas & Elena Vance',
-          company: 'Vance Badrumsdesign',
-          niche: 'Badrumsrenovering',
-          quote: 'Mötesbokarna gör hela skillnaden. Vi fick 21 granskade hembesök och konverterade 8 lyxiga badrumsrenoveringar direkt.',
-          result: '21 genomförda offerter · 8 vunna jobb (1,52 Mkr)',
-          stats: { shownEstimates: 21, closedJobs: 8, ticketValue: '1 520 000 kr' }
+          name: 'Prisinformation i Förväg',
+          company: 'Tydliga Förväntningar',
+          niche: 'Steg 03 · Förberedelse',
+          quote: 'Med vårt prisinformerade alternativ pratar vi med husägaren i förväg så att prisnivån är tydlig före besöket.',
+          result: 'Påminnelser skickas före mötet',
+          stats: { shownEstimates: 3, closedJobs: 1, ticketValue: 'Förberedd' }
         },
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854408/Image_18_cc9t7y.jpg',
-          name: 'Robert Kowalski',
-          company: 'Apex Ytbeläggning & Betong',
-          niche: 'Epoxigolv & Betonguppfarter',
-          quote: 'Noll fönstershoppare eller prispressare. 34 bekräftade möten resulterade i 12 betonguppfarts- och epoxiprojekt i orderboken.',
-          result: '34 genomförda offerter · 12 vunna jobb (1,34 Mkr)',
-          stats: { shownEstimates: 34, closedJobs: 12, ticketValue: '1 340 000 kr' }
+          name: 'Bokade Offertbesök',
+          company: 'Betala Per Genomfört Möte',
+          niche: 'Steg 04 · Kalender',
+          quote: 'Bokade offertbesök läggs direkt i din kalender. Uteblir eller avbokar kunden betalar du 0 kr.',
+          result: 'Betala endast vid genomfört besök',
+          stats: { shownEstimates: 4, closedJobs: 0, ticketValue: '0 kr bom' }
         }
       ],
-      waTag: 'DIREKTA CHATTLOGGAR',
-      waTitlePart1: 'DIREKT FRÅN FÄLTET. ',
-      waTitleSpan: 'KUNDMEDDELANDEN.',
-      waSubtitle: 'Realtidsuppdateringar från våra entreprenörers WhatsApp-grupper när offerter bokas och avtal signeras.',
+      waTag: 'BOKNINGSKOMMUNIKATION',
+      waTitlePart1: 'DIREKTA ',
+      waTitleSpan: 'KALENDERUPPDATERINGAR.',
+      waSubtitle: 'Exempel på direkt kommunikation vid samordning av bokade offertbesök.',
       waItems: [
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854844/Image_21_zmxtae.jpg',
-          tag: 'Kundchatt #1',
-          caption: 'Signerat kontrakt på plats · Handpenning mottagen',
-          location: 'Stockholm'
+          tag: 'Exempel #1',
+          caption: 'Bekräftelse av bokat offertbesök',
+          location: 'Kalender'
         },
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854844/Image_22_fy7cvl.jpg',
-          tag: 'Kundchatt #2',
-          caption: 'Full offert godkänd · Rutten fullbokad',
-          location: 'Göteborg'
+          tag: 'Exempel #2',
+          caption: 'Samordning av tidsbokning',
+          location: 'Planering'
         },
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854844/Image_23_rba7bx.jpg',
-          tag: 'Kundchatt #3',
-          caption: '3 möten genomförda idag · 2 vunna avtal',
-          location: 'Malmö'
+          tag: 'Exempel #3',
+          caption: 'Uppföljning inför besök',
+          location: 'Uppföljning'
         }
       ]
     },
     es: {
-      tag: 'RESULTADOS VERIFICADOS DE CLIENTES',
-      titlePart1: 'RESULTADOS PROBADOS. ',
-      titleSpan: 'SOCIOS REALES.',
-      subtitle: 'Métricas reales de empresas de reformas durante sus primeros 30 días con nuestro sistema de pago por presupuesto. Cero cuotas mensuales, 100% visitas realizadas.',
-      ctaButton: 'Comprobar disponibilidad de tu especialidad',
+      tag: 'CÓMO FUNCIONA EL PROCESO',
+      titlePart1: 'PARA CONTRATISTAS DE ',
+      titleSpan: 'AISLAMIENTO DE ÁTICOS.',
+      subtitle: 'Servicio de concertación de citas B2B para contratistas y propietarios de empresas de aislamiento de áticos. Gestionamos los anuncios, calificamos propietarios y pagas por cita realizada.',
+      ctaButton: 'Comprobar disponibilidad de tu ciudad',
       cards: [
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854408/Image_20_vuryj6.jpg',
-          name: 'Mark Callahan',
-          company: 'Callahan Cocinas de Diseño',
-          niche: 'Reformas de Cocinas',
-          quote: 'ShownLeads llenó nuestra agenda de propietarios con presupuestos reales. Cerramos 11 reformas completas el primer mes sin hacer llamadas en frío.',
-          result: '32 visitas completadas · 11 contratos cerrados (285.000€)',
-          stats: { shownEstimates: 32, closedJobs: 11, ticketValue: '285.000€' }
+          name: 'Campañas Locales',
+          company: 'Alcance a Propietarios',
+          niche: 'Paso 01 · Anuncios',
+          quote: 'Publicamos anuncios dirigidos a propietarios de tu zona que buscan presupuestos de aislamiento de áticos.',
+          result: 'Enfocado en aislamiento de áticos',
+          stats: { shownEstimates: 1, closedJobs: 1, ticketValue: 'Local' }
         },
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854944/Image_24_ppwwz3.jpg',
-          name: 'David Miller',
-          company: 'Miller Tejados y Cubiertas',
-          niche: 'Sustitución de Tejados',
-          quote: 'Todos los propietarios acudieron a la cita preparados y con presupuesto. Cerramos 9 proyectos de tejados en 4 semanas.',
-          result: '26 visitas completadas · 9 contratos cerrados (198.000€)',
-          stats: { shownEstimates: 26, closedJobs: 9, ticketValue: '198.000€' }
+          name: 'Cualificación Previa',
+          company: 'Revisión de Alcance',
+          niche: 'Paso 02 · Filtro',
+          quote: 'Verificamos ubicación, titularidad de la vivienda y alcance del trabajo antes de agendar cualquier visita.',
+          result: 'No vendemos listas compartidas',
+          stats: { shownEstimates: 2, closedJobs: 1, ticketValue: 'Filtrado' }
         },
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854408/Image_17_w0msvz.jpg',
-          name: 'Thomas & Elena Vance',
-          company: 'Vance Baños de Lujo',
-          niche: 'Reformas de Baños',
-          quote: 'Los teleoperadores marcan la diferencia. Tuvimos 21 reuniones cualificadas y cerramos 8 reformas de baños principales de inmediato.',
-          result: '21 visitas completadas · 8 contratos cerrados (152.000€)',
-          stats: { shownEstimates: 21, closedJobs: 8, ticketValue: '152.000€' }
+          name: 'Educación de Precios',
+          company: 'Expectativas Claras',
+          niche: 'Paso 03 · Preparación',
+          quote: 'En la opción con precio informado, hablamos primero con el propietario para que conozca tus tarifas antes de la visita.',
+          result: 'Recordatorios antes de la cita',
+          stats: { shownEstimates: 3, closedJobs: 1, ticketValue: 'Informado' }
         },
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854408/Image_18_cc9t7y.jpg',
-          name: 'Robert Kowalski',
-          company: 'Apex Pavimentos y Resinas',
-          niche: 'Suelos de Resina y Hormigón',
-          quote: 'Cero curiosos buscando precios bajos. 34 visitas confirmadas se tradujeron en 12 obras de pavimentos y entradas de hormigón.',
-          result: '34 visitas completadas · 12 contratos cerrados (134.000€)',
-          stats: { shownEstimates: 34, closedJobs: 12, ticketValue: '134.000€' }
+          name: 'Citas en tu Calendario',
+          company: 'Pago por Cita Realizada',
+          niche: 'Paso 04 · Agenda',
+          quote: 'Las citas de presupuesto agendadas llegan directo a tu calendario. Si cancelan o no asisten, pagas $0.',
+          result: 'Solo pagas si el cliente asiste',
+          stats: { shownEstimates: 4, closedJobs: 0, ticketValue: '$97–$197' }
         }
       ],
-      waTag: 'CONVERSACIONES REALES DE CLIENTES',
-      waTitlePart1: 'DESDE EL TERRENO. ',
-      waTitleSpan: 'CHATS DE WHATSAPP.',
-      waSubtitle: 'Capturas reales compartidas en directo por nuestros contratistas al cerrar presupuestos.',
+      waTag: 'COMUNICACIÓN DE CITAS',
+      waTitlePart1: 'ACTUALIZACIONES ',
+      waTitleSpan: 'DE AGENDA.',
+      waSubtitle: 'Ejemplos de comunicación directa durante la coordinación de citas de presupuesto agendadas.',
       waItems: [
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854844/Image_21_zmxtae.jpg',
-          tag: 'Chat de Cliente #1',
-          caption: 'Contrato firmado en el acto · Señal cobrada',
-          location: 'Madrid'
+          tag: 'Ejemplo #1',
+          caption: 'Confirmación de cita agendada',
+          location: 'Agenda'
         },
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854844/Image_22_fy7cvl.jpg',
-          tag: 'Chat de Cliente #2',
-          caption: 'Presupuesto completo cerrado · Calendario lleno',
-          location: 'Barcelona'
+          tag: 'Ejemplo #2',
+          caption: 'Coordinación de horario de visita',
+          location: 'Calendario'
         },
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854844/Image_23_rba7bx.jpg',
-          tag: 'Chat de Cliente #3',
-          caption: '3 visitas realizadas hoy · 2 contratos cerrados',
-          location: 'Valencia'
+          tag: 'Ejemplo #3',
+          caption: 'Seguimiento previo a la visita',
+          location: 'Seguimiento'
         }
       ]
     },
     de: {
-      tag: 'VERIFIZIERTE KUNDENERGEBNISSE',
-      titlePart1: 'BEWIESENE ERFOLGE. ',
-      titleSpan: 'ECHTE PARTNERBETRIEBE.',
-      subtitle: 'Tatsächliche Kennzahlen von Fachbetrieben aus ihren ersten 30 Tagen mit unserem Pay-per-Estimate System. Keine monatlichen Retainer, 100% wahrgenommene Termine.',
-      ctaButton: 'Prüfen Sie, ob Ihr Gewerk frei ist',
+      tag: 'SO FUNKTIONIERT UNSER PROZESS',
+      titlePart1: 'FÜR DACHBODENDÄMMUNGS-',
+      titleSpan: 'FACHBETRIEBE.',
+      subtitle: 'B2B-Terminvereinbarung für Fachbetriebe und Inhaber im Bereich Dachbodendämmung. Wir schalten Anzeigen, qualifizieren Eigentümer und Sie zahlen pro wahrgenommenem Kostenvoranschlagstermin.',
+      ctaButton: 'Prüfen Sie, ob Ihre Stadt verfügbar ist',
       cards: [
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854408/Image_20_vuryj6.jpg',
-          name: 'Mark Callahan',
-          company: 'Callahan Küchenmanufaktur',
-          niche: 'Küchenrenovierung',
-          quote: 'ShownLeads hat unseren Kalender komplett mit kaufkräftigen Eigentümern gefüllt. Wir haben im ersten Monat 11 Komplettküchen abgeschlossen.',
-          result: '32 Vor-Ort-Termine · 11 Aufträge (285.000€ Umsatz)',
-          stats: { shownEstimates: 32, closedJobs: 11, ticketValue: '285.000€' }
+          name: 'Lokale Werbeanzeigen',
+          company: 'Regionale Ansprache',
+          niche: 'Schritt 01 · Anzeigen',
+          quote: 'Wir schalten bezahlte Anzeigen für Hauseigentümer in Ihrem Einsatzgebiet, die Angebote zur Dachbodendämmung suchen.',
+          result: 'Fokus auf Dachbodendämmung',
+          stats: { shownEstimates: 1, closedJobs: 1, ticketValue: 'Lokal' }
         },
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854944/Image_24_ppwwz3.jpg',
-          name: 'David Miller',
-          company: 'Miller Dachtechnik',
-          niche: 'Metalldacheindeckung',
-          quote: 'Jeder einzelne Termin fand wie vereinbart statt. Wir haben innerhalb von 4 Wochen 9 hochwertige Dacheindeckungen unter Vertrag genommen.',
-          result: '26 Vor-Ort-Termine · 9 Aufträge (198.000€ Umsatz)',
-          stats: { shownEstimates: 26, closedJobs: 9, ticketValue: '198.000€' }
+          name: 'Eigentümer-Vorprüfung',
+          company: 'Umfang & Standort',
+          niche: 'Schritt 02 · Prüfung',
+          quote: 'Wir prüfen Standort, Immobilieneigentum und Projektumfang, bevor ein Kostenvoranschlagstermin gebucht wird.',
+          result: 'Keine geteilten Kontaktlisten',
+          stats: { shownEstimates: 2, closedJobs: 1, ticketValue: 'Geprüft' }
         },
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854408/Image_17_w0msvz.jpg',
-          name: 'Thomas & Elena Vance',
-          company: 'Vance Luxusbäder',
-          niche: 'Badsanierung',
-          quote: 'Die Vorqualifizierung ist unschlagbar. 21 geprüfte Vor-Ort-Besichtigungen führten direkt zu 8 hochwertigen Masterbad-Sanierungen.',
-          result: '21 Vor-Ort-Termine · 8 Aufträge (152.000€ Umsatz)',
-          stats: { shownEstimates: 21, closedJobs: 8, ticketValue: '152.000€' }
+          name: 'Preisaufklärung vorab',
+          company: 'Klare Erwartungen',
+          niche: 'Schritt 03 · Vorbereitung',
+          quote: 'Bei der preisaufgeklärten Option sprechen wir vorab mit dem Eigentümer, damit der Preisrahmen vor Ihrem Besuch bekannt ist.',
+          result: 'Erinnerungen vor dem Termin',
+          stats: { shownEstimates: 3, closedJobs: 1, ticketValue: 'Aufgeklärt' }
         },
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854408/Image_18_cc9t7y.jpg',
-          name: 'Robert Kowalski',
-          company: 'Apex Industrieböden & Beton',
-          niche: 'Epoxidharzböden & Beton',
-          quote: 'Keine Schnäppchenjäger. 34 bestätigte Eigentümertermine brachten 12 feste Einfahrts- und Bodenbeschichtungsaufträge in unsere Bücher.',
-          result: '34 Vor-Ort-Termine · 12 Aufträge (134.000€ Umsatz)',
-          stats: { shownEstimates: 34, closedJobs: 12, ticketValue: '134.000€' }
+          name: 'Gebuchte Termine',
+          company: 'Zahlung bei Erscheinen',
+          niche: 'Schritt 04 · Kalender',
+          quote: 'Gebuchte Termine landen direkt in Ihrem Kalender. Bei Absage oder Nichterscheinen zahlen Sie $0.',
+          result: 'Zahlung nur bei stattfindendem Termin',
+          stats: { shownEstimates: 4, closedJobs: 0, ticketValue: '$97–$197' }
         }
       ],
-      waTag: 'DIREKTE EINSATZPROTOKOLLE',
-      waTitlePart1: 'LIVE VOM FACHBETRIEB. ',
-      waTitleSpan: 'WHATSAPP-NACHRICHTEN.',
-      waSubtitle: 'Echte Bildschirmaufnahmen aus den WhatsApp-Gruppen unserer Partnerbetriebe bei Terminbuchungen und Vertragsabschlüssen.',
+      waTag: 'TERMINKOMMUNIKATION',
+      waTitlePart1: 'DIREKTE ',
+      waTitleSpan: 'TERMINUPDATES.',
+      waSubtitle: 'Beispiele direkter Terminkommunikation bei der Koordination gebuchter Kostenvoranschlagstermine.',
       waItems: [
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854844/Image_21_zmxtae.jpg',
-          tag: 'Kundenchat #1',
-          caption: 'Vertrag vor Ort unterschrieben · Anzahlung erhalten',
-          location: 'München'
+          tag: 'Beispiel #1',
+          caption: 'Bestätigung eines gebuchten Termins',
+          location: 'Kalender'
         },
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854844/Image_22_fy7cvl.jpg',
-          tag: 'Kundenchat #2',
-          caption: 'Komplettauftrag abgeschlossen · Route ausgelastet',
-          location: 'Köln'
+          tag: 'Beispiel #2',
+          caption: 'Zeitfenster-Abstimmung',
+          location: 'Planung'
         },
         {
           image: 'https://res.cloudinary.com/diwxs2xe8/image/upload/v1792854844/Image_23_rba7bx.jpg',
-          tag: 'Kundenchat #3',
-          caption: '3 Termine heute durchgeführt · 2 Abschlüsse gesichert',
-          location: 'Frankfurt'
+          tag: 'Beispiel #3',
+          caption: 'Terminerinnerung vorab',
+          location: 'Nachfassung'
         }
       ]
     }
@@ -347,9 +347,9 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenQuiz }) => {
           </div>
 
           <h2 className="font-heading uppercase text-3xl sm:text-5xl lg:text-[3.75rem] text-[#fffdf9] font-normal tracking-[0.02em] mb-6 leading-tight">
-            Verified Results from{' '}
+            Built for Attic Insulation{' '}
             <span className="font-serif italic font-normal text-blue-400 tracking-normal normal-case">
-              Real Partners
+              Contractors
             </span>
           </h2>
 
@@ -396,12 +396,12 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenQuiz }) => {
                         className="w-3.5 h-3.5 fill-[#f97316] text-[#f97316]"
                       />
                     ))}
-                    <span className="text-[11px] font-mono text-gray-400 ml-1.5">5.0 Verified</span>
+                    <span className="text-[11px] font-mono text-gray-400 ml-1.5">B2B Workflow</span>
                   </div>
 
                   {/* Client quote */}
                   <p className="font-sans text-xs sm:text-[13.5px] text-[#fffdf9]/90 font-normal leading-relaxed mb-4">
-                    “{card.quote}”
+                    {card.quote}
                   </p>
 
                   {/* Result Pill */}
@@ -414,15 +414,15 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenQuiz }) => {
                   <div className="grid grid-cols-3 gap-1.5 py-2 px-2.5 rounded-xl bg-[#121524]/80 border border-white/[0.06] text-center text-xs mb-3">
                     <div>
                       <div className="font-display font-bold text-blue-400 leading-none text-xs sm:text-sm">{card.stats.ticketValue}</div>
-                      <div className="text-[9px] text-gray-400 font-mono uppercase mt-0.5">Value</div>
+                      <div className="text-[9px] text-gray-400 font-mono uppercase mt-0.5">Focus</div>
                     </div>
                     <div className="border-l border-white/10">
-                      <div className="font-display font-bold text-white leading-none text-xs sm:text-sm">{card.stats.closedJobs}</div>
-                      <div className="text-[9px] text-gray-400 font-mono uppercase mt-0.5">Closed</div>
+                      <div className="font-display font-bold text-white leading-none text-xs sm:text-sm">{card.stats.closedJobs === 0 ? '$0 No-Show' : '1 City'}</div>
+                      <div className="text-[9px] text-gray-400 font-mono uppercase mt-0.5">Policy</div>
                     </div>
                     <div className="border-l border-white/10">
-                      <div className="font-display font-bold text-white leading-none text-xs sm:text-sm">{card.stats.shownEstimates}</div>
-                      <div className="text-[9px] text-gray-400 font-mono uppercase mt-0.5">Sits</div>
+                      <div className="font-display font-bold text-white leading-none text-xs sm:text-sm">0{card.stats.shownEstimates}</div>
+                      <div className="text-[9px] text-gray-400 font-mono uppercase mt-0.5">Step</div>
                     </div>
                   </div>
                 </div>
@@ -454,9 +454,9 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenQuiz }) => {
             </div>
 
             <h3 className="font-heading uppercase text-2xl sm:text-4xl text-[#fffdf9] font-normal tracking-[0.02em] mb-4 leading-tight">
-              Live from Contractors:{' '}
+              Contractor Dispatch:{' '}
               <span className="font-serif italic font-normal text-blue-400 tracking-normal normal-case">
-                WhatsApp Dispatch Records
+                Scheduling Communication
               </span>
             </h3>
 
@@ -464,6 +464,10 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenQuiz }) => {
               {currentContent.waSubtitle}
             </p>
           </div>
+
+          <p className="text-center text-xs font-mono text-gray-400 mb-6">
+            Illustrative examples of scheduling messages
+          </p>
 
           {/* 3 WhatsApp Phone / Chat Mockup Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
@@ -489,7 +493,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenQuiz }) => {
                     </div>
                     <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/25 flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      <span>Live Record</span>
+                      <span>Dispatch</span>
                     </span>
                   </div>
 
@@ -525,7 +529,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onOpenQuiz }) => {
         <div className="max-w-2xl mx-auto text-center space-y-6 pt-4">
           <div className="inline-flex items-center gap-2 text-xs text-[#8e9aa8] font-sans">
             <ShieldCheck className="w-4 h-4 text-blue-400" />
-            <span>All metrics independently verified. Zero upfront retainers. You only pay per shown estimate.</span>
+            <span>Built for attic insulation contractors and business owners. Zero upfront retainers—you pay per appointment that shows.</span>
           </div>
 
           {onOpenQuiz && (

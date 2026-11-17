@@ -29,11 +29,11 @@ export const DifferentiationSector: React.FC<DifferentiationSectorProps> = ({ on
           </div>
 
           <h2 className="font-heading uppercase text-3xl sm:text-5xl lg:text-[3.75rem] text-[#fffdf9] font-normal tracking-[0.02em] leading-[1.05]">
-            What Makes ShownLeads{' '}
+            Why Contractors Choose{' '}
             <span className="font-serif italic font-normal text-blue-400 tracking-normal normal-case">
-              Different
+              ShownLeads
             </span>{' '}
-            to Pay-Per-Lead Companies
+            Over Traditional Lead Lists
           </h2>
 
           <p className="font-sans text-[15px] sm:text-[17px] text-[#fffdf9]/85 font-normal max-w-2xl mx-auto leading-relaxed mt-5">

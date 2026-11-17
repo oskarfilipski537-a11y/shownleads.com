@@ -54,7 +54,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({
 
           <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-gray-400 pb-6 border-b border-white/[0.08]">
             <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white font-medium">
-              Last updated: November 12, 2026
+              Last updated: 17 November 2026
             </span>
             <span>Appointment Messaging Program</span>
             <span className="text-gray-600">•</span>
@@ -247,14 +247,27 @@ export const TermsPage: React.FC<TermsPageProps> = ({
           {/* Official Bottom Contact & Legal Identification Card */}
           <div className="mt-14 p-6 sm:p-8 rounded-[24px] bg-[#0c0e17] border border-white/15 shadow-2xl text-center space-y-4">
             <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-mono">
-              <button 
-                onClick={() => onNavigate('privacy-policy')}
+              <a
+                href="/privacy-policy"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavigate('privacy-policy');
+                }}
                 className="text-gray-300 hover:text-white hover:underline transition-colors cursor-pointer"
               >
                 Privacy Policy
-              </button>
+              </a>
               <span className="text-gray-600">•</span>
-              <span className="text-blue-400 font-semibold">SMS Terms &amp; Conditions</span>
+              <a
+                href="/terms-and-conditions"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavigate('terms-and-conditions');
+                }}
+                className="text-blue-400 font-semibold hover:underline"
+              >
+                Terms &amp; Conditions
+              </a>
               <span className="text-gray-600">•</span>
               <a href="mailto:info@shownleads.com" className="text-gray-300 hover:text-white hover:underline">
                 info@shownleads.com
@@ -262,7 +275,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({
             </div>
 
             <p className="text-xs text-gray-400 font-sans max-w-xl mx-auto leading-relaxed">
-              ShownLeads is a trading name of Oskar Jan Filipski, 2 Windmill Close, Cashel, Co. Tipperary, E25 AV62, Ireland. Phone: +353 83 023 6881.
+              ShownLeads is a trading name of Oskar Jan Filipski, 2 Windmill Close, Cashel, Co. Tipperary, E25 AV62, Ireland. info@shownleads.com
             </p>
           </div>
         </div>

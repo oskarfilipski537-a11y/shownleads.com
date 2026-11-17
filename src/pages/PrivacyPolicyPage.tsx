@@ -54,7 +54,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({
 
           <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-gray-400 pb-6 border-b border-white/[0.08]">
             <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white font-medium">
-              Last updated: November 12, 2026
+              Last updated: 17 November 2026
             </span>
             <span>GDPR</span>
             <span className="text-gray-600">•</span>
@@ -75,6 +75,23 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({
               This policy explains how ShownLeads, a trading name of Oskar Jan Filipski (&ldquo;we&rdquo;, &ldquo;us&rdquo;), collects and uses personal information when you visit shownleads.com or our booking page, or book a strategy call through our booking form.
             </p>
           </div>
+
+          {/* Who this site is for */}
+          <section className="space-y-4">
+            <div className="flex items-center gap-2.5 text-white">
+              <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
+                <Shield className="w-4 h-4" />
+              </div>
+              <h2 className="font-heading uppercase text-xl sm:text-2xl text-white tracking-wide">
+                Who this site is for
+              </h2>
+            </div>
+            <div className="p-5 rounded-2xl bg-[#0c0e17] border border-white/10">
+              <p className="leading-relaxed">
+                ShownLeads provides appointment-setting services to business owners in the home-improvement trades. This website and booking form are intended only for business owners and their representatives, not for consumers or homeowners. We collect your information so that we can book, confirm and attend a strategy call with you.
+              </p>
+            </div>
+          </section>
 
           {/* Section 1: Who we are */}
           <section className="space-y-4 pt-2">
@@ -122,6 +139,11 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({
               <h2 className="font-heading uppercase text-xl sm:text-2xl text-white tracking-wide">
                 Information we collect
               </h2>
+            </div>
+            <div className="p-5 rounded-2xl bg-[#0c0e17] border border-white/10">
+              <p className="leading-relaxed">
+                When you book a strategy call, we collect your name, email address, mobile number, whether your business fits the type of contractor we work with, your crew size, your monthly revenue range, how many estimates your business can take on, and the date and time you chose. We also collect basic technical data such as browser, device and pages visited.
+              </p>
             </div>
             <ul className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <li className="p-4 rounded-xl bg-[#0c0e17] border border-white/10 space-y-1">
@@ -178,6 +200,10 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({
 
             <div className="p-6 rounded-[22px] bg-gradient-to-b from-[#0e1220] to-[#0a0d17] border border-blue-500/30 space-y-4 shadow-xl">
               <p className="leading-relaxed">
+                Texts are sent by ShownLeads only to business owners who ticked the consent box when booking a strategy call. Messages are limited to the booking confirmation and reminders about that call. We do not send marketing or promotional texts, and we do not send text messages on behalf of other businesses or to consumers.
+              </p>
+
+              <p className="leading-relaxed">
                 If you tick the consent box on our booking form, we send text messages about the strategy call you booked, such as confirmations and reminders. Message frequency varies and is up to 5 messages per booking. Message and data rates may apply. Reply <span className="px-2 py-0.5 rounded bg-white/10 font-mono text-white text-xs font-semibold">STOP</span> at any time to opt out, or <span className="px-2 py-0.5 rounded bg-white/10 font-mono text-white text-xs font-semibold">HELP</span> for help. Consent to receive texts is not a condition of any purchase.
               </p>
 
@@ -197,7 +223,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({
             </h2>
             <div className="p-5 rounded-2xl bg-[#0c0e17] border border-white/10">
               <p className="leading-relaxed">
-                We do not sell your personal information. We share it only with service providers who host our systems, process bookings and deliver messages on our behalf, under confidentiality obligations. We may disclose information if the law requires it.
+                We do not sell your personal information. We do not sell, rent or share leads, contact lists or phone numbers with other businesses. We share it only with service providers who host our systems, process bookings and deliver messages on our behalf, under confidentiality obligations. We may disclose information if the law requires it.
               </p>
             </div>
           </section>
@@ -244,14 +270,27 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({
           {/* Official Bottom Contact & Legal Identification Card */}
           <div className="mt-14 p-6 sm:p-8 rounded-[24px] bg-[#0c0e17] border border-white/15 shadow-2xl text-center space-y-4">
             <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-mono">
-              <span className="text-blue-400 font-semibold">Privacy Policy</span>
+              <a
+                href="/privacy-policy"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavigate('privacy-policy');
+                }}
+                className="text-blue-400 font-semibold hover:underline"
+              >
+                Privacy Policy
+              </a>
               <span className="text-gray-600">•</span>
-              <button 
-                onClick={() => onNavigate('terms-and-conditions')}
+              <a
+                href="/terms-and-conditions"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavigate('terms-and-conditions');
+                }}
                 className="text-gray-300 hover:text-white hover:underline transition-colors cursor-pointer"
               >
-                SMS Terms &amp; Conditions
-              </button>
+                Terms &amp; Conditions
+              </a>
               <span className="text-gray-600">•</span>
               <a href="mailto:info@shownleads.com" className="text-gray-300 hover:text-white hover:underline">
                 info@shownleads.com
@@ -259,7 +298,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({
             </div>
 
             <p className="text-xs text-gray-400 font-sans max-w-xl mx-auto leading-relaxed">
-              ShownLeads is a trading name of Oskar Jan Filipski, 2 Windmill Close, Cashel, Co. Tipperary, E25 AV62, Ireland. Phone: +353 83 023 6881.
+              ShownLeads is a trading name of Oskar Jan Filipski, 2 Windmill Close, Cashel, Co. Tipperary, E25 AV62, Ireland. info@shownleads.com
             </p>
           </div>
         </div>

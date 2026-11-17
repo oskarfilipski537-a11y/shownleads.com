@@ -56,11 +56,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuiz, onTalkToSpecialist }) =>
             variants={itemVariants}
             className="font-heading uppercase text-4xl sm:text-6xl md:text-7xl lg:text-[4.75rem] xl:text-[5.25rem] text-[#fffdf9] font-normal leading-[1.02] tracking-[0.015em] mb-6 max-w-5xl select-none"
           >
-            Become One of the{' '}
+            Booked{' '}
             <span className="font-serif italic font-normal text-blue-300 tracking-normal normal-case drop-shadow-[0_0_30px_rgba(59,130,246,0.45)]">
-              Biggest
+              Estimate
             </span>{' '}
-            Attic Insulation Companies in Your City.
+            Appointments for Attic Insulation Contractors.
           </motion.h1>
 
           {/* Supporting Headline */}
@@ -68,7 +68,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuiz, onTalkToSpecialist }) =>
             variants={itemVariants}
             className="font-sans text-base sm:text-lg lg:text-[1.15rem] text-[#fffdf9]/85 font-normal max-w-3xl leading-[1.68] mb-10"
           >
-            We help ambitious attic insulation contractors generate more homeowner demand, build a stronger workforce, and create the infrastructure to scale—without trying to manage every part of growth themselves.
+            Built for attic insulation contractors and business owners. We run the ads, qualify homeowners and book estimate appointments on your calendar, and you pay per appointment that shows.
           </motion.h2>
 
           {/* Action Buttons: "SEE IF YOUR BUSINESS QUALIFIES" and "BOOK A GROWTH STRATEGY CALL" */}

@@ -105,38 +105,38 @@ export const PPR_TRANSLATIONS: Record<'en' | 'sv' | 'es' | 'de', LocalizedPprCon
       },
       {
         num: '02',
-        title: 'Generative Engine Optimisation',
-        desc: 'Get your company ranking on AI tools.'
+        title: 'Local Visibility',
+        desc: 'Help homeowners find your attic insulation business.'
       },
       {
         num: '03',
         title: 'Ad',
-        desc: 'Video that stops the scroll.'
+        desc: 'Video that reaches local homeowners.'
       },
       {
         num: '04',
         title: 'Copy',
-        desc: 'Direct response, no fluff.'
+        desc: 'Clear attic insulation messaging, no fluff.'
       },
       {
         num: '05',
         title: 'Qualify',
-        desc: 'Renters and DIYers filtered out.'
+        desc: 'Renters and out-of-area inquiries filtered out.'
       },
       {
         num: '06',
         title: 'Book',
-        desc: 'Homeowners pick a slot on your route.'
+        desc: 'Estimate appointments placed on your calendar.'
       },
       {
         num: '07',
-        title: 'Instant Estimator Tool',
-        desc: 'Provide a full estimate in 2 minutes instead of sending it in 2 days.'
+        title: 'Scope Intake',
+        desc: 'Gather basic attic project details prior to the visit.'
       },
       {
         num: '08',
         title: 'Remind',
-        desc: 'SMS reminders so 94.6% show up.'
+        desc: 'Appointment confirmations and reminders beforehand.'
       }
     ],
     mapTargeted: 'Targeted ($90k+ Income)',
@@ -170,10 +170,10 @@ export const PPR_TRANSLATIONS: Record<'en' | 'sv' | 'es' | 'de', LocalizedPprCon
       },
       copy: {
         badge: 'Direct response copy',
-        headline: 'Ever been stuck in a grocery line that never seems to move?',
-        body: 'What a bathroom remodel feels like with the wrong bathroom remodeler.',
-        feature1: 'Waterproof luxury finishes',
-        feature2: '5-day completion'
+        headline: 'High summer cooling bills or drafty rooms?',
+        body: 'What an under-insulated attic costs homeowners every season.',
+        feature1: 'Local attic insulation assessment',
+        feature2: 'Written on-site estimate'
       },
       qualify: {
         title: 'Quick check',
@@ -266,7 +266,7 @@ export const PPR_TRANSLATIONS: Record<'en' | 'sv' | 'es' | 'de', LocalizedPprCon
       {
         num: '08',
         title: 'Påminnelse',
-        desc: 'SMS-påminnelser så 94,6% faktiskt kommer.'
+        desc: 'SMS-påminnelser och bekräftelser före besöket.'
       }
     ],
     mapTargeted: 'Målgrupp (Hög inkomst & köpkraft)',
@@ -300,10 +300,10 @@ export const PPR_TRANSLATIONS: Record<'en' | 'sv' | 'es' | 'de', LocalizedPprCon
       },
       copy: {
         badge: 'Direktrespons-copy',
-        headline: 'Har du någonsin fastnat i en matbutikskö som aldrig rör sig?',
-        body: 'Precis så känns en badrumsrenovering med fel entreprenör.',
-        feature1: 'Vattensäkra premiumytor',
-        feature2: 'Färdigt på 5 dagar'
+        headline: 'Höga elkostnader eller dragiga rum?',
+        body: 'Det är vad dålig vindsisolering kostar husägare varje säsong.',
+        feature1: 'Besiktning av vindsisolering',
+        feature2: 'Tydlig offert på plats'
       },
       qualify: {
         title: 'Snabbkoll',
@@ -396,7 +396,7 @@ export const PPR_TRANSLATIONS: Record<'en' | 'sv' | 'es' | 'de', LocalizedPprCon
       {
         num: '08',
         title: 'Recordatorio',
-        desc: 'SMS automatizados para un 94,6% de asistencia.'
+        desc: 'Confirmaciones y recordatorios por SMS antes de la cita.'
       }
     ],
     mapTargeted: 'Segmentado (Ingresos > 90k€)',
@@ -430,10 +430,10 @@ export const PPR_TRANSLATIONS: Record<'en' | 'sv' | 'es' | 'de', LocalizedPprCon
       },
       copy: {
         badge: 'Copywriting directo',
-        headline: '¿Alguna vez te has quedado atrapado en una cola del supermercado que nunca avanza?',
-        body: 'Así se siente una reforma de baño con el contratista equivocado.',
-        feature1: 'Acabados de lujo impermeables',
-        feature2: 'Terminado en 5 días'
+        headline: '¿Facturas altas de climatización en verano o invierno?',
+        body: 'Así afecta un ático mal aislado a la eficiencia de tu vivienda.',
+        feature1: 'Evaluación de aislamiento de ático',
+        feature2: 'Presupuesto presencial claro'
       },
       qualify: {
         title: 'Comprobación rápida',
@@ -526,7 +526,7 @@ export const PPR_TRANSLATIONS: Record<'en' | 'sv' | 'es' | 'de', LocalizedPprCon
       {
         num: '08',
         title: 'Erinnerung',
-        desc: 'Automatische SMS-Erinnerungen für 94,6% Termintreue.'
+        desc: 'Bestätigungen und SMS-Erinnerungen vor dem Termin.'
       }
     ],
     mapTargeted: 'Zielgebiet (Einkommen ab 90k€)',
@@ -560,10 +560,10 @@ export const PPR_TRANSLATIONS: Record<'en' | 'sv' | 'es' | 'de', LocalizedPprCon
       },
       copy: {
         badge: 'Direktwerbetext',
-        headline: 'Schon mal an einer Supermarktkasse gestanden, die sich einfach nicht bewegt?',
-        body: 'Genauso fühlt sich eine Badsanierung mit dem falschen Handwerker an.',
-        feature1: 'Wasserdichte Premium-Oberflächen',
-        feature2: 'Fertigstellung in 5 Tagen'
+        headline: 'Hohe Heiz- und Kühlkosten im eigenen Haus?',
+        body: 'Was unzureichende Dachbodendämmung Eigentümer jede Saison kostet.',
+        feature1: 'Vor-Ort-Prüfung des Dachbodens',
+        feature2: 'Verständliches Angebot vor Ort'
       },
       qualify: {
         title: 'Kurzcheck',

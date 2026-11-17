@@ -723,11 +723,11 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                       <div className="flex items-center justify-between px-4 pb-2.5">
                         <div className="flex items-center gap-2">
                           <div className="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-[10px] font-bold shadow-xs">
-                            NB
+                            SL
                           </div>
                           <div>
                             <div className="text-xs font-bold text-black leading-tight">
-                              Northline Bath
+                              Attic Insulation Ad Preview
                             </div>
                             <span className="text-[9px] text-gray-400 leading-tight">{mobile.ad.sponsored}</span>
                           </div>
@@ -830,11 +830,11 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                         {/* Company Header */}
                         <div className="flex items-center gap-2 mb-4">
                           <div className="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-[10px] font-bold">
-                            NB
+                            SL
                           </div>
                           <div>
                             <div className="text-xs font-bold text-black leading-none">
-                              Northline Bath
+                              Attic Insulation Example
                             </div>
                             <span className="text-[9px] text-gray-400">{mobile.copy.badge}</span>
                           </div>
@@ -1173,7 +1173,7 @@ export const PayPerResultSector: React.FC<PayPerResultSectorProps> = ({ onOpenQu
                       <div className="flex items-center justify-end">
                         <div className="inline-flex items-center gap-1 bg-green-50 text-green-700 border border-green-200 px-2 py-0.5 rounded-full text-[10px] font-mono font-bold">
                           <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                          94.6%
+                          Confirmed
                         </div>
                       </div>
                     </div>

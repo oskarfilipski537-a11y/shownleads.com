@@ -112,10 +112,10 @@ export const ComparisonTable: React.FC = () => {
           <div className="py-4 px-8 bg-[#0a0c14] border-t border-white/[0.08] flex items-center justify-between text-xs text-gray-400 font-sans">
             <span className="flex items-center gap-2">
               <Shield className="w-3.5 h-3.5 text-blue-400" />
-              <span>Zero retainers. Zero shared leads. You only pay when a vetted homeowner sits.</span>
+              <span>Zero retainers. No shared contact lists. You pay per booked estimate appointment that shows.</span>
             </span>
             <span className="text-blue-300 font-medium hidden sm:inline">
-              100% Risk-Reversed
+              Pay-Per-Show Model
             </span>
           </div>
         </div>

@@ -8,6 +8,62 @@ if (fs.existsSync(distDir)) {
   if (fs.existsSync(indexHtmlPath)) {
     const templateHtml = fs.readFileSync(indexHtmlPath, 'utf8');
 
+    const sharedFooterStaticHtml = `
+<footer id="footer" class="pt-20 pb-16 bg-[#07080c] text-xs text-[#8e9aa8]">
+  <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-14 pb-14">
+      <div class="lg:col-span-5 space-y-5">
+        <div class="flex items-center gap-2">
+          <span class="uppercase text-2xl sm:text-3xl tracking-[0.03em] text-[#fffdf9] font-bold">SHOWN LEADS</span>
+        </div>
+        <p class="text-[13px] text-[#8e9aa8] leading-relaxed max-w-md font-normal">
+          ShownLeads is a B2B appointment-setting service for attic insulation contractors and business owners. We run the ads, qualify homeowners and book estimate appointments on your calendar, and you pay per appointment that shows.
+        </p>
+        <p class="text-[11px] text-blue-300">Serving Attic Insulation Contractors · US · UK · Ireland · Australia · Canada</p>
+      </div>
+      <div class="lg:col-span-2 space-y-4">
+        <h4 class="uppercase text-xs tracking-[0.1em] text-[#fffdf9]">Navigation</h4>
+        <ul class="space-y-2.5 text-xs">
+          <li><a href="/" class="text-[#8e9aa8] hover:text-[#fffdf9]">Home</a></li>
+          <li><a href="/#delivering-pay-per-results" class="text-[#8e9aa8] hover:text-[#fffdf9]">Pay Per Estimate Model</a></li>
+          <li><a href="/#differentiation" class="text-[#8e9aa8] hover:text-[#fffdf9]">Why Booked Appointments</a></li>
+          <li><a href="/#how-it-works" class="text-[#8e9aa8] hover:text-[#fffdf9]">How It Works</a></li>
+          <li><a href="/case-studies" class="text-[#8e9aa8] hover:text-blue-400">Case Studies</a></li>
+        </ul>
+      </div>
+      <div class="lg:col-span-2 space-y-4">
+        <h4 class="uppercase text-xs tracking-[0.1em] text-[#fffdf9]">Attic insulation focus</h4>
+        <ul class="space-y-2.5 text-xs">
+          <li><a href="/appointments" class="text-[#8e9aa8] hover:text-[#fffdf9]">Blown-In Cellulose</a></li>
+          <li><a href="/appointments" class="text-[#8e9aa8] hover:text-[#fffdf9]">Spray Foam Insulation</a></li>
+          <li><a href="/appointments" class="text-[#8e9aa8] hover:text-[#fffdf9]">Fiberglass Batt &amp; Roll</a></li>
+          <li><a href="/appointments" class="text-[#8e9aa8] hover:text-[#fffdf9]">Attic Air Sealing</a></li>
+          <li><a href="/appointments" class="text-[#8e9aa8] hover:text-[#fffdf9]">Insulation Removal</a></li>
+        </ul>
+      </div>
+      <div class="lg:col-span-3 space-y-4">
+        <h4 class="uppercase text-xs tracking-[0.1em] text-[#fffdf9]">One Contractor Per City</h4>
+        <p class="text-xs text-[#8e9aa8] leading-relaxed">
+          We partner with attic insulation contractors and business owners who have active installation crews ready for booked estimate appointments.
+        </p>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-white/[0.08] flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#6f879c]">
+      <div class="space-y-1 text-center md:text-left">
+        <div>© ${new Date().getFullYear()} ShownLeads. All rights reserved.</div>
+        <p class="text-[11px] text-[#556575]">ShownLeads is a trading name of Oskar Jan Filipski, 2 Windmill Close, Cashel, Co. Tipperary, E25 AV62, Ireland. info@shownleads.com</p>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-4 text-xs shrink-0">
+        <a href="/privacy-policy" class="text-[#8e9aa8] hover:text-[#fffdf9]">Privacy Policy</a>
+        <span class="text-[#262832]">•</span>
+        <a href="/terms-and-conditions" class="text-[#8e9aa8] hover:text-[#fffdf9]">Terms &amp; Conditions</a>
+        <span class="text-[#262832]">•</span>
+        <a href="mailto:info@shownleads.com" class="text-[#8e9aa8] hover:text-[#fffdf9]">info@shownleads.com</a>
+      </div>
+    </div>
+  </div>
+</footer>`;
+
     // Prerendered content for SMS Terms & Conditions
     const termsStaticContent = `
 <div id="root">
@@ -15,7 +71,7 @@ if (fs.existsSync(distDir)) {
     <div class="max-w-4xl mx-auto px-6 sm:px-10 lg:px-12">
       <div class="mb-12">
         <h1 class="text-3xl sm:text-5xl uppercase tracking-wider mb-4 font-bold">SMS Terms &amp; Conditions</h1>
-        <p class="text-xs text-gray-400 font-mono">Last updated: November 12, 2026</p>
+        <p class="text-xs text-gray-400 font-mono">Last updated: 17 November 2026</p>
       </div>
       <div class="space-y-8 text-sm leading-relaxed text-gray-300">
         <section>
@@ -68,6 +124,7 @@ if (fs.existsSync(distDir)) {
       </div>
     </div>
   </div>
+  ${sharedFooterStaticHtml}
 </div>`;
 
     // Prerendered content for Privacy Policy
@@ -77,11 +134,15 @@ if (fs.existsSync(distDir)) {
     <div class="max-w-4xl mx-auto px-6 sm:px-10 lg:px-12">
       <div class="mb-12">
         <h1 class="text-3xl sm:text-5xl uppercase tracking-wider mb-4 font-bold">Privacy Policy</h1>
-        <p class="text-xs text-gray-400 font-mono">Last updated: November 12, 2026</p>
+        <p class="text-xs text-gray-400 font-mono">Last updated: 17 November 2026</p>
       </div>
       <div class="space-y-8 text-sm leading-relaxed text-gray-300">
         <section>
           <p class="text-base text-white">This policy explains how ShownLeads, a trading name of Oskar Jan Filipski (&ldquo;we&rdquo;, &ldquo;us&rdquo;), collects and uses personal information when you visit shownleads.com or our booking page, or book a strategy call through our booking form.</p>
+        </section>
+        <section>
+          <h2 class="text-xl uppercase font-semibold text-white mb-2">Who this site is for</h2>
+          <p>ShownLeads provides appointment-setting services to business owners in the home-improvement trades. This website and booking form are intended only for business owners and their representatives, not for consumers or homeowners. We collect your information so that we can book, confirm and attend a strategy call with you.</p>
         </section>
         <section>
           <h2 class="text-xl uppercase font-semibold text-white mb-2">Who we are</h2>
@@ -89,6 +150,7 @@ if (fs.existsSync(distDir)) {
         </section>
         <section>
           <h2 class="text-xl uppercase font-semibold text-white mb-2">Information we collect</h2>
+          <p class="mb-3">When you book a strategy call, we collect your name, email address, mobile number, whether your business fits the type of contractor we work with, your crew size, your monthly revenue range, how many estimates your business can take on, and the date and time you chose. We also collect basic technical data such as browser, device and pages visited.</p>
           <ul class="list-disc pl-5 space-y-1">
             <li><strong>Contact Data:</strong> Name, email address and mobile phone number you submit in our booking form.</li>
             <li><strong>Call Details:</strong> The date and time of the strategy call you book and the answers you give on the booking form.</li>
@@ -105,12 +167,13 @@ if (fs.existsSync(distDir)) {
         </section>
         <section>
           <h2 class="text-xl uppercase font-semibold text-white mb-2">Text messaging (SMS)</h2>
+          <p class="mb-2">Texts are sent by ShownLeads only to business owners who ticked the consent box when booking a strategy call. Messages are limited to the booking confirmation and reminders about that call. We do not send marketing or promotional texts, and we do not send text messages on behalf of other businesses or to consumers.</p>
           <p class="mb-2">If you tick the consent box on our booking form, we send text messages about the strategy call you booked, such as confirmations and reminders. Message frequency varies and is up to 5 messages per booking. Message and data rates may apply. Reply STOP at any time to opt out, or HELP for help. Consent to receive texts is not a condition of any purchase.</p>
-          <p class="p-3.5 rounded-xl bg-white/[0.04] border border-blue-500/20 text-xs text-blue-100">No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Text messaging originator opt-in data and consent will not be shared with any third parties. We use your mobile number only to send the messages described above.</p>
+          <p class="p-3.5 rounded-xl bg-white/[0.04] border border-blue-500/20 text-xs text-blue-100">Strict Privacy Guarantee: No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Text messaging originator opt-in data and consent will not be shared with any third parties. We use your mobile number only to send the messages described above.</p>
         </section>
         <section>
           <h2 class="text-xl uppercase font-semibold text-white mb-2">Sharing</h2>
-          <p>We do not sell your personal information. We share it only with service providers who host our systems, process bookings and deliver messages on our behalf, under confidentiality obligations. We may disclose information if the law requires it.</p>
+          <p>We do not sell your personal information. We do not sell, rent or share leads, contact lists or phone numbers with other businesses. We share it only with service providers who host our systems, process bookings and deliver messages on our behalf, under confidentiality obligations. We may disclose information if the law requires it.</p>
         </section>
         <section>
           <h2 class="text-xl uppercase font-semibold text-white mb-2">Retention and security</h2>
@@ -124,12 +187,10 @@ if (fs.existsSync(distDir)) {
           <h2 class="text-xl uppercase font-semibold text-white mb-2">Changes</h2>
           <p>We may update this policy. The date at the top shows when it last changed.</p>
         </section>
-        <section>
-          <p class="text-xs text-gray-400">ShownLeads is a trading name of Oskar Jan Filipski, 2 Windmill Close, Cashel, Co. Tipperary, E25 AV62, Ireland. Phone: +353 83 023 6881.</p>
-        </section>
       </div>
     </div>
   </div>
+  ${sharedFooterStaticHtml}
 </div>`;
 
     const routes = [
