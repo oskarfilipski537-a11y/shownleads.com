@@ -76,6 +76,21 @@ export default function App() {
     };
   }, []);
 
+  // Keep canonical tag synced to current page URL on https://www.shownleads.com
+  useEffect(() => {
+    const canonicalUrl =
+      currentPage === 'home'
+        ? 'https://www.shownleads.com/'
+        : `https://www.shownleads.com/${currentPage}`;
+    let canonicalLink = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute('href', canonicalUrl);
+  }, [currentPage]);
+
   const navigateTo = useCallback((page: AppPage, hash?: string) => {
     setCurrentPage(page);
     const targetUrl = page === 'home' ? (hash ? `/${hash}` : '/') : `/${page}`;

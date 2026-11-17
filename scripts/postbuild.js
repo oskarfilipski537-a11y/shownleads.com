@@ -194,25 +194,29 @@ if (fs.existsSync(distDir)) {
 </div>`;
 
     const routes = [
-      { name: 'privacy-policy', staticHtml: templateHtml.replace('<div id="root"></div>', privacyStaticContent) },
-      { name: 'privacy', staticHtml: templateHtml.replace('<div id="root"></div>', privacyStaticContent) },
-      { name: 'terms-and-conditions', staticHtml: templateHtml.replace('<div id="root"></div>', termsStaticContent) },
-      { name: 'terms', staticHtml: templateHtml.replace('<div id="root"></div>', termsStaticContent) },
-      { name: 'sms-terms', staticHtml: templateHtml.replace('<div id="root"></div>', termsStaticContent) },
-      { name: 'case-studies', staticHtml: templateHtml },
-      { name: 'company', staticHtml: templateHtml },
-      { name: 'appointments', staticHtml: templateHtml },
-      { name: 'lead-gen', staticHtml: templateHtml },
-      { name: 'our-companies', staticHtml: templateHtml },
-      { name: 'our-services', staticHtml: templateHtml },
+      { name: 'privacy-policy', canonicalPath: '/privacy-policy', staticHtml: templateHtml.replace('<div id="root"></div>', privacyStaticContent) },
+      { name: 'privacy', canonicalPath: '/privacy-policy', staticHtml: templateHtml.replace('<div id="root"></div>', privacyStaticContent) },
+      { name: 'terms-and-conditions', canonicalPath: '/terms-and-conditions', staticHtml: templateHtml.replace('<div id="root"></div>', termsStaticContent) },
+      { name: 'terms', canonicalPath: '/terms-and-conditions', staticHtml: templateHtml.replace('<div id="root"></div>', termsStaticContent) },
+      { name: 'sms-terms', canonicalPath: '/terms-and-conditions', staticHtml: templateHtml.replace('<div id="root"></div>', termsStaticContent) },
+      { name: 'case-studies', canonicalPath: '/case-studies', staticHtml: templateHtml },
+      { name: 'company', canonicalPath: '/company', staticHtml: templateHtml },
+      { name: 'appointments', canonicalPath: '/appointments', staticHtml: templateHtml },
+      { name: 'lead-gen', canonicalPath: '/lead-gen', staticHtml: templateHtml },
+      { name: 'our-companies', canonicalPath: '/our-companies', staticHtml: templateHtml },
+      { name: 'our-services', canonicalPath: '/our-services', staticHtml: templateHtml },
     ];
 
     for (const route of routes) {
+      const routeHtml = route.staticHtml.replace(
+        '<link rel="canonical" href="https://www.shownleads.com/" />',
+        `<link rel="canonical" href="https://www.shownleads.com${route.canonicalPath}" />`
+      );
       const targetDir = path.join(distDir, route.name);
       fs.mkdirSync(targetDir, { recursive: true });
-      fs.writeFileSync(path.join(targetDir, 'index.html'), route.staticHtml);
+      fs.writeFileSync(path.join(targetDir, 'index.html'), routeHtml);
       // Also provide a .html version for direct file servers
-      fs.writeFileSync(path.join(distDir, `${route.name}.html`), route.staticHtml);
+      fs.writeFileSync(path.join(distDir, `${route.name}.html`), routeHtml);
     }
 
     console.log('Post-build: static prerendered HTML generated for legal routes & SPA fallbacks created.');
